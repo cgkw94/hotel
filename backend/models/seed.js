@@ -117,248 +117,248 @@ module.exports = [
     //   },
     // ],
   },
-  {
-    hotelId: 2,
-    hotelName: "lyf Farrer Park Singapore by Ascott",
-    hotelImg: "",
-    location: "Farrer Park",
-    address: "15 Stamford Road , City Hall, 178906 Singapore",
-    geolocation: { longitude: 103.851299277575, latitude: 1.29390281870928 },
-    hotelRating: 4.4,
-    vacancies: true,
-    feedback: [
-      {
-        username: "Kah",
-        userRating: 9.0,
-        userFeedback: "Amazin",
-      },
-      {
-        username: "Kevin",
-        userRating: 9,
-        userFeedback: "Overall and enjoyable stay in a centralized location",
-      },
-      {
-        username: "Gerald",
-        userRating: 10,
-        userFeedback:
-          "We did a staycation for New Year’s Eve. The hotel is well appointed, luxurious, and stuff work hard to make you happy.",
-      },
-      {
-        username: "Maria",
-        userRating: 9.0,
-        userFeedback:
-          "will definitely want to stay again but this time to explore and enjoy the amenities",
-      },
-      {
-        username: "Shirley",
-        userRating: 10,
-        userFeedback: "It was a good break. Great discovery - 15 Stamford",
-      },
-      {
-        username: "Jocelyn",
-        userRating: 8.6,
-        userFeedback: "Excellent service and good location",
-      },
-      {
-        username: "Anna",
-        userRating: 9.2,
-        userFeedback:
-          "Perfect Place for a Quiet Staycation. Excellent Service.",
-      },
-      {
-        username: "Salim",
-        userRating: 8.8,
-        userFeedback: "I’ll be back",
-      },
-    ],
-    amenities: [
-      "Swimming Pool",
-      "Free Wifi",
-      "Non-Smoking Rooms",
-      "Free Parking",
-      "Bar",
-      "Gym",
-      "Spa and wellness centre",
-      "Restaurant",
-    ],
-    userStayed: [
-      "Kah",
-      "Kevin",
-      "Gerald",
-      "Maria",
-      "Shirley",
-      "Jocelyn",
-      "Anna",
-      "Salim",
-    ],
-    roomsGeneral: [
-      {
-        roomType: "Deluxe",
-        maxPax: 2,
-        price: 450,
-        roomImg: [],
-        size: "43 sqf",
-        amenities: ["Minibar", "Safe Deposit Box", "Closet"],
-      },
-      {
-        roomType: "Grand Deluxe",
-        maxPax: 3,
-        price: 730,
-        roomImg: [],
-        size: "52 sqf",
-        amenities: [
-          "Minibar",
-          "Safe Deposit Box",
-          "Closet",
-          "Bathtub",
-          "Coffee Machine",
-        ],
-      },
-      {
-        roomType: "Suite",
-        maxPax: 4,
-        price: 1250,
-        roomImg: [],
-        size: "58 sqf",
-        amenities: [
-          "Minibar",
-          "Safe Deposit Box",
-          "Closet",
-          "Bathtub",
-          "Coffee Machine",
-          "Wake up service/Alarm clock",
-          "Butler Service",
-        ],
-      },
-    ],
-    // rooms: [
-    //   {
-    //     datesBooked: [{ date: String, occupied: Boolean }], //array filters}
-    //     roomNumber: Number,
-    //     roomType: String,
-    //   },
-    // ],
-  },
-  {
-    hotelId: 2,
-    hotelName: "lyf Farrer Park Singapore by Ascott",
-    hotelImg: "",
-    location: "Farrer Park",
-    address: "15 Stamford Road , City Hall, 178906 Singapore",
-    geolocation: { longitude: 103.851299277575, latitude: 1.29390281870928 },
-    hotelRating: 4.4,
-    vacancies: true,
-    feedback: [
-      {
-        username: "Kah",
-        userRating: 9.0,
-        userFeedback: "Amazin",
-      },
-      {
-        username: "Kevin",
-        userRating: 9,
-        userFeedback: "Overall and enjoyable stay in a centralized location",
-      },
-      {
-        username: "Gerald",
-        userRating: 10,
-        userFeedback:
-          "We did a staycation for New Year’s Eve. The hotel is well appointed, luxurious, and stuff work hard to make you happy.",
-      },
-      {
-        username: "Maria",
-        userRating: 9.0,
-        userFeedback:
-          "will definitely want to stay again but this time to explore and enjoy the amenities",
-      },
-      {
-        username: "Shirley",
-        userRating: 10,
-        userFeedback: "It was a good break. Great discovery - 15 Stamford",
-      },
-      {
-        username: "Jocelyn",
-        userRating: 8.6,
-        userFeedback: "Excellent service and good location",
-      },
-      {
-        username: "Anna",
-        userRating: 9.2,
-        userFeedback:
-          "Perfect Place for a Quiet Staycation. Excellent Service.",
-      },
-      {
-        username: "Salim",
-        userRating: 8.8,
-        userFeedback: "I’ll be back",
-      },
-    ],
-    amenities: [
-      "Swimming Pool",
-      "Free Wifi",
-      "Non-Smoking Rooms",
-      "Free Parking",
-      "Bar",
-      "Gym",
-      "Spa and wellness centre",
-      "Restaurant",
-    ],
-    userStayed: [
-      "Kah",
-      "Kevin",
-      "Gerald",
-      "Maria",
-      "Shirley",
-      "Jocelyn",
-      "Anna",
-      "Salim",
-    ],
-    roomsGeneral: [
-      {
-        roomType: "Deluxe",
-        maxPax: 2,
-        price: 450,
-        roomImg: [],
-        size: "43 sqf",
-        amenities: ["Minibar", "Safe Deposit Box", "Closet"],
-      },
-      {
-        roomType: "Grand Deluxe",
-        maxPax: 3,
-        price: 730,
-        roomImg: [],
-        size: "52 sqf",
-        amenities: [
-          "Minibar",
-          "Safe Deposit Box",
-          "Closet",
-          "Bathtub",
-          "Coffee Machine",
-        ],
-      },
-      {
-        roomType: "Suite",
-        maxPax: 4,
-        price: 1250,
-        roomImg: [],
-        size: "58 sqf",
-        amenities: [
-          "Minibar",
-          "Safe Deposit Box",
-          "Closet",
-          "Bathtub",
-          "Coffee Machine",
-          "Wake up service/Alarm clock",
-          "Butler Service",
-        ],
-      },
-    ],
-    // rooms: [
-    //   {
-    //     datesBooked: [{ date: String, occupied: Boolean }], //array filters}
-    //     roomNumber: Number,
-    //     roomType: String,
-    //   },
-    // ],
-  },
+  // {
+  //   hotelId: 2,
+  //   hotelName: "lyf Farrer Park Singapore by Ascott",
+  //   hotelImg: "",
+  //   location: "Farrer Park",
+  //   address: "15 Stamford Road , City Hall, 178906 Singapore",
+  //   geolocation: { longitude: 103.851299277575, latitude: 1.29390281870928 },
+  //   hotelRating: 4.4,
+  //   vacancies: true,
+  //   feedback: [
+  //     {
+  //       username: "Kah",
+  //       userRating: 9.0,
+  //       userFeedback: "Amazin",
+  //     },
+  //     {
+  //       username: "Kevin",
+  //       userRating: 9,
+  //       userFeedback: "Overall and enjoyable stay in a centralized location",
+  //     },
+  //     {
+  //       username: "Gerald",
+  //       userRating: 10,
+  //       userFeedback:
+  //         "We did a staycation for New Year’s Eve. The hotel is well appointed, luxurious, and stuff work hard to make you happy.",
+  //     },
+  //     {
+  //       username: "Maria",
+  //       userRating: 9.0,
+  //       userFeedback:
+  //         "will definitely want to stay again but this time to explore and enjoy the amenities",
+  //     },
+  //     {
+  //       username: "Shirley",
+  //       userRating: 10,
+  //       userFeedback: "It was a good break. Great discovery - 15 Stamford",
+  //     },
+  //     {
+  //       username: "Jocelyn",
+  //       userRating: 8.6,
+  //       userFeedback: "Excellent service and good location",
+  //     },
+  //     {
+  //       username: "Anna",
+  //       userRating: 9.2,
+  //       userFeedback:
+  //         "Perfect Place for a Quiet Staycation. Excellent Service.",
+  //     },
+  //     {
+  //       username: "Salim",
+  //       userRating: 8.8,
+  //       userFeedback: "I’ll be back",
+  //     },
+  //   ],
+  //   amenities: [
+  //     "Swimming Pool",
+  //     "Free Wifi",
+  //     "Non-Smoking Rooms",
+  //     "Free Parking",
+  //     "Bar",
+  //     "Gym",
+  //     "Spa and wellness centre",
+  //     "Restaurant",
+  //   ],
+  //   userStayed: [
+  //     "Kah",
+  //     "Kevin",
+  //     "Gerald",
+  //     "Maria",
+  //     "Shirley",
+  //     "Jocelyn",
+  //     "Anna",
+  //     "Salim",
+  //   ],
+  //   roomsGeneral: [
+  //     {
+  //       roomType: "Deluxe",
+  //       maxPax: 2,
+  //       price: 450,
+  //       roomImg: "",
+  //       size: "43 sqf",
+  //       amenities: ["Minibar", "Safe Deposit Box", "Closet"],
+  //     },
+  //     {
+  //       roomType: "Grand Deluxe",
+  //       maxPax: 3,
+  //       price: 730,
+  //       roomImg: "",
+  //       size: "52 sqf",
+  //       amenities: [
+  //         "Minibar",
+  //         "Safe Deposit Box",
+  //         "Closet",
+  //         "Bathtub",
+  //         "Coffee Machine",
+  //       ],
+  //     },
+  //     {
+  //       roomType: "Suite",
+  //       maxPax: 4,
+  //       price: 1250,
+  //       roomImg: "",
+  //       size: "58 sqf",
+  //       amenities: [
+  //         "Minibar",
+  //         "Safe Deposit Box",
+  //         "Closet",
+  //         "Bathtub",
+  //         "Coffee Machine",
+  //         "Wake up service/Alarm clock",
+  //         "Butler Service",
+  //       ],
+  //     },
+  //   ],
+  //   // rooms: [
+  //   //   {
+  //   //     datesBooked: [{ date: String, occupied: Boolean }], //array filters}
+  //   //     roomNumber: Number,
+  //   //     roomType: String,
+  //   //   },
+  //   // ],
+  // },
+  // {
+  //   hotelId: 2,
+  //   hotelName: "lyf Farrer Park Singapore by Ascott",
+  //   hotelImg: "",
+  //   location: "Farrer Park",
+  //   address: "15 Stamford Road , City Hall, 178906 Singapore",
+  //   geolocation: { longitude: 103.851299277575, latitude: 1.29390281870928 },
+  //   hotelRating: 4.4,
+  //   vacancies: true,
+  //   feedback: [
+  //     {
+  //       username: "Kah",
+  //       userRating: 9.0,
+  //       userFeedback: "Amazin",
+  //     },
+  //     {
+  //       username: "Kevin",
+  //       userRating: 9,
+  //       userFeedback: "Overall and enjoyable stay in a centralized location",
+  //     },
+  //     {
+  //       username: "Gerald",
+  //       userRating: 10,
+  //       userFeedback:
+  //         "We did a staycation for New Year’s Eve. The hotel is well appointed, luxurious, and stuff work hard to make you happy.",
+  //     },
+  //     {
+  //       username: "Maria",
+  //       userRating: 9.0,
+  //       userFeedback:
+  //         "will definitely want to stay again but this time to explore and enjoy the amenities",
+  //     },
+  //     {
+  //       username: "Shirley",
+  //       userRating: 10,
+  //       userFeedback: "It was a good break. Great discovery - 15 Stamford",
+  //     },
+  //     {
+  //       username: "Jocelyn",
+  //       userRating: 8.6,
+  //       userFeedback: "Excellent service and good location",
+  //     },
+  //     {
+  //       username: "Anna",
+  //       userRating: 9.2,
+  //       userFeedback:
+  //         "Perfect Place for a Quiet Staycation. Excellent Service.",
+  //     },
+  //     {
+  //       username: "Salim",
+  //       userRating: 8.8,
+  //       userFeedback: "I’ll be back",
+  //     },
+  //   ],
+  //   amenities: [
+  //     "Swimming Pool",
+  //     "Free Wifi",
+  //     "Non-Smoking Rooms",
+  //     "Free Parking",
+  //     "Bar",
+  //     "Gym",
+  //     "Spa and wellness centre",
+  //     "Restaurant",
+  //   ],
+  //   userStayed: [
+  //     "Kah",
+  //     "Kevin",
+  //     "Gerald",
+  //     "Maria",
+  //     "Shirley",
+  //     "Jocelyn",
+  //     "Anna",
+  //     "Salim",
+  //   ],
+  //   roomsGeneral: [
+  //     {
+  //       roomType: "Deluxe",
+  //       maxPax: 2,
+  //       price: 450,
+  //       roomImg: "",
+  //       size: "43 sqf",
+  //       amenities: ["Minibar", "Safe Deposit Box", "Closet"],
+  //     },
+  //     {
+  //       roomType: "Grand Deluxe",
+  //       maxPax: 3,
+  //       price: 730,
+  //       roomImg: "",
+  //       size: "52 sqf",
+  //       amenities: [
+  //         "Minibar",
+  //         "Safe Deposit Box",
+  //         "Closet",
+  //         "Bathtub",
+  //         "Coffee Machine",
+  //       ],
+  //     },
+  //     {
+  //       roomType: "Suite",
+  //       maxPax: 4,
+  //       price: 1250,
+  //       roomImg: "",
+  //       size: "58 sqf",
+  //       amenities: [
+  //         "Minibar",
+  //         "Safe Deposit Box",
+  //         "Closet",
+  //         "Bathtub",
+  //         "Coffee Machine",
+  //         "Wake up service/Alarm clock",
+  //         "Butler Service",
+  //       ],
+  //     },
+  //   ],
+  //   // rooms: [
+  //   //   {
+  //   //     datesBooked: [{ date: String, occupied: Boolean }], //array filters}
+  //   //     roomNumber: Number,
+  //   //     roomType: String,
+  //   //   },
+  //   // ],
+  // },
 ];
