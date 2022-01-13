@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 
 const HotelSchema = new mongoose.Schema(
   {
-    hotelId: { type: Number }, //uuid
     hotelName: { type: String, required: true, unique: true },
     hotelImg: { type: String },
     location: { type: String },
@@ -10,7 +9,14 @@ const HotelSchema = new mongoose.Schema(
     geolocation: { longitude: Number, latitude: Number },
     hotelRating: { type: Number, max: 5 },
     vacancies: { type: Boolean },
-    feedback: [{ username: String, userRating: Number, userFeedback: String }],
+    feedback: [
+      {
+        fbId: Number,
+        username: String,
+        userRating: Number, // max:10
+        userFeedback: String,
+      },
+    ],
     amenities: [{ type: String }],
     userStayed: [{ type: String }],
     roomsGeneral: [
