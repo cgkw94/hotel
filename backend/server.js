@@ -22,9 +22,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.get("/seed", async (req, res) => {
-  await Hotel.deleteMany({});
+  await Hotel.deleteMany();
   await Hotel.create(seedData);
-  const hotelResults = await Hotel.find({});
+  const hotelResults = await Hotel.find();
   res.json(hotelResults);
 });
 
