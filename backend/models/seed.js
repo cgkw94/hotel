@@ -302,13 +302,4 @@ module.exports = [
     ],
     rooms: [{ datesBooked: [{ date: "123", occupied: true }] }],
   },
-  {
-    hotelName: "hi",
-    amenities: ["hi", "hi"],
-    userStayed: ["hi"],
-    feedback: [{ fbID: 1 }],
-    roomsGeneral: [
-      { roomtype: "hi", amenities: ["hi", "hi"], roomImg: ["hi"] },
-    ],
-  },
 ];
