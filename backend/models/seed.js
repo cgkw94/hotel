@@ -114,7 +114,7 @@ module.exports = [
     ],
   },
   {
-    hotelId: 3,
+    hotelId: 2,
     hotelName: "Co4324d Centennial Singapore",
     hotelImg: "",
     location: "Marina Bay",
