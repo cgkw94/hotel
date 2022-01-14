@@ -4,7 +4,7 @@ const Login = () => {
   return (
     <div>
       <div>
-        login
+        Login
         <br />
         <form>
           <input placeholder="email"></input>
@@ -17,8 +17,8 @@ const Login = () => {
         <br />
         <form>
           <input placeholder="username"></input>
-          <input placeholder="email"></input>
-          <input placeholder="password"></input>
+          <input placeholder="email" type="email"></input>
+          <input placeholder="password" type="password"></input>
           <button type="submit">Submit</button>
         </form>
       </div>

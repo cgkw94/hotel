@@ -12,6 +12,8 @@ const connectDB = require("./models/db");
 
 const Hotel = require("./models/hotel");
 const seedData = require("./models/Seed");
+const Users = require("./models/users");
+const usersseed = require("./models/usersseed");
 
 ////////////////////////////////////
 // Config
@@ -33,7 +35,7 @@ mongoose.connect(
   mongoURI,
   { useNewUrlParser: true, useUnifiedTopology: true },
   () => {
-    console.log("The connection with mongod is established");
+    console.log("The connection with mongodb is established");
   }
 );
 
@@ -42,7 +44,7 @@ mongoose.connect(
 ////////////////////////////////////
 
 ////////////////////////////////////
-// Seed Data
+// Seed Hotel Data
 ////////////////////////////////////
 
 app.get("/seed", async (req, res) => {
@@ -53,7 +55,18 @@ app.get("/seed", async (req, res) => {
 });
 
 ////////////////////////////////////
-// Hotel Detals
+// Seed Users Data
+////////////////////////////////////
+
+app.get("/usersseed", async (req, res) => {
+  await Users.deleteMany();
+  await Users.create(usersseed);
+  const checkUsers = await Users.find();
+  res.json(checkUsers);
+});
+
+////////////////////////////////////
+// Hotel Details
 ////////////////////////////////////
 app.get("/hotel/:id", async (req, res) => {
   const hotelDetails = await Hotel.find({
@@ -65,5 +78,17 @@ app.get("/hotel/:id", async (req, res) => {
 ////////////////////////////////////
 // Hotel Room Details
 ////////////////////////////////////
+
+////////////////////////////////////
+// Login to obtain Users Data
+////////////////////////////////////
+// remember that username is case-sensitive
+app.get("/users", async (req, res) => {
+  const checkUsers = await Users.find(
+    { username: req.body.username },
+    { username: 1, hotelStayed: 1, _id: 0 }
+  );
+  res.json(checkUsers);
+});
 
 app.listen(5005);
