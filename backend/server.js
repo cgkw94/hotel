@@ -62,4 +62,8 @@ app.get("/hotel/:id", async (req, res) => {
   res.json(hotelDetails);
 });
 
+////////////////////////////////////
+// Hotel Room Details
+////////////////////////////////////
+
 app.listen(5005);

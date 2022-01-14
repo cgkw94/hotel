@@ -1,5 +1,6 @@
 module.exports = [
   {
+    //this confirm works
     hotelId: 1,
     hotelName: "Conrad Centennial Singapore",
     hotelImg: "",
