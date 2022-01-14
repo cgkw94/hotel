@@ -52,4 +52,14 @@ app.get("/seed", async (req, res) => {
   res.json(hotelResults);
 });
 
+////////////////////////////////////
+// Hotel Detals
+////////////////////////////////////
+app.get("/hotel/:id", async (req, res) => {
+  const hotelDetails = await Hotel.find({
+    hotelId: `${req.params.id}`,
+  });
+  res.json(hotelDetails);
+});
+
 app.listen(5005);
