@@ -17,15 +17,6 @@ function App() {
         <a href="/login">
           <button>Login / Sign Up</button>
         </a>
-        <form onSubmit={handleSubmit}>
-          <div>Feedback</div>
-          <input
-            type="text"
-            name="feedback"
-            onChange={(e) => setUserFeedback(e.target.value)}
-          />
-          <button type="submit">Submit</button>
-        </form>
       </Route>
       <Route path="/login">
         <Login setUserInfo={setUserInfo} setLoggedIn={setLoggedIn} />
