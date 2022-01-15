@@ -5,6 +5,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const connectDB = require("./models/db");
+let cors = require("cors");
 
 ////////////////////////////////////
 // Models
@@ -23,6 +24,7 @@ const mongoURI = "mongodb://127.0.0.1:27017/hotel";
 connectDB(mongoURI);
 
 const app = express();
+app.use(cors());
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -76,19 +78,24 @@ app.get("/hotel/:id", async (req, res) => {
 });
 
 ////////////////////////////////////
-// Hotel Room Details
+// POST feedback form
 ////////////////////////////////////
+
+const feedback = [];
+
+app.get("/feedback", async (req, res) => {
+  res.json(feedback);
+});
+
+app.post("/feedback/create", async (req, res) => {
+  console.log(req.body);
+  const newFeedback = req.body;
+  feedback.push(newFeedback);
+});
 
 ////////////////////////////////////
 // Login to obtain Users Data
 ////////////////////////////////////
 // remember that username is case-sensitive
-app.get("/users", async (req, res) => {
-  const checkUsers = await Users.find(
-    { username: req.body.username },
-    { username: 1, hotelStayed: 1, _id: 0 }
-  );
-  res.json(checkUsers);
-});
 
 app.listen(5005);

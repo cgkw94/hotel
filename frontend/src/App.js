@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Route } from "react-router-dom";
 import "./App.css";
+import HotelDetails from "./components/HotelDetails";
 import Login from "./components/Login";
 
 function App() {
@@ -20,6 +21,9 @@ function App() {
       </Route>
       <Route path="/login">
         <Login setUserInfo={setUserInfo} setLoggedIn={setLoggedIn} />
+      </Route>
+      <Route path="/hoteldetails">
+        <HotelDetails />
       </Route>
     </>
   );
