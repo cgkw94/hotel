@@ -15,6 +15,7 @@ const Hotel = require("./models/hotel");
 const seedData = require("./models/Seed");
 const Users = require("./models/users");
 const usersseed = require("./models/usersseed");
+const { deleteMany, db } = require("./models/hotel");
 
 ////////////////////////////////////
 // Config
@@ -81,17 +82,22 @@ app.get("/hotel/:id", async (req, res) => {
 // POST feedback form
 ////////////////////////////////////
 
-// just a basic form. will change the routes later
-const feedback = [];
-
-app.get("/feedback", async (req, res) => {
-  res.json(feedback);
-});
-
 app.post("/feedback/create", async (req, res) => {
-  console.log(req.body);
-  const newFeedback = req.body;
-  feedback.push(newFeedback);
+  console.log(req.body.feedback);
+
+  const newFeedback = req.body.feedback;
+
+  //for some reason cant update DB using this syntax but express can receive post
+  Hotel.updateOne(
+    //query
+    { hotelId: 1 },
+    //update
+    {
+      $push: {
+        feedback: newFeedback,
+      },
+    }
+  );
 });
 
 ////////////////////////////////////

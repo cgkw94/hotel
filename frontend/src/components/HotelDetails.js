@@ -1,8 +1,11 @@
 import React, { useState } from "react";
-import Axios from "axios";
 
 function HotelDetails(props) {
-  const [feedback, setFeedback] = useState({ username: "", feedback: "" });
+  const [feedback, setFeedback] = useState({
+    username: "",
+    userRating: 0,
+    userFeedback: "",
+  });
 
   const handleUsernameChange = (event) => {
     setFeedback((prevState) => {
@@ -12,7 +15,7 @@ function HotelDetails(props) {
 
   const handleFeedbackChange = (event) => {
     setFeedback((prevState) => {
-      return { ...prevState, feedback: event.target.value };
+      return { ...prevState, userFeedback: event.target.value };
     });
   };
 
