@@ -81,6 +81,7 @@ app.get("/hotel/:id", async (req, res) => {
 // POST feedback form
 ////////////////////////////////////
 
+// just a basic form. will change the routes later
 const feedback = [];
 
 app.get("/feedback", async (req, res) => {
