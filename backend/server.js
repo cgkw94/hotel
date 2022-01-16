@@ -5,6 +5,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const connectDB = require("./models/db");
+const cors = require("cors");
 
 ////////////////////////////////////
 // Models
@@ -24,6 +25,7 @@ connectDB(mongoURI);
 
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
@@ -58,12 +60,11 @@ app.get("/seed", async (req, res) => {
 // Seed Users Data
 ////////////////////////////////////
 
-app.get("/usersseed", async (req, res) => {
-  await Users.deleteMany();
-  await Users.create(usersseed);
-  const checkUsers = await Users.find();
-  res.json(checkUsers);
-});
+// app.get("/usersseed",  async (req, res) => {
+Users.deleteMany().then(Users.create(usersseed));
+// const checkUsers = await Users.find();
+// res.json(checkUsers);
+// }
 
 ////////////////////////////////////
 // Hotel Details
@@ -83,12 +84,16 @@ app.get("/hotel/:id", async (req, res) => {
 // Login to obtain Users Data
 ////////////////////////////////////
 // remember that username is case-sensitive
-app.get("/users", async (req, res) => {
+app.post("/users", async (req, res) => {
   const checkUsers = await Users.find(
     { username: req.body.username },
     { username: 1, hotelStayed: 1, _id: 0 }
   );
-  res.json(checkUsers);
+  if (checkUsers === []) {
+    res.json({ msg: "no users found" });
+  } else {
+    res.json(checkUsers);
+  }
 });
 
 app.listen(5005);

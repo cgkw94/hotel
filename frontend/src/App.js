@@ -7,7 +7,7 @@ function App() {
   // eslint-disable-next-line -- this is to "get rid" of the compilation warning that the state was assigned but never used.
   const [userFeedback, setUserFeedback] = useState("");
   // eslint-disable-next-line
-  const [userInfo, setUserInfo] = useState(0);
+  const [userInfo, setUserInfo] = useState({ username: "" });
   // eslint-disable-next-line
   const [loggedIn, setLoggedIn] = useState(false);
   const handleSubmit = () => {};
@@ -28,7 +28,11 @@ function App() {
         </form>
       </Route>
       <Route path="/login">
-        <Login setUserInfo={setUserInfo} setLoggedIn={setLoggedIn} />
+        <Login
+          setUserInfo={setUserInfo}
+          setLoggedIn={setLoggedIn}
+          username={userInfo.username}
+        />
       </Route>
     </>
   );
