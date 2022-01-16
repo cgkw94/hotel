@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Route } from "react-router-dom";
 import "./App.css";
+import HotelDetails from "./components/HotelDetails";
 import Login from "./components/Login";
 
 function App() {
@@ -17,15 +18,6 @@ function App() {
         <a href="/login">
           <button>Login / Sign Up</button>
         </a>
-        <form onSubmit={handleSubmit}>
-          <div>Feedback</div>
-          <input
-            type="text"
-            name="feedback"
-            onChange={(e) => setUserFeedback(e.target.value)}
-          />
-          <button type="submit">Submit</button>
-        </form>
       </Route>
       <Route path="/login">
         <Login
@@ -33,6 +25,9 @@ function App() {
           setLoggedIn={setLoggedIn}
           username={userInfo.username}
         />
+      </Route>
+      <Route path="/hoteldetails">
+        <HotelDetails />
       </Route>
     </>
   );

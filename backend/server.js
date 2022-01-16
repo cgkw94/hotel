@@ -5,7 +5,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const connectDB = require("./models/db");
-const cors = require("cors");
+let cors = require("cors");
 
 ////////////////////////////////////
 // Models
@@ -15,6 +15,7 @@ const Hotel = require("./models/hotel");
 const seedData = require("./models/Seed");
 const Users = require("./models/users");
 const usersseed = require("./models/usersseed");
+const { deleteMany, db } = require("./models/hotel");
 
 ////////////////////////////////////
 // Config
@@ -24,6 +25,7 @@ const mongoURI = "mongodb://127.0.0.1:27017/hotel";
 connectDB(mongoURI);
 
 const app = express();
+app.use(cors());
 
 app.use(cors());
 app.use(express.json());
@@ -77,8 +79,26 @@ app.get("/hotel/:id", async (req, res) => {
 });
 
 ////////////////////////////////////
-// Hotel Room Details
+// POST feedback form
 ////////////////////////////////////
+
+app.post("/feedback/create", async (req, res) => {
+  console.log(req.body.feedback);
+
+  const newFeedback = req.body.feedback;
+
+  //for some reason cant update DB using this syntax but express can receive post
+  Hotel.updateOne(
+    //query
+    { hotelId: 1 },
+    //update
+    {
+      $push: {
+        feedback: newFeedback,
+      },
+    }
+  );
+});
 
 ////////////////////////////////////
 // Login to obtain Users Data
