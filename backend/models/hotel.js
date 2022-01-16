@@ -25,8 +25,8 @@ const HotelSchema = new mongoose.Schema(
     ],
     rooms: [
       {
-        datesBooked: [{ date: String, occupied: Boolean }], //array filters}
-        roomNumber: Number,
+        inDate: String,
+        outDate: String,
         roomType: String,
       },
     ],

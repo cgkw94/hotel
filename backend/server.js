@@ -17,6 +17,8 @@ const Users = require("./models/users");
 const usersseed = require("./models/usersseed");
 const { deleteMany, db } = require("./models/hotel");
 
+const { json } = require("express");
+
 ////////////////////////////////////
 // Config
 ////////////////////////////////////
@@ -99,6 +101,70 @@ app.post("/feedback/create", async (req, res) => {
     }
   );
 });
+
+////////////////////////////////////
+// PUT transaction for room
+////////////////////////////////////
+
+app.put("/hotel/:id", async (req, res) => {
+
+  let id = parseInt(req.params.id)
+  let inDate = req.body.inDate
+  let outDate = req.body.outDate
+  let userName = req.body.userName
+  let roomType = req.body.roomType
+
+  const hotelDetails = await Hotel.findOne({
+    hotelId: `${req.params.id}`,
+  });
+
+  hotelDetails.userStayed.push(userName)
+  hotelDetails.rooms.push({inDate: inDate, outDate: outDate, roomType: roomType})
+
+  Hotel.updateOne({hotelId: id}, hotelDetails, function(err, res) {
+    if (err) {
+      console.log(err)
+      res.status(500)
+      res.json({})
+    } else {
+      console.log(res)
+    }
+  })
+  res.status(200)
+  res.json(hotelDetails)
+})
+
+////////////////////////////////////
+// GET list of available hotels
+////////////////////////////////////
+
+app.get("/hotel/", async (req, res) => {
+
+  let inDate = req.query.inDate
+  let outDate = req.query.outDate
+  let inDateUnix = Date(inDate)
+  let outDateUnix = Date(outDate)
+  let roomType = req.query.roomType
+  let allHotels = await Hotel.find()
+  // for each hotel, go through all the bookings and check if there is a clash in booking. If clash, return false in filter.
+  allHotels = allHotels.filter(singleHotel => {
+    // get all bookings for this roomType (rooms are the bookings of this particular hotel)
+    let bookings = singleHotel.rooms.filter(room => room.roomType === roomType);
+
+    // for each of the existing booking, check if every booking doesn't overlap with user's booking
+    return bookings.every(booking => {
+      // to make a fair comparison of date strings, convert to unix time
+      // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/parse
+      let bookingStart = Date.parse(booking.inDate)
+      let bookingEnd = Date.parse(booking.outDate)
+      // the only two conditions to check to ensure no overlap
+      return outDateUnix < bookingStart || inDateUnix > bookingEnd
+    })
+  })
+  
+  // at this point, Hotels that's not available are filtered out already
+  res.json(allHotels)
+})
 
 ////////////////////////////////////
 // Login to obtain Users Data
