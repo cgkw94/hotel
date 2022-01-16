@@ -3,14 +3,14 @@ import React, { useState } from "react";
 const Login = (props) => {
   const [error, setError] = useState("");
   const [usernameInput, setUsernameInput] = useState("");
+  const [newUser, setNewUser] = useState({ username: "", email: "" });
 
   const fetchData = async (input) => {
     try {
       props.setUserInfo({ username: "" });
       props.setLoggedIn(false);
-      console.log("hi");
       const res = await fetch("http://localhost:5005/users", {
-        method: "POST",
+        method: "PATCH",
         headers: { "Content-Type": "application/json" },
         mode: "cors",
         body: JSON.stringify({ username: input }),
@@ -45,6 +45,43 @@ const Login = (props) => {
     props.setLoggedIn(false);
   };
 
+  const createUser = async (input) => {
+    try {
+      props.setUserInfo({ username: "" });
+      props.setLoggedIn(false);
+      console.log("hi");
+      const res = await fetch("http://localhost:5005/users/new", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        mode: "cors",
+        body: JSON.stringify({ input }),
+      });
+      const data = await res.json();
+      res.send("user created");
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const handleUsername = (e) => {
+    setNewUser((prevState) => {
+      return { ...prevState, username: e.target.value };
+    });
+  };
+
+  const handleEmail = (e) => {
+    setNewUser((prevState) => {
+      return { ...prevState, email: e.target.value };
+    });
+  };
+
+  const handleNew = (e) => {
+    e.preventDefault();
+    console.log(newUser);
+    createUser(newUser);
+    //need to clear forms
+  };
+
   // useEffect(() => {
   //   const url = "http://localhost:5005/users";
   //   fetchData(url);
@@ -75,10 +112,21 @@ const Login = (props) => {
         Sign Up
         <br />
         <form>
-          <input placeholder="username"></input>
-          <input placeholder="email" type="email"></input>
+          <input
+            placeholder="username"
+            value={newUser.username}
+            onChange={handleUsername}
+          ></input>
+          <input
+            placeholder="email"
+            type="email"
+            value={newUser.email}
+            onChange={handleEmail}
+          ></input>
           <input placeholder="password" type="password"></input>
-          <button type="submit">Submit</button>
+          <button type="submit" onClick={handleNew}>
+            Submit
+          </button>
         </form>
       </div>
     </div>
