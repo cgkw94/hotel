@@ -113,13 +113,14 @@ app.put("/hotel/:id", async (req, res) => {
   let outDate = req.body.outDate
   let userName = req.body.userName
   let roomType = req.body.roomType
+  let roomSize = req.body.roomSize
 
   const hotelDetails = await Hotel.findOne({
     hotelId: `${req.params.id}`,
   });
 
   hotelDetails.userStayed.push(userName)
-  hotelDetails.rooms.push({inDate: inDate, outDate: outDate, roomType: roomType})
+  hotelDetails.rooms.push({inDate: inDate, outDate: outDate, roomType: roomType, roomSize: roomSize})
 
   Hotel.updateOne({hotelId: id}, hotelDetails, function(err, res) {
     if (err) {
@@ -144,22 +145,23 @@ app.get("/hotel/", async (req, res) => {
   let outDate = req.query.outDate
   let inDateUnix = Date(inDate)
   let outDateUnix = Date(outDate)
-  let roomType = req.query.roomType
+  let roomSize = req.query.roomSize
   let allHotels = await Hotel.find()
-  // for each hotel, go through all the bookings and check if there is a clash in booking. If clash, return false in filter.
+  
   allHotels = allHotels.filter(singleHotel => {
-    // get all bookings for this roomType (rooms are the bookings of this particular hotel)
-    let bookings = singleHotel.rooms.filter(room => room.roomType === roomType);
-
-    // for each of the existing booking, check if every booking doesn't overlap with user's booking
+  
+    let bookings = singleHotel.rooms.filter(room => room.maxPax === roomSize);
+    // for each of the existing bookings, the logic below checks every booking to see if it overlaps with user's in and out dates
     return bookings.every(booking => {
-      // to make a fair comparison of date strings, convert to unix time
-      // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/parse
+      // Date.parse converts the in and out dates to unix for comparison
+
       let bookingStart = Date.parse(booking.inDate)
       let bookingEnd = Date.parse(booking.outDate)
-      // the only two conditions to check to ensure no overlap
-      return outDateUnix < bookingStart || inDateUnix > bookingEnd
-    })
+  
+      return outDateUnix < bookingStart || inDateUnix > bookingEnd //the conditions to make sure it doesn't overlap
+
+    }) && singleHotel.location === req.query.location
+
   })
   
   // at this point, Hotels that's not available are filtered out already

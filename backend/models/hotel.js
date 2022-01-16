@@ -28,6 +28,7 @@ const HotelSchema = new mongoose.Schema(
         inDate: String,
         outDate: String,
         roomType: String,
+        roomSize: Number
       },
     ],
   },
