@@ -9,9 +9,12 @@ function App() {
   const [userFeedback, setUserFeedback] = useState("");
   // eslint-disable-next-line
   const [userInfo, setUserInfo] = useState({ username: "" });
+  // const [username, setUsername] = useState("");
+  // const [hotelsStayed, setHotelsStayed] = useState("");
   // eslint-disable-next-line
   const [loggedIn, setLoggedIn] = useState(false);
   const handleSubmit = () => {};
+
   return (
     <>
       <Route exact path="/">
@@ -22,8 +25,12 @@ function App() {
       <Route path="/login">
         <Login
           setUserInfo={setUserInfo}
+          userInfo={userInfo}
+          // setUsername={setUsername}
+          // setHotelsStayed={setHotelsStayed}
           setLoggedIn={setLoggedIn}
-          username={userInfo.username}
+          // username={username}
+          // hotelsStayed={hotelsStayed}
         />
       </Route>
       <Route path="/hoteldetails">
