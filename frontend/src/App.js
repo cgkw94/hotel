@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Route } from "react-router-dom";
+import { Button } from "@chakra-ui/react";
 import "./App.css";
 import HotelDetails from "./components/HotelDetails";
 import Login from "./components/Login";
@@ -9,8 +10,6 @@ function App() {
   const [userFeedback, setUserFeedback] = useState("");
   // eslint-disable-next-line
   const [userInfo, setUserInfo] = useState({ username: "" });
-  // const [username, setUsername] = useState("");
-  // const [hotelsStayed, setHotelsStayed] = useState("");
   // eslint-disable-next-line
   const [loggedIn, setLoggedIn] = useState(false);
   const handleSubmit = () => {};
@@ -19,18 +18,16 @@ function App() {
     <>
       <Route exact path="/">
         <a href="/login">
-          <button>Login / Sign Up</button>
+          <Button colorScheme="teal" variant="outline">
+            Login/Sign Up
+          </Button>
         </a>
       </Route>
       <Route path="/login">
         <Login
           setUserInfo={setUserInfo}
           userInfo={userInfo}
-          // setUsername={setUsername}
-          // setHotelsStayed={setHotelsStayed}
           setLoggedIn={setLoggedIn}
-          // username={username}
-          // hotelsStayed={hotelsStayed}
         />
       </Route>
       <Route exact path="/hotel/:hotelId">

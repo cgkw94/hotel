@@ -4,28 +4,28 @@ const Login = (props) => {
   const [error, setError] = useState("");
   const [usernameInput, setUsernameInput] = useState("");
   const [passwordInput, setPasswordInput] = useState("");
-  const [newUser, setNewUser] = useState({ username: "", email: "" });
+  const [newUser, setNewUser] = useState({
+    username: "",
+    password: "",
+    rpassword: "",
+    email: "",
+  });
 
   const fetchData = async (username, password) => {
-    try {
-      props.setUserInfo({ username: "" });
-      props.setLoggedIn(false);
-      const res = await fetch("http://localhost:5005/users/login", {
-        method: "PATCH",
-        headers: { "Content-Type": "application/json" },
-        mode: "cors",
-        body: JSON.stringify({ username: username, password: password }),
-      });
-      const data = await res.json();
-      console.log(data);
-      if (data.length > 0) {
-        props.setUserInfo(data[0]);
-        props.setLoggedIn(true);
-        setError("");
-      } else setError("Username/Password not found");
-    } catch (err) {
-      console.error(err);
-      setError("errororor");
+    props.setUserInfo({ username: "" });
+    props.setLoggedIn(false);
+    const res = await fetch("http://localhost:5005/users/login", {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      mode: "cors",
+      body: JSON.stringify({ username: username, password: password }),
+    });
+    const data = await res.json();
+    if (data.msg === undefined) {
+      setError("");
+      props.setUserInfo(data);
+    } else {
+      setError(data.msg);
     }
   };
 
@@ -50,21 +50,20 @@ const Login = (props) => {
     props.setLoggedIn(false);
   };
 
-  const createUser = async (username, password) => {
-    try {
-      props.setUserInfo({ username: "" });
-      props.setLoggedIn(false);
-      console.log("hi");
-      const res = await fetch("http://localhost:5005/users/new", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        mode: "cors",
-        body: JSON.stringify({ username: username, password: password }),
-      });
-      const data = await res.json();
-      res.send("user created");
-    } catch (err) {
-      console.error(err);
+  const createUser = async (username, password, email) => {
+    const res = await fetch("http://localhost:5005/users/new", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      mode: "cors",
+      body: JSON.stringify({ username, password, email }),
+    });
+    const data = await res.json();
+    if (data.msg === undefined) {
+      setError("");
+      props.setUserInfo(data);
+      setNewUser({ username: "", password: "", rpassword: "", email: "" });
+    } else {
+      setError(data.msg);
     }
   };
 
@@ -80,19 +79,32 @@ const Login = (props) => {
     });
   };
 
+  const handlePassword = (e) => {
+    setNewUser((prevState) => {
+      return { ...prevState, password: e.target.value };
+    });
+  };
+
+  const handleRPassword = (e) => {
+    setNewUser((prevState) => {
+      return { ...prevState, rpassword: e.target.value };
+    });
+  };
+
   const handleNew = (e) => {
     e.preventDefault();
-    createUser(newUser);
-    setError("");
-    props.setUserInfo({ username: newUser.username, hotelStayed: [] });
-    props.setLoggedIn(true);
-    setNewUser({ username: "", email: "" });
+    props.setUserInfo({ username: "" });
+    props.setLoggedIn(false);
+    if (newUser.password !== newUser.rpassword) {
+      setError("Passwords do not match.");
+    } else {
+      createUser(newUser.username, newUser.password, newUser.email);
+    }
   };
 
   return (
     <div>
       {props.userInfo.username}
-      {props.userInfo.hotelStayed}
       {error}
       <div>
         Login
@@ -105,6 +117,7 @@ const Login = (props) => {
           ></input>
           <input
             placeholder="password"
+            type="password"
             value={passwordInput}
             onChange={handleLoginPassword}
           ></input>
@@ -117,11 +130,23 @@ const Login = (props) => {
       <div>
         Sign Up
         <br />
-        <form onSubmit={handleNew}>
+        <form>
           <input
             placeholder="username"
             value={newUser.username}
             onChange={handleUsername}
+          ></input>
+          <input
+            placeholder="password"
+            type="password"
+            value={newUser.password}
+            onChange={handlePassword}
+          ></input>
+          <input
+            placeholder="retype password"
+            type="password"
+            value={newUser.rpassword}
+            onChange={handleRPassword}
           ></input>
           <input
             placeholder="email"
@@ -129,8 +154,12 @@ const Login = (props) => {
             value={newUser.email}
             onChange={handleEmail}
           ></input>
-          <input placeholder="password" type="password"></input>
-          <button type="submit">Submit</button>
+          <input type="radio" defaultChecked></input>
+          <label>Customer</label>
+          <input type="radio" /> <label> Hotel Manager</label>
+          <button type="submit" onClick={handleNew}>
+            Submit
+          </button>
         </form>
       </div>
     </div>
