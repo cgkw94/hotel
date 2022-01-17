@@ -84,7 +84,6 @@ app.get("/hotel/:id", async (req, res) => {
 
 app.post("/feedback/create", async (req, res) => {
   console.log(req.body.feedback);
-
   const newFeedback = req.body.feedback;
 
   await Hotel.updateOne(
