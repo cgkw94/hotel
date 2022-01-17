@@ -3,9 +3,10 @@ import React, { useState } from "react";
 const Login = (props) => {
   const [error, setError] = useState("");
   const [usernameInput, setUsernameInput] = useState("");
+  const [passwordInput, setPasswordInput] = useState("");
   const [newUser, setNewUser] = useState({ username: "", email: "" });
 
-  const fetchData = async (input) => {
+  const fetchData = async (username, password) => {
     try {
       props.setUserInfo({ username: "" });
       props.setLoggedIn(false);
@@ -13,9 +14,10 @@ const Login = (props) => {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         mode: "cors",
-        body: JSON.stringify({ username: input }),
+        body: JSON.stringify({ username: username, password: password }),
       });
       const data = await res.json();
+      console.log(data);
       if (data.length > 0) {
         props.setUserInfo(data[0]);
         props.setLoggedIn(true);
@@ -23,6 +25,7 @@ const Login = (props) => {
       } else setError("Username/Password not found");
     } catch (err) {
       console.error(err);
+      setError("errororor");
     }
   };
 
@@ -30,10 +33,15 @@ const Login = (props) => {
     setUsernameInput(e.target.value);
   };
 
+  const handleLoginPassword = (e) => {
+    setPasswordInput(e.target.value);
+  };
+
   const handleLoginSubmit = (e) => {
     e.preventDefault();
-    fetchData(usernameInput);
+    fetchData(usernameInput, passwordInput);
     setUsernameInput("");
+    setPasswordInput("");
   };
 
   const handleLogout = (e) => {
@@ -42,7 +50,7 @@ const Login = (props) => {
     props.setLoggedIn(false);
   };
 
-  const createUser = async (input) => {
+  const createUser = async (username, password) => {
     try {
       props.setUserInfo({ username: "" });
       props.setLoggedIn(false);
@@ -51,7 +59,7 @@ const Login = (props) => {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         mode: "cors",
-        body: JSON.stringify({ input }),
+        body: JSON.stringify({ username: username, password: password }),
       });
       const data = await res.json();
       res.send("user created");
@@ -95,7 +103,11 @@ const Login = (props) => {
             value={usernameInput}
             onChange={handleLoginUsername}
           ></input>
-          <input placeholder="password"></input>
+          <input
+            placeholder="password"
+            value={passwordInput}
+            onChange={handleLoginPassword}
+          ></input>
           <button type="submit" onClick={handleLoginSubmit}>
             Submit
           </button>
