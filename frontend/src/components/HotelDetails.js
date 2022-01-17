@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from "react";
 import FeedbackForm from "./FeedbackForm";
+import ReviewsCard from "./ReviewsCard";
 
 function HotelDetails(props) {
-  const [hotelDetails, setHotelDetails] = useState({});
-  const [loading, setLoading] = useState(false);
   const [feedback, setFeedback] = useState({
     username: "",
     userRating: 0,
     userFeedback: "",
   });
+  const [feedbackDetails, setFeedbackDetails] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const fetchHotelDetails = async (url) => {
     const res = await fetch(url);
     const data = await res.json();
-    setHotelDetails(data[0].feedback);
-    console.log(hotelDetails);
+    setFeedbackDetails(data[0].feedback);
   };
 
   useEffect(() => {
@@ -52,8 +52,21 @@ function HotelDetails(props) {
     });
   };
 
+  const displayFeedback = feedbackDetails.map((data, index) => {
+    return (
+      <>
+        <ReviewsCard
+          username={data.username}
+          userRating={data.userRating}
+          userFeedback={data.userFeedback}
+        />
+      </>
+    );
+  });
+
   return (
     <div>
+      <div>{displayFeedback}</div>
       <FeedbackForm
         handleSubmit={handleSubmit}
         handleUsernameChange={handleUsernameChange}
