@@ -9,7 +9,7 @@ const Login = (props) => {
     try {
       props.setUserInfo({ username: "" });
       props.setLoggedIn(false);
-      const res = await fetch("http://localhost:5005/users", {
+      const res = await fetch("http://localhost:5005/users/login", {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         mode: "cors",
@@ -111,7 +111,7 @@ const Login = (props) => {
       <div>
         Sign Up
         <br />
-        <form>
+        <form onSubmit={handleNew}>
           <input
             placeholder="username"
             value={newUser.username}
@@ -124,9 +124,7 @@ const Login = (props) => {
             onChange={handleEmail}
           ></input>
           <input placeholder="password" type="password"></input>
-          <button type="submit" onClick={handleNew}>
-            Submit
-          </button>
+          <button type="submit">Submit</button>
         </form>
       </div>
     </div>
