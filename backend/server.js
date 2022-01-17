@@ -87,14 +87,15 @@ app.post("/feedback/create", async (req, res) => {
 
   const newFeedback = req.body.feedback;
 
-  //for some reason cant update DB using this syntax but express can receive post
-  Hotel.updateOne(
-    //query
+  await Hotel.updateOne(
     { hotelId: 1 },
-    //update
     {
       $push: {
-        feedback: newFeedback,
+        feedback: {
+          username: newFeedback.username,
+          userRating: newFeedback.userRating,
+          userFeedback: newFeedback.userFeedback,
+        },
       },
     }
   );
