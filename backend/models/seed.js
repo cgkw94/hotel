@@ -546,4 +546,77 @@ module.exports = [
       },
     ],
   },
+  {
+    hotelId: 6,
+    hotelName: "Jen Singapore Tanglin",
+    hotelImg: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/295682788.jpg?k=f69efdb86e64daffe2ba740e0419a796438732f9d4fe35168d04b5c242057c57&o=&hp=1",
+    location: "Orchard",
+    address: "1A Cuscaden Road, Orchard, 249716 Singapore, Singapore",
+    geolocation: {
+      longitude: 103.8587261,
+      latitude: 1.2934379,
+    },
+    hotelRating: 3.7,
+    vacancies: true,
+    feedback: [
+      {
+        username: "Jasmine",
+        userRating: 9.6,
+        userFeedback: "Good staycation option",
+      },
+    ],
+    amenities: [
+      "Outdoor Pool",
+      "Free Wifi",
+      "Non-Smoking Rooms",
+      "Free Parking",
+      "City View"
+    ],
+    userStayed: [
+      "Jasmin",
+      "Cheryl",
+      "Lee",
+    ],
+    rooms: [{ inDate: "02/02/21", outDate: "05/02/21", roomType: "Deluxe"}, 
+            { inDate: "03/03/21", outDate: "05/03/21", roomType: "Grand Deluxe"},],
+    roomsGeneral: [
+      {
+        roomType: "Deluxe",
+        maxPax: 2,
+        price: 350,
+        roomImg: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/328626148.jpg?k=8fa8aec18d19fbd55f2c28f61d9b28f740ab0f76d441c29f2cfc8b2d426c5eff&o=",
+        size: "40 sqf",
+        amenities: ["Minibar", "Safe Deposit Box", "Closet"],
+      },
+      {
+        roomType: "Grand Deluxe",
+        maxPax: 3,
+        price: 450,
+        roomImg: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/328626146.jpg?k=71d7729f08b8d2373b28f78d5c6eefe4fa954fb67664e748442a476c3f13a09e&o=",
+        size: "55sqf",
+        amenities: [
+          "Minibar",
+          "Safe Deposit Box",
+          "Closet",
+          "Shower",
+          "Coffee Machine",
+        ],
+      },
+      {
+        roomType: "Suite",
+        maxPax: 4,
+        price: 1000,
+        roomImg: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/328626166.jpg?k=b44e96c17f6774e2362933a2244e5a4429e2453b42f5bc59afe80f8e06bc9559&o=",
+        size: "55sqf",
+        amenities: [
+          "Minibar",
+          "Safe Deposit Box",
+          "Closet",
+          "Bathtub",
+          "Coffee Machine",
+          "Flat Screen TV"
+        ],
+      },
+    ],
+  },
 ];
