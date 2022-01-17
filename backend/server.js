@@ -207,7 +207,6 @@ app.get("/hotel/", async (req, res) => {
 ////////////////////////////////////
 // remember that username is case-sensitive
 app.patch("/users/login", async (req, res) => {
-  console.log(req.body);
   const checkUsers = await Users.find(
     { username: req.body.username },
     { username: 1, passwordHash: 1, hotelStayed: 1, _id: 0 }
@@ -216,7 +215,6 @@ app.patch("/users/login", async (req, res) => {
     req.session.auth = false;
     res.json({ msg: "Username invalid." });
   } else {
-    console.log("result from database", checkUsers.username);
     const valid = await bcrypt.compare(
       req.body.password,
       checkUsers[0].passwordHash
@@ -258,11 +256,6 @@ app.post("/users/new", async (req, res) => {
       msg: "Username already exists. Login or choose another username.",
     });
   }
-});
-
-app.get("/get-hash", async (req, res) => {
-  const hashPassword = await bcrypt.hash("password", 12);
-  res.send(hashPassword);
 });
 
 app.listen(5005);

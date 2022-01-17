@@ -105,7 +105,6 @@ const Login = (props) => {
   return (
     <div>
       {props.userInfo.username}
-      {props.userInfo.hotelStayed}
       {error}
       <div>
         Login
