@@ -6,6 +6,10 @@ const express = require("express");
 const mongoose = require("mongoose");
 const connectDB = require("./models/db");
 let cors = require("cors");
+const session = require("express-session");
+const MongoDBStore = require("connect-mongodb-session")(session);
+const bcrypt = require("bcrypt");
+const auth = require("./middleware/auth");
 
 ////////////////////////////////////
 // Models
@@ -25,7 +29,6 @@ const { json } = require("express");
 
 const mongoURI = "mongodb://127.0.0.1:27017/hotel";
 connectDB(mongoURI);
-
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -41,6 +44,21 @@ mongoose.connect(
   () => {
     console.log("The connection with mongodb is established");
   }
+);
+
+const store = new MongoDBStore({
+  uri: mongoURI,
+  collection: "currentSessions",
+});
+
+app.use(
+  session({
+    secret: "secret",
+    resave: false,
+    saveUninitialized: false,
+    maxAge: 24 * 60 * 60 * 1000,
+    store: store,
+  })
 );
 
 ////////////////////////////////////
@@ -173,11 +191,25 @@ app.get("/hotel/", async (req, res) => {
 ////////////////////////////////////
 // remember that username is case-sensitive
 app.patch("/users/login", async (req, res) => {
+  console.log(req.body);
   const checkUsers = await Users.find(
     { username: req.body.username },
-    { username: 1, hotelStayed: 1, _id: 0 }
+    { username: 1, passwordHash: 1, hotelStayed: 1, _id: 0 }
   );
-  res.json(checkUsers);
+  console.log("result from database", checkUsers);
+  const valid = await bcrypt.compare(
+    req.body.password,
+    checkUsers[0].passwordHash
+  );
+  if (valid) {
+    req.session.auth = true;
+    res.json({ msg: "passwords match" });
+    console.log("this");
+  } else {
+    req.session.auth = false;
+    res.json({ msg: "password invalid" });
+    console.log("that");
+  }
 });
 
 ////////////////////////////////////
@@ -191,6 +223,11 @@ app.post("/users/new", async (req, res) => {
     passwordHash: 123,
   });
   res.json(checkUsers);
+});
+
+app.get("/get-hash", async (req, res) => {
+  const hashPassword = await bcrypt.hash("password", 12);
+  res.send(hashPassword);
 });
 
 app.listen(5005);
