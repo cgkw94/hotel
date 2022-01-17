@@ -1,6 +1,5 @@
 module.exports = [
   {
-    //this confirm works
     hotelId: 1,
     hotelName: "Conrad Centennial Singapore",
     hotelImg: "",
@@ -116,15 +115,15 @@ module.exports = [
   },
   {
     hotelId: 2,
-    hotelName: "Co4324d Centennial Singapore",
-    hotelImg: "",
-    location: "Marina Bay",
-    address: "Two Temasek Boulevard, Marina Bay, 038982 Singapore",
+    hotelName: "Four Seasons",
+    hotelImg: "https://cf.bstatic.com/xdata/images/hotel/max1280x900/269210728.jpg?k=d295aaf07aee1951a917ec812b97e5d2905e4686da6880e7e15b0e7d9b522097&o=&hp=1",
+    location: "Orchard",
+    address: "190 Orchard Boulevard, Orchard, 248646 Singapore, Singapore",
     geolocation: {
       longitude: 103.8587261,
       latitude: 1.2934379,
     },
-    hotelRating: 4.9,
+    hotelRating: 5.0,
     vacancies: true,
     feedback: [
       {
@@ -159,24 +158,13 @@ module.exports = [
         userRating: 8.0,
         userFeedback: "we had enjoyable time staying at Conrad",
       },
-      {
-        username: "Lee",
-        userRating: 8.0,
-        userFeedback: "Very good",
-      },
-      {
-        username: "Cheryl",
-        userRating: 8.0,
-        userFeedback: "Is an enjoyable stay in Conrad",
-      },
     ],
     amenities: [
       "Swimming Pool",
       "Free Wifi",
       "Non-Smoking Rooms",
       "Free Parking",
-      "Bar",
-      "Gym",
+      "Bath"
     ],
     userStayed: [
       "Jasmin",
@@ -184,23 +172,21 @@ module.exports = [
       "Lee",
       "Rajan",
       "Patrick",
-      "Swee",
-      "Nicolaas",
     ],
     roomsGeneral: [
       {
         roomType: "Deluxe",
         maxPax: 2,
         price: 450,
-        roomImg: "",
-        size: "40 sqf",
+        roomImg: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/128992790.jpg?k=a820490d10b34549063683a21552d78bf5982aaac5d0cfa0d538d0180f93c262&o=",
+        size: "49 sqf",
         amenities: ["Minibar", "Safe Deposit Box", "Closet"],
       },
       {
         roomType: "Grand Deluxe",
         maxPax: 3,
         price: 600,
-        roomImg: "",
+        roomImg: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/128992753.jpg?k=b357b2e6f61580728b7d66c50e8f243be501bcbfa47bd6ba1b0b2e30f7234088&o=",
         size: "55sqf",
         amenities: [
           "Minibar",
@@ -214,7 +200,7 @@ module.exports = [
         roomType: "Suite",
         maxPax: 4,
         price: 1000,
-        roomImg: "",
+        roomImg: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/128992775.jpg?k=187f9bbfc7c5d36427009c292bb5719e4bc1e1fe0b0363be939bda18b7be4690&o=",
         size: "55sqf",
         amenities: [
           "Minibar",
@@ -230,15 +216,130 @@ module.exports = [
   },
   {
     hotelId: 3,
-    hotelName: "Conrad Centennial Singapore",
-    hotelImg: "",
-    location: "Marina Bay",
-    address: "Two Temasek Boulevard, Marina Bay, 038982 Singapore",
+    hotelName: "Shangri-La",
+    hotelImg: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/295685435.jpg?k=7305ecb369d193fa1ee13e9cf66ab740077142445364c2531f513de99dd715fe&o=&hp=1",
+    location: "Orchard",
+    address: "22 Orange Grove Road, Orchard, 258350 Singapore, Singapore",
     geolocation: {
       longitude: 103.8587261,
       latitude: 1.2934379,
     },
-    hotelRating: 4.9,
+    hotelRating: 4.8,
+    vacancies: true,
+    feedback: [
+      {
+        username: "Jasmine",
+        userRating: 9.6,
+        userFeedback: "Good staycation option",
+      },
+      {
+        username: "Nicolaas",
+        userRating: 10,
+        userFeedback: "Excellent staycation weekend !",
+      },
+      {
+        username: "Hazel",
+        userRating: 9.0,
+        userFeedback:
+          "Fantastic service and experience, although slightly pricey",
+      },
+      {
+        username: "Rainie",
+        userRating: 10,
+        userFeedback: "have a wonderful stay in a luxurious hotel",
+      },
+      {
+        username: "Rajan",
+        userRating: 10,
+        userFeedback:
+          "Fantastic service and experience, although slightly pricey",
+      },
+      {
+        username: "Norman",
+        userRating: 8.0,
+        userFeedback: "we had enjoyable time staying at Conrad",
+      },
+      {
+        username: "Lee",
+        userRating: 8.0,
+        userFeedback: "Very good",
+      },
+      {
+        username: "Cheryl",
+        userRating: 8.0,
+        userFeedback: "Is an enjoyable stay in Conrad",
+      },
+    ],
+    amenities: [
+      "Swimming Pool",
+      "Free Wifi",
+      "Non-Smoking Rooms",
+      "Free Parking",
+      "Bar",
+      "Gym",
+    ],
+    userStayed: [
+      "Jasmin",
+      "Cheryl",
+      "Hazel",
+      "Rajan",
+      "Rainie",
+      "Swee",
+      "Nicolaas",
+    ],
+    rooms: [{ inDate: "02/10/21", outDate: "05/10/21", roomType: "Deluxe"}],
+    roomsGeneral: [
+      {
+        roomType: "Deluxe",
+        maxPax: 2,
+        price: 450,
+        roomImg: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/165010895.jpg?k=6ddaa657c6b832876c401a9a881d44d3e2664c24a5561d6f7e60e80361dc1007&o=",
+        size: "40 sqf",
+        amenities: ["Minibar", "Safe Deposit Box", "Closet"],
+      },
+      {
+        roomType: "Grand Deluxe",
+        maxPax: 3,
+        price: 600,
+        roomImg: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/306181607.jpg?k=0a8ff9e9a6f280c0354663259e2be4c996fa127348a753ecca68f7a8022a5057&o=",
+        size: "55sqf",
+        amenities: [
+          "Minibar",
+          "Safe Deposit Box",
+          "Closet",
+          "Bathtub",
+          "Coffee Machine",
+        ],
+      },
+      {
+        roomType: "Suite",
+        maxPax: 4,
+        price: 1000,
+        roomImg: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/165008112.jpg?k=eedd929b39bdbeeace93b8f0a274f4ecbae272e5e571b72bdc8f43e75bcd2d9f&o=",
+        size: "55sqf",
+        amenities: [
+          "Minibar",
+          "Safe Deposit Box",
+          "Closet",
+          "Bathtub",
+          "Coffee Machine",
+          "Wake up service/Alarm clock",
+          "Butler Service",
+        ],
+      },
+    ],
+  },
+  {
+    hotelId: 4,
+    hotelName: "Grand Hyatt",
+    hotelImg: "https://cf.bstatic.com/xdata/images/hotel/max1280x900/113605648.jpg?k=bf3936b4d1849def388b2b35cc092c3d3c5cffc15bb10c68066d90ab11fa0bf8&o=&hp=1",
+    location: "Orchard",
+    address: "10 Scotts Road, Orchard, 228211 Singapore, Singapore",
+    geolocation: {
+      longitude: 103.8587261,
+      latitude: 1.2934379,
+    },
+    hotelRating: 4.5,
     vacancies: true,
     feedback: [
       {
@@ -291,31 +392,30 @@ module.exports = [
       "Free Parking",
       "Bar",
       "Gym",
+      "Family Rooms"
     ],
     userStayed: [
       "Jasmin",
       "Cheryl",
       "Lee",
       "Rajan",
-      "Patrick",
-      "Swee",
-      "Nicolaas",
     ],
-    rooms: [{ inDate: "02/10/21", outDate: "05/10/21", roomType: "Deluxe"}],
+    rooms: [{ inDate: "02/10/21", outDate: "05/10/21", roomType: "Deluxe"}, 
+            { inDate: "03/10/21", outDate: "05/10/21", roomType: "Grand Deluxe"}],
     roomsGeneral: [
       {
         roomType: "Deluxe",
         maxPax: 2,
-        price: 450,
-        roomImg: "",
+        price: 350,
+        roomImg: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/180009109.jpg?k=f8bc41cc849215207f297ffecb70c8a01838fefbd3568f51d488c93fd24dd44e&o=",
         size: "40 sqf",
         amenities: ["Minibar", "Safe Deposit Box", "Closet"],
       },
       {
         roomType: "Grand Deluxe",
         maxPax: 3,
-        price: 600,
-        roomImg: "",
+        price: 450,
+        roomImg: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/180009554.jpg?k=bef6f9511b115797124a15973371147068c81b8dc30188e0833c409ff407fb96&o=",
         size: "55sqf",
         amenities: [
           "Minibar",
@@ -329,7 +429,7 @@ module.exports = [
         roomType: "Suite",
         maxPax: 4,
         price: 1000,
-        roomImg: "",
+        roomImg: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/180005519.jpg?k=d1e92f471767d6a7c5c71b65f7af531399c4b149b47e618407f3641379f719e7&o=",
         size: "55sqf",
         amenities: [
           "Minibar",
@@ -339,6 +439,109 @@ module.exports = [
           "Coffee Machine",
           "Wake up service/Alarm clock",
           "Butler Service",
+          "Stove Top", 
+          "Dining Table"
+        ],
+      },
+    ],
+  },
+  {
+    hotelId: 5,
+    hotelName: "YOTEL Singapore",
+    hotelImg: "https://cf.bstatic.com/xdata/images/hotel/max1280x900/308960783.jpg?k=b51cb02433019e70cacb3f67e46f103c14b320c9064bd59055a408d446d4a518&o=&hp=1",
+    location: "Orchard",
+    address: "366 Orchard Road, Orchard, 238904 Singapore, Singapore",
+    geolocation: {
+      longitude: 103.8587261,
+      latitude: 1.2934379,
+    },
+    hotelRating: 3.9,
+    vacancies: true,
+    feedback: [
+      {
+        username: "Jasmine",
+        userRating: 9.6,
+        userFeedback: "Good staycation option",
+      },
+      {
+        username: "Nicolaas",
+        userRating: 10,
+        userFeedback: "Excellent staycation weekend !",
+      },
+      {
+        username: "Swee",
+        userRating: 9.0,
+        userFeedback:
+          "Fantastic service and experience, although slightly pricey",
+      },
+      {
+        username: "Patrick",
+        userRating: 10,
+        userFeedback: "have a wonderful stay in a luxurious hotel",
+      },
+      {
+        username: "Rajan",
+        userRating: 10,
+        userFeedback:
+          "Fantastic service and experience, although slightly pricey",
+      },
+      {
+        username: "Norman",
+        userRating: 8.0,
+        userFeedback: "we had enjoyable time staying at Conrad",
+      },
+    ],
+    amenities: [
+      "Swimming Pool",
+      "Free Wifi",
+      "Non-Smoking Rooms",
+      "Free Parking",
+      "City View"
+    ],
+    userStayed: [
+      "Jasmin",
+      "Cheryl",
+      "Lee",
+    ],
+    rooms: [{ inDate: "02/10/21", outDate: "05/10/21", roomType: "Deluxe"}, 
+            { inDate: "03/10/21", outDate: "05/10/21", roomType: "Grand Deluxe"},
+            { inDate: "06/10/21", outDate: "10/10/21", roomType: "Deluxe"}],
+    roomsGeneral: [
+      {
+        roomType: "Deluxe",
+        maxPax: 2,
+        price: 350,
+        roomImg: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/120695580.jpg?k=ee721597cb146b38cc102159437d1097ae51bea528816eba60c4ac0ab85f2685&o=",
+        size: "40 sqf",
+        amenities: ["Minibar", "Safe Deposit Box", "Closet"],
+      },
+      {
+        roomType: "Grand Deluxe",
+        maxPax: 3,
+        price: 450,
+        roomImg: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/120699685.jpg?k=85a2ac0005a7c801380cd82df3b0932a1cdc7d0ede564274c56b8e45309ebd67&o=",
+        size: "55sqf",
+        amenities: [
+          "Minibar",
+          "Safe Deposit Box",
+          "Closet",
+          "Shower",
+          "Coffee Machine",
+        ],
+      },
+      {
+        roomType: "Suite",
+        maxPax: 4,
+        price: 1000,
+        roomImg: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/308960743.jpg?k=e6f414715378961cf93dd0167680c11e5f005bc5bdc6f39158e556c5b9ecd42f&o=",
+        size: "55sqf",
+        amenities: [
+          "Minibar",
+          "Safe Deposit Box",
+          "Closet",
+          "Bathtub",
+          "Coffee Machine",
+          "Bidet"
         ],
       },
     ],
