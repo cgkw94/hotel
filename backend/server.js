@@ -28,8 +28,6 @@ connectDB(mongoURI);
 
 const app = express();
 app.use(cors());
-
-app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
@@ -175,16 +173,25 @@ app.get("/hotel/", async (req, res) => {
 // Login to obtain Users Data
 ////////////////////////////////////
 // remember that username is case-sensitive
-app.post("/users", async (req, res) => {
+app.patch("/users", async (req, res) => {
   const checkUsers = await Users.find(
     { username: req.body.username },
     { username: 1, hotelStayed: 1, _id: 0 }
   );
-  if (checkUsers === []) {
-    res.json({ msg: "no users found" });
-  } else {
-    res.json(checkUsers);
-  }
+  res.json(checkUsers);
+});
+
+////////////////////////////////////
+// Create New User
+////////////////////////////////////
+// remember that username is case-sensitive
+app.post("/users/new", async (req, res) => {
+  const checkUsers = await Users.create({
+    username: req.body.username,
+    email: req.body.email,
+    passwordHash: 123,
+  });
+  res.json({ msg: "user added" });
 });
 
 app.listen(5005);
