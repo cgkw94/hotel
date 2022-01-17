@@ -172,7 +172,7 @@ app.get("/hotel/", async (req, res) => {
 // Login to obtain Users Data
 ////////////////////////////////////
 // remember that username is case-sensitive
-app.patch("/users", async (req, res) => {
+app.patch("/users/login", async (req, res) => {
   const checkUsers = await Users.find(
     { username: req.body.username },
     { username: 1, hotelStayed: 1, _id: 0 }
@@ -186,11 +186,11 @@ app.patch("/users", async (req, res) => {
 // remember that username is case-sensitive
 app.post("/users/new", async (req, res) => {
   const checkUsers = await Users.create({
-    username: req.body.username,
-    email: req.body.email,
+    username: req.body.input.username,
+    email: req.body.input.email,
     passwordHash: 123,
   });
-  res.json({ msg: "user added" });
+  res.json(checkUsers);
 });
 
 app.listen(5005);

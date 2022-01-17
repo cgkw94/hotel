@@ -9,7 +9,7 @@ const Login = (props) => {
     try {
       props.setUserInfo({ username: "" });
       props.setLoggedIn(false);
-      const res = await fetch("http://localhost:5005/users", {
+      const res = await fetch("http://localhost:5005/users/login", {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         mode: "cors",
@@ -17,9 +17,6 @@ const Login = (props) => {
       });
       const data = await res.json();
       if (data.length > 0) {
-        console.log(data[0]);
-        // props.setUsername(data[0].username);
-        // props.setHotelsStayed(data[0].HotelStayed);
         props.setUserInfo(data[0]);
         props.setLoggedIn(true);
         setError("");
@@ -77,15 +74,12 @@ const Login = (props) => {
 
   const handleNew = (e) => {
     e.preventDefault();
-    console.log(newUser);
     createUser(newUser);
-    //need to clear forms
+    setError("");
+    props.setUserInfo({ username: newUser.username, hotelStayed: [] });
+    props.setLoggedIn(true);
+    setNewUser({ username: "", email: "" });
   };
-
-  // useEffect(() => {
-  //   const url = "http://localhost:5005/users";
-  //   fetchData(url);
-  // }, []);
 
   return (
     <div>
@@ -111,7 +105,7 @@ const Login = (props) => {
       <div>
         Sign Up
         <br />
-        <form>
+        <form onSubmit={handleNew}>
           <input
             placeholder="username"
             value={newUser.username}
@@ -124,9 +118,7 @@ const Login = (props) => {
             onChange={handleEmail}
           ></input>
           <input placeholder="password" type="password"></input>
-          <button type="submit" onClick={handleNew}>
-            Submit
-          </button>
+          <button type="submit">Submit</button>
         </form>
       </div>
     </div>
