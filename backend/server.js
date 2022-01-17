@@ -90,7 +90,7 @@ Users.deleteMany().then(Users.create(usersseed));
 // Hotel Details
 ////////////////////////////////////
 app.get("/hotel/:id", async (req, res) => {
-  const hotelDetails = await Hotel.find({
+  const hotelDetails = await Hotel.findOne({
     hotelId: `${req.params.id}`,
   });
   res.json(hotelDetails);
@@ -113,6 +113,22 @@ app.post("/feedback/create", async (req, res) => {
           userRating: newFeedback.userRating,
           userFeedback: newFeedback.userFeedback,
         },
+      },
+    }
+  );
+});
+
+////////////////////////////////////
+// DELETE feedback
+////////////////////////////////////
+
+app.delete("/feedback/delete", async (req, res) => {
+  console.log(req.body);
+  await Hotel.updateOne(
+    { hotelId: 1 },
+    {
+      $pull: {
+        feedback: { _id: "61e51c7001306aab09cf8592" },
       },
     }
   );

@@ -3,18 +3,18 @@ import FeedbackForm from "./FeedbackForm";
 import ReviewsCard from "./ReviewsCard";
 
 function HotelDetails(props) {
+  const [feedbackDetails, setFeedbackDetails] = useState([]);
+  const [loading, setLoading] = useState(false);
   const [feedback, setFeedback] = useState({
     username: "",
     userRating: 0,
     userFeedback: "",
   });
-  const [feedbackDetails, setFeedbackDetails] = useState([]);
-  const [loading, setLoading] = useState(false);
 
   const fetchHotelDetails = async (url) => {
     const res = await fetch(url);
     const data = await res.json();
-    setFeedbackDetails(data[0].feedback);
+    setFeedbackDetails(data.feedback);
   };
 
   useEffect(() => {
@@ -52,6 +52,14 @@ function HotelDetails(props) {
     });
   };
 
+  const handleDelete = () => {
+    fetch("/feedback/delete", {
+      method: "DELETE",
+    }).then(() => {
+      console.log("feedback deleted");
+    });
+  };
+
   const displayFeedback = feedbackDetails.map((data, index) => {
     return (
       <>
@@ -59,6 +67,7 @@ function HotelDetails(props) {
           username={data.username}
           userRating={data.userRating}
           userFeedback={data.userFeedback}
+          onClick={handleDelete}
         />
       </>
     );

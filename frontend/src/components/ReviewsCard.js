@@ -6,6 +6,7 @@ function ReviewsCard(props) {
       <h4>{props.username}</h4>
       <p>{props.userRating}</p>
       <p>{props.userFeedback}</p>
+      <button onClick={props.onClick}>Delete Feedback</button>
     </div>
   );
 }
