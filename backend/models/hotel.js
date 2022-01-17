@@ -11,7 +11,7 @@ const HotelSchema = new mongoose.Schema(
     hotelRating: { type: Number, max: 5 },
     vacancies: { type: Boolean },
     feedback: [{ username: String, userRating: Number, userFeedback: String }],
-    // amenities: [{ type: String }],
+    amenities: [{ type: String }],
     userStayed: [{ type: String }],
     roomsGeneral: [
       {
