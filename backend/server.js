@@ -197,19 +197,25 @@ app.patch("/users/login", async (req, res) => {
     { username: req.body.username },
     { username: 1, passwordHash: 1, hotelStayed: 1, _id: 0 }
   );
-  console.log("result from database", checkUsers);
-  const valid = await bcrypt.compare(
-    req.body.password,
-    checkUsers[0].passwordHash
-  );
-  if (valid) {
-    req.session.auth = true;
-    res.json({ msg: "passwords match" });
-    console.log("this");
-  } else {
+  if (checkUsers.length === 0) {
     req.session.auth = false;
-    res.json({ msg: "password invalid" });
-    console.log("that");
+    res.json({ msg: "Username invalid." });
+  } else {
+    console.log("result from database", checkUsers.username);
+    const valid = await bcrypt.compare(
+      req.body.password,
+      checkUsers[0].passwordHash
+    );
+    if (valid) {
+      req.session.auth = true;
+      res.json({
+        username: checkUsers[0].username,
+        hotelStayed: checkUsers[0].hotelStayed,
+      });
+    } else {
+      req.session.auth = false;
+      res.json({ msg: "Password invalid." });
+    }
   }
 });
 
@@ -218,12 +224,25 @@ app.patch("/users/login", async (req, res) => {
 ////////////////////////////////////
 // remember that username is case-sensitive
 app.post("/users/new", async (req, res) => {
-  const checkUsers = await Users.create({
-    username: req.body.input.username,
-    email: req.body.input.email,
-    passwordHash: 123,
-  });
-  res.json(checkUsers);
+  const checkUsername = await Users.find(
+    { username: req.body.username },
+    { username: 1, _id: 0 }
+  );
+  if (checkUsername.length === 0) {
+    const newPassword = await bcrypt.hash(req.body.password, 12);
+    const newUser = await Users.create({
+      username: req.body.username,
+      email: req.body.email,
+      passwordHash: newPassword,
+    });
+    req.session.auth = true;
+    res.json({ username: newUser.username, hotelStayed: newUser.hotelStayed });
+  } else {
+    req.session.auth = false;
+    res.json({
+      msg: "Username already exists. Login or choose another username.",
+    });
+  }
 });
 
 app.get("/get-hash", async (req, res) => {
