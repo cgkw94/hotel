@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import FeedbackForm from "./FeedbackForm";
 import ReviewsCard from "./ReviewsCard";
 
 function HotelDetails(props) {
+  const params = useParams();
+
   const [feedbackDetails, setFeedbackDetails] = useState([]);
   const [loading, setLoading] = useState(false);
   const [feedback, setFeedback] = useState({
@@ -19,7 +22,7 @@ function HotelDetails(props) {
 
   useEffect(() => {
     setLoading(true);
-    fetchHotelDetails("/hotel/1");
+    fetchHotelDetails(`/hotel/${params.hotelId}`);
     setLoading(false);
   }, []);
 
@@ -43,7 +46,7 @@ function HotelDetails(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    fetch("/feedback/create", {
+    fetch(`/hotel/${params.hotelId}/feedback/create`, {
       method: "POST",
       body: JSON.stringify({ feedback }),
       headers: { "Content-Type": "application/json" },
@@ -52,15 +55,14 @@ function HotelDetails(props) {
     });
   };
 
-  const handleDelete = () => {
-    fetch("/feedback/delete", {
-      method: "DELETE",
-    }).then(() => {
-      console.log("feedback deleted");
-    });
-  };
-
   const displayFeedback = feedbackDetails.map((data, index) => {
+    const handleDelete = () => {
+      fetch(`/hotel/${params.hotelId}/feedback/delete/${data._id}`, {
+        method: "DELETE",
+      }).then(() => {
+        console.log("feedback deleted");
+      });
+    };
     return (
       <>
         <ReviewsCard

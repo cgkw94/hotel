@@ -100,12 +100,12 @@ app.get("/hotel/:id", async (req, res) => {
 // POST feedback form
 ////////////////////////////////////
 
-app.post("/feedback/create", async (req, res) => {
+app.post("/hotel/:id/feedback/create", async (req, res) => {
   console.log(req.body.feedback);
   const newFeedback = req.body.feedback;
 
   await Hotel.updateOne(
-    { hotelId: 1 },
+    { hotelId: `${req.params.id}` },
     {
       $push: {
         feedback: {
@@ -122,13 +122,12 @@ app.post("/feedback/create", async (req, res) => {
 // DELETE feedback
 ////////////////////////////////////
 
-app.delete("/feedback/delete", async (req, res) => {
-  console.log(req.body);
+app.delete("/hotel/:id/feedback/delete/:feedbackId", async (req, res) => {
   await Hotel.updateOne(
-    { hotelId: 1 },
+    { hotelId: `${req.params.id}` },
     {
       $pull: {
-        feedback: { _id: "61e51c7001306aab09cf8592" },
+        feedback: { _id: `${req.params.feedbackId}` },
       },
     }
   );

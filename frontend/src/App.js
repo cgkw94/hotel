@@ -33,7 +33,7 @@ function App() {
           // hotelsStayed={hotelsStayed}
         />
       </Route>
-      <Route path="/hoteldetails">
+      <Route exact path="/hotel/:hotelId">
         <HotelDetails />
       </Route>
     </>
