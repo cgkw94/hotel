@@ -5,7 +5,7 @@ const HotelHeader = (props) => {
   return (
     <Box>
       <Box>
-        <Image src={props.src} boxSize="sm" />
+        <Image src={props.src} maxW="120ch" />
       </Box>
       <h1>{props.hotelName}</h1>
     </Box>
