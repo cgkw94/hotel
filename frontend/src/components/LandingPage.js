@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
+import { Button } from "@chakra-ui/react";
 
 const LandingPage = (props) => {
 
@@ -11,7 +12,6 @@ const LandingPage = (props) => {
     const handleOnClick = (event) => {
         event.preventDefault();
 
-        console.log(locationInput)
         props.setLocation(locationInput)
         props.setInDate(inDateInput)
         props.setOutDate(outDateInput)
@@ -63,9 +63,9 @@ const LandingPage = (props) => {
                     <option value="Suite">Suite</option>
                 </select>
                 <Link to={{
-                    pathname: `/${props.location}`,
+                    pathname: `/${locationInput}`,
                 }}> 
-                <input type="submit" id='searchButton' onClick={handleOnClick}></input>
+                <Button onClick={handleOnClick}>Submit</Button>
                 </Link>
                 </form>
             </div>
