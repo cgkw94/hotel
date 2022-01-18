@@ -8,6 +8,7 @@ import HotelDetails from "./components/HotelDetails";
 import Login from "./components/Login";
 import LandingPage from "./components/LandingPage";
 import Header from "./components/Header";
+import DisplayPage from "./components/DisplayPage";
 
 function App() {
   const cookies = new Cookies();
@@ -46,6 +47,13 @@ function App() {
       <Route path="/search">
         <Header userInfo={userInfo} />
         this is the results page
+      <Route exact path="/hotel">
+        <DisplayPage
+          location={location}
+          inDate={inDate}
+          outDate={outDate}
+          roomType={roomType}
+        />
       </Route>
       <Route exact path="/hotel/:hotelId">
         <HotelDetails />
