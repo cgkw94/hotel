@@ -6,6 +6,7 @@ import "./App.css";
 import HotelDetails from "./components/HotelDetails";
 import Login from "./components/Login";
 import LandingPage from "./components/LandingPage";
+import DisplayPage from "./components/DisplayPage";
 
 function App() {
   //search input useStates
@@ -42,6 +43,14 @@ function App() {
           setInDate={setInDate}
           setOutDate={setOutDate}
           setRoomType={setRoomType}
+        />
+      </Route>
+      <Route exact path="/hotel">
+        <DisplayPage
+          location={location}
+          inDate={inDate}
+          outDate={outDate}
+          roomType={roomType}
         />
       </Route>
       <Route exact path="/hotel/:hotelId">
