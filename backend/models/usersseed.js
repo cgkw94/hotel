@@ -4,12 +4,12 @@ module.exports = [
     username: "Jessie",
     email: "jessie@gmail.com",
     passwordHash:
-      "$2b$12$7DV.TQK3mkyWwlQPoX6Qoefi9gXX7CSrnYQ/0PVhcZcUp//fTLuFG", // password is password
+      "$2b$12$T23m0mvMxml.oTzSuqTpkuRV.UXHI4dNzf9AEaXO36JNuX5P3D7Fe", // password is getpassword
   },
   {
     username: "James",
     email: "james@gmail.com",
     passwordHash:
-      "$2b$12$7DV.TQK3mkyWwlQPoX6Qoefi9gXX7CSrnYQ/0PVhcZcUp//fTLuFG", // password is password
+      "$2b$12$T23m0mvMxml.oTzSuqTpkuRV.UXHI4dNzf9AEaXO36JNuX5P3D7Fe", // password is getpassword
   },
 ];

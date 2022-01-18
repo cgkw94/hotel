@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { Container } from "@chakra-ui/react";
+import Header from "./Header";
+import Cookies from "universal-cookie";
+import { Container, Box } from "@chakra-ui/react";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import {
   FormControl,
@@ -31,9 +33,9 @@ const Login = (props) => {
   const [show, setShow] = React.useState(false);
   const handleClick = () => setShow(!show);
 
+  const cookies = new Cookies();
+
   const fetchData = async (username, password) => {
-    props.setUserInfo({ username: "" });
-    props.setLoggedIn(false);
     const res = await fetch("http://localhost:5005/users/login", {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
@@ -42,8 +44,16 @@ const Login = (props) => {
     });
     const data = await res.json();
     if (data.msg === undefined) {
-      setError("");
-      props.setUserInfo(data);
+      setError("Yay login successful! Redirecting.....");
+      cookies.set("usernameCookie", data.username, {
+        path: "/",
+        maxAge: 2 * 60 * 60,
+      });
+      cookies.set("hotelStayedCookie", data.hotelStayed, {
+        path: "/",
+        maxAge: 2 * 60 * 60,
+      });
+      window.location.href = "/search";
     } else {
       setError(data.msg);
     }
@@ -60,14 +70,6 @@ const Login = (props) => {
   const handleLoginSubmit = (e) => {
     e.preventDefault();
     fetchData(usernameInput, passwordInput);
-    setUsernameInput("");
-    setPasswordInput("");
-  };
-
-  const handleLogout = (e) => {
-    e.preventDefault();
-    props.setUserInfo("");
-    props.setLoggedIn(false);
   };
 
   const createUser = async (username, password, email) => {
@@ -79,9 +81,16 @@ const Login = (props) => {
     });
     const data = await res.json();
     if (data.msg === undefined) {
-      setError("");
-      props.setUserInfo(data);
-      setNewUser({ username: "", password: "", rpassword: "", email: "" });
+      setError("Yay welcome newjoiner! Redirecting.....");
+      cookies.set("usernameCookie", data.username, {
+        path: "/",
+        maxAge: 2 * 60 * 60,
+      });
+      cookies.set("hotelStayedCookie", data.hotelStayed, {
+        path: "/",
+        maxAge: 2 * 60 * 60,
+      });
+      window.location.href = "/search";
     } else {
       setError(data.msg);
     }
@@ -113,8 +122,6 @@ const Login = (props) => {
 
   const handleNew = (e) => {
     e.preventDefault();
-    props.setUserInfo({ username: "" });
-    props.setLoggedIn(false);
     if (
       newUser.username.length === 0 ||
       newUser.password.length === 0 ||
@@ -132,6 +139,7 @@ const Login = (props) => {
 
   return (
     <>
+      <Header userInfo={props.userInfo} hide="true"></Header>
       <Container w="75%">
         <Tabs w="100%" isFitted variant="enclosed" colorScheme="blue">
           <TabList mb="1em">
@@ -240,12 +248,6 @@ const Login = (props) => {
           </TabPanels>
         </Tabs>
       </Container>
-      <div>
-        {props.userInfo.username}
-        {error}
-
-        <button onClick={handleLogout}>Log Out?</button>
-      </div>
     </>
   );
 };

@@ -257,4 +257,9 @@ app.post("/users/new", async (req, res) => {
   }
 });
 
+app.get("/get-hash", async (req, res) => {
+  const hash = await bcrypt.hash(req.body.password, 12);
+  res.json(hash);
+});
+
 app.listen(5005);
