@@ -1,17 +1,22 @@
 import React from "react";
+import { Input, Button, Select } from "@chakra-ui/react";
 
 const FeedbackForm = (props) => {
   return (
     <>
       <form onSubmit={props.handleSubmit}>
-        <input
+        <Input
           onChange={props.handleUsernameChange}
           placeholder="username"
           type="text"
           name="username"
           value={props.username}
-        ></input>
-        <select onChange={props.handleRatingChange} value={props.userRating}>
+        ></Input>
+        <Select
+          onChange={props.handleRatingChange}
+          value={props.userRating}
+          placeholder="Rating"
+        >
           <option value="0">0</option>
           <option value="1">1</option>
           <option value="2">2</option>
@@ -23,15 +28,17 @@ const FeedbackForm = (props) => {
           <option value="8">8</option>
           <option value="9">9</option>
           <option value="10">10</option>
-        </select>
-        <input
+        </Select>
+        <Input
           onChange={props.handleFeedbackChange}
           placeholder="feedback"
           type="text"
           name="feedback"
           value={props.userFeedback}
-        ></input>
-        <button>Submit</button>
+        ></Input>
+        <Button size="xs" varian="solid" colorScheme="blue">
+          Delete
+        </Button>
       </form>
     </>
   );

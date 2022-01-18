@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import FeedbackForm from "./FeedbackForm";
+import HotelHeader from "./HotelHeader";
 import ReviewsCard from "./ReviewsCard";
 
 function HotelDetails(props) {
   const params = useParams();
 
+  const [hotelDetails, setHotelDetails] = useState([]);
   const [feedbackDetails, setFeedbackDetails] = useState([]);
   const [loading, setLoading] = useState(false);
   const [feedback, setFeedback] = useState({
@@ -17,6 +19,7 @@ function HotelDetails(props) {
   const fetchHotelDetails = async (url) => {
     const res = await fetch(url);
     const data = await res.json();
+    setHotelDetails(data);
     setFeedbackDetails(data.feedback);
   };
 
@@ -77,7 +80,11 @@ function HotelDetails(props) {
 
   return (
     <div>
-      <div>{displayFeedback}</div>
+      <HotelHeader
+        src={hotelDetails.hotelImg}
+        hotelName={hotelDetails.hotelName}
+      />
+      <div className="feedback-container">{displayFeedback}</div>
       <FeedbackForm
         handleSubmit={handleSubmit}
         handleUsernameChange={handleUsernameChange}
