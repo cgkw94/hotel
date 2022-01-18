@@ -1,15 +1,14 @@
 import React, { useState } from "react";
-import Header from "./Header";
 import Cookies from "universal-cookie";
-import { Container, Box } from "@chakra-ui/react";
-import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import {
+  Container,
+  Tabs,
+  TabList,
+  TabPanels,
+  Tab,
+  TabPanel,
   FormControl,
-  FormLabel,
   FormErrorMessage,
-  FormHelperText,
-} from "@chakra-ui/react";
-import {
   Input,
   InputGroup,
   InputLeftElement,
@@ -17,10 +16,9 @@ import {
   Button,
   Stack,
 } from "@chakra-ui/react";
-
 import { EmailIcon } from "@chakra-ui/icons";
 
-const Login = (props) => {
+const Login = () => {
   const [error, setError] = useState("");
   const [usernameInput, setUsernameInput] = useState("");
   const [passwordInput, setPasswordInput] = useState("");
@@ -139,7 +137,6 @@ const Login = (props) => {
 
   return (
     <>
-      <Header userInfo={props.userInfo} hide="true"></Header>
       <Container w="75%">
         <Tabs w="100%" isFitted variant="enclosed" colorScheme="blue">
           <TabList mb="1em">

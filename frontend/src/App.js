@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Route } from "react-router-dom";
-import { Button } from "@chakra-ui/react";
 import Cookies from "universal-cookie";
 
 import "./App.css";
@@ -42,9 +41,11 @@ function App() {
         />
       </Route>
       <Route path="/login">
+        <Header userInfo={userInfo} hide="true" />
         <Login setUserInfo={setUserInfo} userInfo={userInfo} />
       </Route>
       <Route path="/search">
+        {/* copy this line into all other routes when done */}
         <Header userInfo={userInfo} />
         this is the results page
       </Route>
