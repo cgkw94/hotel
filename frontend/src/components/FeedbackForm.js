@@ -37,7 +37,7 @@ const FeedbackForm = (props) => {
           value={props.userFeedback}
         ></Input>
         <Button size="xs" varian="solid" colorScheme="blue">
-          Delete
+          Submit
         </Button>
       </form>
     </>

@@ -1,14 +1,15 @@
 import React from "react";
+import { Box, Image, Text, Badge } from "@chakra-ui/react";
 
-const RoomsCard = () => {
+const RoomsCard = (props) => {
   return (
     <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
-      <Image src={props.src} alt={props.alt} />
+      <Image src={props.src} alt="hotel-picture" />
 
       <Box p="6">
         <Box display="flex" alignItems="baseline">
           <Badge borderRadius="full" px="2" colorScheme="teal">
-            Available
+            New
           </Badge>
           <Box
             color="gray.500"
@@ -18,7 +19,7 @@ const RoomsCard = () => {
             textTransform="uppercase"
             ml="2"
           >
-            xx beds xx baths
+            Max {props.maxPax} Pax &bull; {props.size}
           </Box>
         </Box>
 
@@ -29,29 +30,10 @@ const RoomsCard = () => {
           lineHeight="tight"
           isTruncated
         >
-          {property.title}
+          {props.roomType}
         </Box>
 
-        <Box>
-          {property.formattedPrice}
-          <Box as="span" color="gray.600" fontSize="sm">
-            / wk
-          </Box>
-        </Box>
-
-        <Box display="flex" mt="2" alignItems="center">
-          {Array(5)
-            .fill("")
-            .map((_, i) => (
-              <StarIcon
-                key={i}
-                color={i < property.rating ? "teal.500" : "gray.300"}
-              />
-            ))}
-          <Box as="span" ml="2" color="gray.600" fontSize="sm">
-            {property.reviewCount} reviews
-          </Box>
-        </Box>
+        <Box> ${props.price} per night</Box>
       </Box>
     </Box>
   );
