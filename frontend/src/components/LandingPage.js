@@ -4,11 +4,6 @@ import { Button } from "@chakra-ui/react";
 
 const LandingPage = (props) => {
   const [locationInput, setLocationInput] = useState("");
-  const [inDateInput, setInDateInput] = useState("");
-  const [outDateInput, setOutDateInput] = useState("");
-  const [roomTypeInput, setRoomTypeInput] = useState("");
-
-  const [locationInput, setLocationInput] = useState("");
   const [inDateInput, setInDateInput] = useState("2022-01-20");
   const [outDateInput, setOutDateInput] = useState("2022-01-20");
   const [roomTypeInput, setRoomTypeInput] = useState("");

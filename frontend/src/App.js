@@ -47,6 +47,7 @@ function App() {
       <Route path="/search">
         <Header userInfo={userInfo} />
         this is the results page
+      </Route>
       <Route exact path="/hotel">
         <DisplayPage
           location={location}
