@@ -116,7 +116,8 @@ module.exports = [
   {
     hotelId: 2,
     hotelName: "Four Seasons",
-    hotelImg: "https://cf.bstatic.com/xdata/images/hotel/max1280x900/269210728.jpg?k=d295aaf07aee1951a917ec812b97e5d2905e4686da6880e7e15b0e7d9b522097&o=&hp=1",
+    hotelImg:
+      "https://cf.bstatic.com/xdata/images/hotel/max1280x900/269210728.jpg?k=d295aaf07aee1951a917ec812b97e5d2905e4686da6880e7e15b0e7d9b522097&o=&hp=1",
     location: "Orchard",
     address: "190 Orchard Boulevard, Orchard, 248646 Singapore, Singapore",
     geolocation: {
@@ -164,21 +165,16 @@ module.exports = [
       "Free Wifi",
       "Non-Smoking Rooms",
       "Free Parking",
-      "Bath"
+      "Bath",
     ],
-    userStayed: [
-      "Jasmin",
-      "Cheryl",
-      "Lee",
-      "Rajan",
-      "Patrick",
-    ],
+    userStayed: ["Jasmin", "Cheryl", "Lee", "Rajan", "Patrick"],
     roomsGeneral: [
       {
         roomType: "Deluxe",
         maxPax: 2,
         price: 450,
-        roomImg: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/128992790.jpg?k=a820490d10b34549063683a21552d78bf5982aaac5d0cfa0d538d0180f93c262&o=",
+        roomImg:
+          "https://cf.bstatic.com/xdata/images/hotel/max1024x768/128992790.jpg?k=a820490d10b34549063683a21552d78bf5982aaac5d0cfa0d538d0180f93c262&o=",
         size: "49 sqf",
         amenities: ["Minibar", "Safe Deposit Box", "Closet"],
       },
@@ -186,7 +182,8 @@ module.exports = [
         roomType: "Grand Deluxe",
         maxPax: 3,
         price: 600,
-        roomImg: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/128992753.jpg?k=b357b2e6f61580728b7d66c50e8f243be501bcbfa47bd6ba1b0b2e30f7234088&o=",
+        roomImg:
+          "https://cf.bstatic.com/xdata/images/hotel/max1024x768/128992753.jpg?k=b357b2e6f61580728b7d66c50e8f243be501bcbfa47bd6ba1b0b2e30f7234088&o=",
         size: "55sqf",
         amenities: [
           "Minibar",
@@ -200,7 +197,8 @@ module.exports = [
         roomType: "Suite",
         maxPax: 4,
         price: 1000,
-        roomImg: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/128992775.jpg?k=187f9bbfc7c5d36427009c292bb5719e4bc1e1fe0b0363be939bda18b7be4690&o=",
+        roomImg:
+          "https://cf.bstatic.com/xdata/images/hotel/max1024x768/128992775.jpg?k=187f9bbfc7c5d36427009c292bb5719e4bc1e1fe0b0363be939bda18b7be4690&o=",
         size: "55sqf",
         amenities: [
           "Minibar",
@@ -217,7 +215,8 @@ module.exports = [
   {
     hotelId: 3,
     hotelName: "Shangri-La",
-    hotelImg: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/295685435.jpg?k=7305ecb369d193fa1ee13e9cf66ab740077142445364c2531f513de99dd715fe&o=&hp=1",
+    hotelImg:
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/295685435.jpg?k=7305ecb369d193fa1ee13e9cf66ab740077142445364c2531f513de99dd715fe&o=&hp=1",
     location: "Orchard",
     address: "22 Orange Grove Road, Orchard, 258350 Singapore, Singapore",
     geolocation: {
@@ -287,13 +286,14 @@ module.exports = [
       "Swee",
       "Nicolaas",
     ],
-    rooms: [{ inDate: "02/10/21", outDate: "05/10/21", roomType: "Deluxe"}],
+    rooms: [{ inDate: "02/10/21", outDate: "05/10/21", roomType: "Deluxe" }],
     roomsGeneral: [
       {
         roomType: "Deluxe",
         maxPax: 2,
         price: 450,
-        roomImg: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/165010895.jpg?k=6ddaa657c6b832876c401a9a881d44d3e2664c24a5561d6f7e60e80361dc1007&o=",
+        roomImg:
+          "https://cf.bstatic.com/xdata/images/hotel/max1024x768/165010895.jpg?k=6ddaa657c6b832876c401a9a881d44d3e2664c24a5561d6f7e60e80361dc1007&o=",
         size: "40 sqf",
         amenities: ["Minibar", "Safe Deposit Box", "Closet"],
       },
@@ -301,7 +301,8 @@ module.exports = [
         roomType: "Grand Deluxe",
         maxPax: 3,
         price: 600,
-        roomImg: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/306181607.jpg?k=0a8ff9e9a6f280c0354663259e2be4c996fa127348a753ecca68f7a8022a5057&o=",
+        roomImg:
+          "https://cf.bstatic.com/xdata/images/hotel/max1024x768/306181607.jpg?k=0a8ff9e9a6f280c0354663259e2be4c996fa127348a753ecca68f7a8022a5057&o=",
         size: "55sqf",
         amenities: [
           "Minibar",
@@ -315,7 +316,8 @@ module.exports = [
         roomType: "Suite",
         maxPax: 4,
         price: 1000,
-        roomImg: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/165008112.jpg?k=eedd929b39bdbeeace93b8f0a274f4ecbae272e5e571b72bdc8f43e75bcd2d9f&o=",
+        roomImg:
+          "https://cf.bstatic.com/xdata/images/hotel/max1024x768/165008112.jpg?k=eedd929b39bdbeeace93b8f0a274f4ecbae272e5e571b72bdc8f43e75bcd2d9f&o=",
         size: "55sqf",
         amenities: [
           "Minibar",
@@ -332,7 +334,8 @@ module.exports = [
   {
     hotelId: 4,
     hotelName: "Grand Hyatt",
-    hotelImg: "https://cf.bstatic.com/xdata/images/hotel/max1280x900/113605648.jpg?k=bf3936b4d1849def388b2b35cc092c3d3c5cffc15bb10c68066d90ab11fa0bf8&o=&hp=1",
+    hotelImg:
+      "https://cf.bstatic.com/xdata/images/hotel/max1280x900/113605648.jpg?k=bf3936b4d1849def388b2b35cc092c3d3c5cffc15bb10c68066d90ab11fa0bf8&o=&hp=1",
     location: "Orchard",
     address: "10 Scotts Road, Orchard, 228211 Singapore, Singapore",
     geolocation: {
@@ -392,22 +395,20 @@ module.exports = [
       "Free Parking",
       "Bar",
       "Gym",
-      "Family Rooms"
+      "Family Rooms",
     ],
-    userStayed: [
-      "Jasmin",
-      "Cheryl",
-      "Lee",
-      "Rajan",
+    userStayed: ["Jasmin", "Cheryl", "Lee", "Rajan"],
+    rooms: [
+      { inDate: "02/10/21", outDate: "05/10/21", roomType: "Deluxe" },
+      { inDate: "03/10/21", outDate: "05/10/21", roomType: "Grand Deluxe" },
     ],
-    rooms: [{ inDate: "02/10/21", outDate: "05/10/21", roomType: "Deluxe"}, 
-            { inDate: "03/10/21", outDate: "05/10/21", roomType: "Grand Deluxe"}],
     roomsGeneral: [
       {
         roomType: "Deluxe",
         maxPax: 2,
         price: 350,
-        roomImg: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/180009109.jpg?k=f8bc41cc849215207f297ffecb70c8a01838fefbd3568f51d488c93fd24dd44e&o=",
+        roomImg:
+          "https://cf.bstatic.com/xdata/images/hotel/max1024x768/180009109.jpg?k=f8bc41cc849215207f297ffecb70c8a01838fefbd3568f51d488c93fd24dd44e&o=",
         size: "40 sqf",
         amenities: ["Minibar", "Safe Deposit Box", "Closet"],
       },
@@ -415,7 +416,8 @@ module.exports = [
         roomType: "Grand Deluxe",
         maxPax: 3,
         price: 450,
-        roomImg: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/180009554.jpg?k=bef6f9511b115797124a15973371147068c81b8dc30188e0833c409ff407fb96&o=",
+        roomImg:
+          "https://cf.bstatic.com/xdata/images/hotel/max1024x768/180009554.jpg?k=bef6f9511b115797124a15973371147068c81b8dc30188e0833c409ff407fb96&o=",
         size: "55sqf",
         amenities: [
           "Minibar",
@@ -429,7 +431,8 @@ module.exports = [
         roomType: "Suite",
         maxPax: 4,
         price: 1000,
-        roomImg: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/180005519.jpg?k=d1e92f471767d6a7c5c71b65f7af531399c4b149b47e618407f3641379f719e7&o=",
+        roomImg:
+          "https://cf.bstatic.com/xdata/images/hotel/max1024x768/180005519.jpg?k=d1e92f471767d6a7c5c71b65f7af531399c4b149b47e618407f3641379f719e7&o=",
         size: "55sqf",
         amenities: [
           "Minibar",
@@ -439,8 +442,8 @@ module.exports = [
           "Coffee Machine",
           "Wake up service/Alarm clock",
           "Butler Service",
-          "Stove Top", 
-          "Dining Table"
+          "Stove Top",
+          "Dining Table",
         ],
       },
     ],
@@ -448,7 +451,8 @@ module.exports = [
   {
     hotelId: 5,
     hotelName: "YOTEL Singapore",
-    hotelImg: "https://cf.bstatic.com/xdata/images/hotel/max1280x900/308960783.jpg?k=b51cb02433019e70cacb3f67e46f103c14b320c9064bd59055a408d446d4a518&o=&hp=1",
+    hotelImg:
+      "https://cf.bstatic.com/xdata/images/hotel/max1280x900/308960783.jpg?k=b51cb02433019e70cacb3f67e46f103c14b320c9064bd59055a408d446d4a518&o=&hp=1",
     location: "Orchard",
     address: "366 Orchard Road, Orchard, 238904 Singapore, Singapore",
     geolocation: {
@@ -496,22 +500,21 @@ module.exports = [
       "Free Wifi",
       "Non-Smoking Rooms",
       "Free Parking",
-      "City View"
+      "City View",
     ],
-    userStayed: [
-      "Jasmin",
-      "Cheryl",
-      "Lee",
+    userStayed: ["Jasmin", "Cheryl", "Lee"],
+    rooms: [
+      { inDate: "02/10/21", outDate: "05/10/21", roomType: "Deluxe" },
+      { inDate: "03/10/21", outDate: "05/10/21", roomType: "Grand Deluxe" },
+      { inDate: "06/10/21", outDate: "10/10/21", roomType: "Deluxe" },
     ],
-    rooms: [{ inDate: "02/10/21", outDate: "05/10/21", roomType: "Deluxe"}, 
-            { inDate: "03/10/21", outDate: "05/10/21", roomType: "Grand Deluxe"},
-            { inDate: "06/10/21", outDate: "10/10/21", roomType: "Deluxe"}],
     roomsGeneral: [
       {
         roomType: "Deluxe",
         maxPax: 2,
         price: 350,
-        roomImg: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/120695580.jpg?k=ee721597cb146b38cc102159437d1097ae51bea528816eba60c4ac0ab85f2685&o=",
+        roomImg:
+          "https://cf.bstatic.com/xdata/images/hotel/max1024x768/120695580.jpg?k=ee721597cb146b38cc102159437d1097ae51bea528816eba60c4ac0ab85f2685&o=",
         size: "40 sqf",
         amenities: ["Minibar", "Safe Deposit Box", "Closet"],
       },
@@ -519,7 +522,8 @@ module.exports = [
         roomType: "Grand Deluxe",
         maxPax: 3,
         price: 450,
-        roomImg: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/120699685.jpg?k=85a2ac0005a7c801380cd82df3b0932a1cdc7d0ede564274c56b8e45309ebd67&o=",
+        roomImg:
+          "https://cf.bstatic.com/xdata/images/hotel/max1024x768/120699685.jpg?k=85a2ac0005a7c801380cd82df3b0932a1cdc7d0ede564274c56b8e45309ebd67&o=",
         size: "55sqf",
         amenities: [
           "Minibar",
@@ -533,7 +537,8 @@ module.exports = [
         roomType: "Suite",
         maxPax: 4,
         price: 1000,
-        roomImg: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/308960743.jpg?k=e6f414715378961cf93dd0167680c11e5f005bc5bdc6f39158e556c5b9ecd42f&o=",
+        roomImg:
+          "https://cf.bstatic.com/xdata/images/hotel/max1024x768/308960743.jpg?k=e6f414715378961cf93dd0167680c11e5f005bc5bdc6f39158e556c5b9ecd42f&o=",
         size: "55sqf",
         amenities: [
           "Minibar",
@@ -541,7 +546,7 @@ module.exports = [
           "Closet",
           "Bathtub",
           "Coffee Machine",
-          "Bidet"
+          "Bidet",
         ],
       },
     ],
@@ -549,7 +554,8 @@ module.exports = [
   {
     hotelId: 6,
     hotelName: "Jen Singapore Tanglin",
-    hotelImg: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/295682788.jpg?k=f69efdb86e64daffe2ba740e0419a796438732f9d4fe35168d04b5c242057c57&o=&hp=1",
+    hotelImg:
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/295682788.jpg?k=f69efdb86e64daffe2ba740e0419a796438732f9d4fe35168d04b5c242057c57&o=&hp=1",
     location: "Orchard",
     address: "1A Cuscaden Road, Orchard, 249716 Singapore, Singapore",
     geolocation: {
@@ -570,21 +576,20 @@ module.exports = [
       "Free Wifi",
       "Non-Smoking Rooms",
       "Free Parking",
-      "City View"
+      "City View",
     ],
-    userStayed: [
-      "Jasmin",
-      "Cheryl",
-      "Lee",
+    userStayed: ["Jasmin", "Cheryl", "Lee"],
+    rooms: [
+      { inDate: "02/02/21", outDate: "05/02/21", roomType: "Deluxe" },
+      { inDate: "03/03/21", outDate: "05/03/21", roomType: "Grand Deluxe" },
     ],
-    rooms: [{ inDate: "02/02/21", outDate: "05/02/21", roomType: "Deluxe"}, 
-            { inDate: "03/03/21", outDate: "05/03/21", roomType: "Grand Deluxe"},],
     roomsGeneral: [
       {
         roomType: "Deluxe",
         maxPax: 2,
         price: 350,
-        roomImg: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/328626148.jpg?k=8fa8aec18d19fbd55f2c28f61d9b28f740ab0f76d441c29f2cfc8b2d426c5eff&o=",
+        roomImg:
+          "https://cf.bstatic.com/xdata/images/hotel/max1024x768/328626148.jpg?k=8fa8aec18d19fbd55f2c28f61d9b28f740ab0f76d441c29f2cfc8b2d426c5eff&o=",
         size: "40 sqf",
         amenities: ["Minibar", "Safe Deposit Box", "Closet"],
       },
@@ -592,7 +597,8 @@ module.exports = [
         roomType: "Grand Deluxe",
         maxPax: 3,
         price: 450,
-        roomImg: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/328626146.jpg?k=71d7729f08b8d2373b28f78d5c6eefe4fa954fb67664e748442a476c3f13a09e&o=",
+        roomImg:
+          "https://cf.bstatic.com/xdata/images/hotel/max1024x768/328626146.jpg?k=71d7729f08b8d2373b28f78d5c6eefe4fa954fb67664e748442a476c3f13a09e&o=",
         size: "55sqf",
         amenities: [
           "Minibar",
@@ -606,7 +612,8 @@ module.exports = [
         roomType: "Suite",
         maxPax: 4,
         price: 1000,
-        roomImg: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/328626166.jpg?k=b44e96c17f6774e2362933a2244e5a4429e2453b42f5bc59afe80f8e06bc9559&o=",
+        roomImg:
+          "https://cf.bstatic.com/xdata/images/hotel/max1024x768/328626166.jpg?k=b44e96c17f6774e2362933a2244e5a4429e2453b42f5bc59afe80f8e06bc9559&o=",
         size: "55sqf",
         amenities: [
           "Minibar",
@@ -614,8 +621,340 @@ module.exports = [
           "Closet",
           "Bathtub",
           "Coffee Machine",
-          "Flat Screen TV"
+          "Flat Screen TV",
         ],
+      },
+    ],
+  },
+  {
+    hotelId: 5,
+    hotelName: "YOTEL Singapore",
+    hotelImg:
+      "https://cf.bstatic.com/xdata/images/hotel/max1280x900/308960783.jpg?k=b51cb02433019e70cacb3f67e46f103c14b320c9064bd59055a408d446d4a518&o=&hp=1",
+    location: "Orchard",
+    address: "366 Orchard Road, Orchard, 238904 Singapore, Singapore",
+    geolocation: {
+      longitude: 103.8587261,
+      latitude: 1.2934379,
+    },
+    hotelRating: 3.9,
+    vacancies: true,
+    feedback: [
+      {
+        username: "Jasmine",
+        userRating: 9.6,
+        userFeedback: "Good staycation option",
+      },
+      {
+        username: "Nicolaas",
+        userRating: 10,
+        userFeedback: "Excellent staycation weekend !",
+      },
+      {
+        username: "Swee",
+        userRating: 9.0,
+        userFeedback:
+          "Fantastic service and experience, although slightly pricey",
+      },
+      {
+        username: "Patrick",
+        userRating: 10,
+        userFeedback: "have a wonderful stay in a luxurious hotel",
+      },
+      {
+        username: "Rajan",
+        userRating: 10,
+        userFeedback:
+          "Fantastic service and experience, although slightly pricey",
+      },
+      {
+        username: "Norman",
+        userRating: 8.0,
+        userFeedback: "we had enjoyable time staying at Conrad",
+      },
+    ],
+    amenities: [
+      "Swimming Pool",
+      "Free Wifi",
+      "Non-Smoking Rooms",
+      "Free Parking",
+      "City View",
+    ],
+    userStayed: ["Jasmin", "Cheryl", "Lee"],
+    rooms: [
+      { inDate: "02/10/21", outDate: "05/10/21", roomType: "Deluxe" },
+      { inDate: "03/10/21", outDate: "05/10/21", roomType: "Grand Deluxe" },
+      { inDate: "06/10/21", outDate: "10/10/21", roomType: "Deluxe" },
+    ],
+    roomsGeneral: [
+      {
+        roomType: "Deluxe",
+        maxPax: 2,
+        price: 350,
+        roomImg:
+          "https://cf.bstatic.com/xdata/images/hotel/max1024x768/120695580.jpg?k=ee721597cb146b38cc102159437d1097ae51bea528816eba60c4ac0ab85f2685&o=",
+        size: "40 sqf",
+        amenities: ["Minibar", "Safe Deposit Box", "Closet"],
+      },
+      {
+        roomType: "Grand Deluxe",
+        maxPax: 3,
+        price: 450,
+        roomImg:
+          "https://cf.bstatic.com/xdata/images/hotel/max1024x768/120699685.jpg?k=85a2ac0005a7c801380cd82df3b0932a1cdc7d0ede564274c56b8e45309ebd67&o=",
+        size: "55sqf",
+        amenities: [
+          "Minibar",
+          "Safe Deposit Box",
+          "Closet",
+          "Shower",
+          "Coffee Machine",
+        ],
+      },
+      {
+        roomType: "Suite",
+        maxPax: 4,
+        price: 1000,
+        roomImg:
+          "https://cf.bstatic.com/xdata/images/hotel/max1024x768/308960743.jpg?k=e6f414715378961cf93dd0167680c11e5f005bc5bdc6f39158e556c5b9ecd42f&o=",
+        size: "55sqf",
+        amenities: [
+          "Minibar",
+          "Safe Deposit Box",
+          "Closet",
+          "Bathtub",
+          "Coffee Machine",
+          "Bidet",
+        ],
+      },
+    ],
+  },
+  {
+    hotelId: 21,
+    hotelName: "Marriot Singapore South Beach",
+    hotelImg:
+      "https://t-cf.bstatic.com/xdata/images/hotel/max1280x900/126221389.jpg?k=c49a5194e68e1f616468c07659f5d1326c93581f0d9585f4d47df5cd1fac93af&o=&hp=1",
+    location: "Marina Bay",
+    address: "30 Beach Road, Nicoll Hwy, Singapore 189763",
+    geolocation: {
+      longitude: 103.85580259843367,
+      latitude: 1.2955301341575316,
+    },
+    hotelRating: 4.5,
+    vacancies: true,
+    feedback: [
+      {
+        username: "Ain89",
+        userRating: 5,
+        userFeedback:
+          "The location and the pool is awesome. The concierge was very friendly and helpful.",
+      },
+      {
+        username: "Hidayah",
+        userRating: 4,
+        userFeedback:
+          "Friendly and helpful staffs. relaxing ambience in the room and lobby. nice city view at the swimming pool",
+      },
+    ],
+    amenities: [
+      "2 Swimming Pools",
+      "Free Wifi",
+      "Non-Smoking Rooms",
+      "Family Room",
+      "Free Parking",
+      "Bar",
+    ],
+    userStayed: ["Hidayah", "Desmond", "WeiJie", "Ain89", "James"],
+    rooms: [
+      { inDate: "20/02/22", outDate: "23/02/22", roomType: "Deluxe" },
+      { inDate: "25/02/22", outDate: "27/02/22", roomType: "Grand Deluxe" },
+      { inDate: "10/03/22", outDate: "13/03/22", roomType: "Deluxe" },
+      { inDate: "05/03/22", outDate: "09/03/22", roomType: "Grand Deluxe" },
+      { inDate: "02/02/22", outDate: "10/02/22", roomType: "Suite" },
+    ],
+    roomsGeneral: [
+      {
+        roomType: "Deluxe",
+        maxPax: 2,
+        price: 470,
+        roomImg:
+          "https://t-cf.bstatic.com/xdata/images/hotel/max1280x900/218874363.jpg?k=d99e712b58333102c4f29fb442416848cdbc79d775ea205225749b06c1d0b95b&o=&hp=1",
+        size: "380 sqf",
+        amenities: ["Private Bathroom", "Safe Deposit Box", "Closet"],
+      },
+      {
+        roomType: "Grand Deluxe",
+        maxPax: 3,
+        price: 705,
+        roomImg:
+          "https://t-cf.bstatic.com/xdata/images/hotel/max1280x900/231124703.jpg?k=e9cab92a99610f4c22755ff0f3b407ea3b3ac32fb1d45c15afecf2d8de8a390d&o=&hp=1",
+        size: "430 sqf",
+        amenities: [
+          "Minibar",
+          "Safe Deposit Box",
+          "Closet",
+          "Shower",
+          "Coffee/Tea Maker",
+        ],
+      },
+      {
+        roomType: "Suite",
+        maxPax: 4,
+        price: 929,
+        roomImg:
+          "https://t-cf.bstatic.com/xdata/images/hotel/max1280x900/151509251.jpg?k=5e334023285ca81b4d83fde7b5490275960f6f80ce1c63f1af88aa0914a0ddbd&o=&hp=1",
+        size: "770 sqf",
+        amenities: [
+          "Minibar",
+          "Safe Deposit Box",
+          "Closet",
+          "Bathtub",
+          "Coffee/tea Maker",
+          "Flat Screen TV",
+          "Soundproofing",
+          "Seperate Bath/Shower",
+        ],
+      },
+    ],
+  },
+  {
+    hotelId: 22,
+    hotelName: "Hotel NuVe Heritage",
+    hotelImg:
+      "https://t-cf.bstatic.com/xdata/images/hotel/max1280x900/81206427.jpg?k=b866e1a7e153e89b365fb606dab3642f3fd3ecaa631039665a7df2aa6353ff02&o=&hp=1",
+    location: "Marina Bay",
+    address: "13 Purvis St, Singapore 188592",
+    geolocation: {
+      longitude: 103.85537602313566,
+      latitude: 1.2972425157921108,
+    },
+    hotelRating: 4.3,
+    vacancies: true,
+    feedback: [
+      {
+        username: "AiTeo",
+        userRating: 4.5,
+        userFeedback:
+          "The staffs are friendly and the room we stayed in was comfortable",
+      },
+      {
+        username: "Mommysiti",
+        userRating: 4,
+        userFeedback:
+          "Everything was perfect! My husband and I enjoyed our stay at Nuve artist suite. Super friendly staff who went the extra mile to fulfill my requests.",
+      },
+      {
+        username: "Weena",
+        userRating: 4.5,
+        userFeedback:
+          "Place was very spacious & clean. It was the perfect size for 4 people to stay in the same room without it feeling cramped.",
+      },
+      {
+        username: "Adelyn",
+        userRating: 4,
+        userFeedback:
+          "I didn't just like. I love it! Staff were amazingly warm and friendly. The suite was huge and it really makes my son 1 year old birthday a happy one! Will come back!",
+      },
+    ],
+    amenities: [
+      "Room Service",
+      "Free Wifi",
+      "Non-Smoking Rooms",
+      "Family Rooms",
+      "Breakfast",
+    ],
+    userStayed: ["Mommysiti", "Desmond", "Jessie", "AiTeo", "James"],
+    rooms: [
+      { inDate: "15/03/22", outDate: "17/03/22", roomType: "Deluxe" },
+      { inDate: "20/03/22", outDate: "24/03/22", roomType: "Deluxe" },
+      { inDate: "01/04/22", outDate: "02/04/22", roomType: "Grand Deluxe" },
+      { inDate: "03/03/21", outDate: "05/03/21", roomType: "Grand Deluxe" },
+    ],
+    roomsGeneral: [
+      {
+        roomType: "Deluxe",
+        maxPax: 2,
+        price: 276,
+        roomImg:
+          "https://t-cf.bstatic.com/xdata/images/hotel/max1280x900/168542030.jpg?k=e8ab360d5b1da88dd7a6a91548799968018121c8c9ee63f5a87c5125db003553&o=&hp=1",
+        size: "160 sqf",
+        amenities: [
+          "Private Bathroom",
+          "Coffee Machine",
+          "Minibar",
+          "Electric Kettle",
+        ],
+      },
+      {
+        roomType: "Grand Deluxe",
+        maxPax: 3,
+        price: 307,
+        roomImg:
+          "https://t-cf.bstatic.com/xdata/images/hotel/max1280x900/40093242.jpg?k=a6498a235ca6f03bda06408894e3236d658f747724ed64127aebd37b5e563443&o=&hp=1",
+        size: "215 sqf",
+        amenities: [
+          "Minibar",
+          "Safe Deposit Box",
+          "Closet",
+          "Shower",
+          "Coffee Machine",
+          "Ensuite bathroom",
+        ],
+      },
+    ],
+  },
+  {
+    hotelId: 23,
+    hotelName: "Victoria Hotel",
+    hotelImg:
+      "https://pix8.agoda.net/hotelImages/1617854/-1/47025c9b68e4626a57209ac5aa639a22.jpg?ca=20&ce=1&s=1024x768",
+    location: "Marina Bay",
+    address: "87 Victoria Street, Bugis, Singapore 188016",
+    geolocation: {
+      longitude: 103.85243274510411,
+      latitude: 1.2978513137043135,
+    },
+    hotelRating: 3,
+    vacancies: true,
+    feedback: [
+      {
+        username: "Jessie",
+        userRating: 3,
+        userFeedback: "Clean, central location, fuss free check in process",
+      },
+      {
+        username: "Nicholas",
+        userRating: 3,
+        userFeedback: "If looking for cheap hotel, this is good.",
+      },
+    ],
+    amenities: ["Free Wifi", "Family Room", "Free Parking", ,],
+    userStayed: ["Jessie", "Alex", "WeiJie", "Ain89", "James"],
+    rooms: [
+      { inDate: "20/02/22", outDate: "23/02/22", roomType: "Deluxe" },
+      { inDate: "25/02/22", outDate: "27/02/22", roomType: "Grand Deluxe" },
+      { inDate: "10/03/22", outDate: "13/03/22", roomType: "Deluxe" },
+      { inDate: "05/03/22", outDate: "09/03/22", roomType: "Grand Deluxe" },
+      { inDate: "02/02/22", outDate: "10/02/22", roomType: "Suite" },
+    ],
+    roomsGeneral: [
+      {
+        roomType: "Deluxe",
+        maxPax: 2,
+        price: 120,
+        roomImg:
+          "https://pix8.agoda.net/hotelImages/1617854/58977838/eb844bb9947a49b9bcf716d9af05dbf5.jpg?ca=20&ce=0&s=1024x768",
+        size: "129 sqf",
+        amenities: ["Private Bathroom", "Safe Deposit Box", "Electric Kettle"],
+      },
+      {
+        roomType: "Grand Deluxe",
+        maxPax: 3,
+        price: 179,
+        roomImg:
+          "https://pix8.agoda.net/hotelImages/1617854/-1/b414783b3f426d014be6c0a40fa37ca9.jpg?ca=20&ce=1&s=1024x768",
+        size: "151 sqf",
+        amenities: ["Minibar", "Shower", "Electric Kettle"],
       },
     ],
   },
