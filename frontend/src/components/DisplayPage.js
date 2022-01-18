@@ -7,7 +7,7 @@ const DisplayPage = (props) => {
     let hotelDisplay = (<div></div>)
 
     //const [loading, setLoading] = useState(false);
-    const [hotelData, setHotelData] = useState({})
+    const [hotelData, setHotelData] = useState([])
 
     const fetchHotels = async (url) => {
     
@@ -47,6 +47,7 @@ const DisplayPage = (props) => {
 
         searchTitle = <h4 id="search-title">Search Results</h4>
         
+        console.log(hotelData)
         hotelDisplay = hotelData?.map((hotel, index) => {
             return (
                 <div className="card">
