@@ -1,4 +1,22 @@
 import React, { useState } from "react";
+import { Container } from "@chakra-ui/react";
+import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
+import {
+  FormControl,
+  FormLabel,
+  FormErrorMessage,
+  FormHelperText,
+} from "@chakra-ui/react";
+import {
+  Input,
+  InputGroup,
+  InputLeftElement,
+  InputRightElement,
+  Button,
+  Stack,
+} from "@chakra-ui/react";
+
+import { EmailIcon } from "@chakra-ui/icons";
 
 const Login = (props) => {
   const [error, setError] = useState("");
@@ -10,6 +28,8 @@ const Login = (props) => {
     rpassword: "",
     email: "",
   });
+  const [show, setShow] = React.useState(false);
+  const handleClick = () => setShow(!show);
 
   const fetchData = async (username, password) => {
     props.setUserInfo({ username: "" });
@@ -95,74 +115,138 @@ const Login = (props) => {
     e.preventDefault();
     props.setUserInfo({ username: "" });
     props.setLoggedIn(false);
-    if (newUser.password !== newUser.rpassword) {
+    if (
+      newUser.username.length === 0 ||
+      newUser.password.length === 0 ||
+      newUser.email.length === 0
+    ) {
+      setError("All fields are required.");
+    } else if (newUser.password !== newUser.rpassword) {
       setError("Passwords do not match.");
+    } else if (newUser.email.includes("@") === false) {
+      setError("Invalid Email address.");
     } else {
       createUser(newUser.username, newUser.password, newUser.email);
     }
   };
 
   return (
-    <div>
-      {props.userInfo.username}
-      {error}
+    <>
+      <Container w="75%">
+        <Tabs w="100%" isFitted variant="enclosed" colorScheme="blue">
+          <TabList mb="1em">
+            <Tab>Login</Tab>
+            <Tab>Sign Up</Tab>
+          </TabList>
+          <TabPanels>
+            <TabPanel>
+              <Stack direction="column" spacing={2}>
+                <Input
+                  value={usernameInput}
+                  onChange={handleLoginUsername}
+                  placeholder="Enter username"
+                  size="md"
+                />
+
+                <InputGroup size="md">
+                  <Input
+                    pr="4.5rem"
+                    type={show ? "text" : "password"}
+                    placeholder="Enter password"
+                    value={passwordInput}
+                    onChange={handleLoginPassword}
+                  />
+                  <InputRightElement width="4.5rem">
+                    <Button h="1.75rem" size="sm" onClick={handleClick}>
+                      {show ? "Hide" : "Show"}
+                    </Button>
+                  </InputRightElement>
+                </InputGroup>
+                <FormControl isInvalid={error}>
+                  <FormErrorMessage>{error}</FormErrorMessage>
+                </FormControl>
+                <Button
+                  colorScheme="blue"
+                  variant="outline"
+                  onClick={handleLoginSubmit}
+                  type="submit"
+                >
+                  Submit
+                </Button>
+              </Stack>
+            </TabPanel>
+            <TabPanel>
+              <Stack direction="column" spacing={2}>
+                <Input
+                  value={newUser.username}
+                  onChange={handleUsername}
+                  placeholder="Enter new username"
+                  size="md"
+                />
+
+                <InputGroup size="md">
+                  <Input
+                    pr="4.5rem"
+                    type={show ? "text" : "password"}
+                    placeholder="Enter password"
+                    value={newUser.password}
+                    onChange={handlePassword}
+                  />
+                  <InputRightElement width="4.5rem">
+                    <Button h="1.75rem" size="sm" onClick={handleClick}>
+                      {show ? "Hide" : "Show"}
+                    </Button>
+                  </InputRightElement>
+                </InputGroup>
+                <InputGroup size="md">
+                  <Input
+                    pr="4.5rem"
+                    type={show ? "text" : "password"}
+                    placeholder="Retype password"
+                    value={newUser.rpassword}
+                    onChange={handleRPassword}
+                  />
+                  <InputRightElement width="4.5rem">
+                    <Button h="1.75rem" size="sm" onClick={handleClick}>
+                      {show ? "Hide" : "Show"}
+                    </Button>
+                  </InputRightElement>
+                </InputGroup>
+                <InputGroup>
+                  <InputLeftElement
+                    pointerEvents="none"
+                    children={<EmailIcon color="gray.300" />}
+                  />
+                  <Input
+                    type="email"
+                    placeholder="Email address"
+                    value={newUser.email}
+                    onChange={handleEmail}
+                  />
+                </InputGroup>
+                <FormControl isInvalid={error}>
+                  <FormErrorMessage>{error}</FormErrorMessage>
+                </FormControl>
+                <Button
+                  colorScheme="blue"
+                  variant="outline"
+                  onClick={handleNew}
+                  type="submit"
+                >
+                  Submit
+                </Button>
+              </Stack>
+            </TabPanel>
+          </TabPanels>
+        </Tabs>
+      </Container>
       <div>
-        Login
-        <br />
-        <form>
-          <input
-            placeholder="username"
-            value={usernameInput}
-            onChange={handleLoginUsername}
-          ></input>
-          <input
-            placeholder="password"
-            type="password"
-            value={passwordInput}
-            onChange={handleLoginPassword}
-          ></input>
-          <button type="submit" onClick={handleLoginSubmit}>
-            Submit
-          </button>
-          <button onClick={handleLogout}>Log Out?</button>
-        </form>
+        {props.userInfo.username}
+        {error}
+
+        <button onClick={handleLogout}>Log Out?</button>
       </div>
-      <div>
-        Sign Up
-        <br />
-        <form>
-          <input
-            placeholder="username"
-            value={newUser.username}
-            onChange={handleUsername}
-          ></input>
-          <input
-            placeholder="password"
-            type="password"
-            value={newUser.password}
-            onChange={handlePassword}
-          ></input>
-          <input
-            placeholder="retype password"
-            type="password"
-            value={newUser.rpassword}
-            onChange={handleRPassword}
-          ></input>
-          <input
-            placeholder="email"
-            type="email"
-            value={newUser.email}
-            onChange={handleEmail}
-          ></input>
-          <input type="radio" defaultChecked></input>
-          <label>Customer</label>
-          <input type="radio" /> <label> Hotel Manager</label>
-          <button type="submit" onClick={handleNew}>
-            Submit
-          </button>
-        </form>
-      </div>
-    </div>
+    </>
   );
 };
 

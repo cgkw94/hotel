@@ -8,12 +8,11 @@ import Login from "./components/Login";
 import LandingPage from "./components/LandingPage";
 
 function App() {
-
   //search input useStates
-  const [location, setLocation] = useState('')
-  const [inDate, setInDate] = useState('')
-  const [outDate, setOutDate] = useState('')
-  const [roomType, setRoomType] = useState('')
+  const [location, setLocation] = useState("");
+  const [inDate, setInDate] = useState("");
+  const [outDate, setOutDate] = useState("");
+  const [roomType, setRoomType] = useState("");
 
   // eslint-disable-next-line -- this is to "get rid" of the compilation warning that the state was assigned but never used.
   const [userFeedback, setUserFeedback] = useState("");
@@ -26,11 +25,9 @@ function App() {
   return (
     <>
       <Route exact path="/">
-        <a href="/login">
-          <Button colorScheme="teal" variant="outline">
-            Login/Sign Up
-          </Button>
-        </a>
+        <Button as="a" href="/login" colorScheme="teal" variant="outline">
+          Login/Sign Up
+        </Button>
       </Route>
       <Route path="/login">
         <Login
@@ -40,7 +37,12 @@ function App() {
         />
       </Route>
       <Route exact path="/">
-        <LandingPage setLocation={setLocation} setInDate={setInDate} setOutDate={setOutDate} setRoomType={setRoomType} />
+        <LandingPage
+          setLocation={setLocation}
+          setInDate={setInDate}
+          setOutDate={setOutDate}
+          setRoomType={setRoomType}
+        />
       </Route>
       <Route exact path="/hotel/:hotelId">
         <HotelDetails />
