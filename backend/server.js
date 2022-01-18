@@ -179,11 +179,11 @@ app.get("/hotel/", async (req, res) => {
   let outDate = req.query.outDate;
   let inDateUnix = Date(inDate);
   let outDateUnix = Date(outDate);
-  let roomSize = req.query.roomSize;
+  let roomType = req.query.roomType;
   let allHotels = await Hotel.find();
 
   allHotels = allHotels.filter((singleHotel) => {
-    let bookings = singleHotel.rooms.filter((room) => room.maxPax === roomSize);
+    let bookings = singleHotel.rooms.filter((room) => room.roomType === roomType);
     // for each of the existing bookings, the logic below checks every booking to see if it overlaps with user's in and out dates
     return (
       bookings.every((booking) => {

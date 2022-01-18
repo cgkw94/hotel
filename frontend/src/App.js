@@ -18,6 +18,8 @@ function App() {
   const [outDate, setOutDate] = useState("");
   const [roomType, setRoomType] = useState("");
 
+  const [fetchedResults, setFetchedResults] = useState(false)
+
   // eslint-disable-next-line -- this is to "get rid" of the compilation warning that the state was assigned but never used.
   const [userFeedback, setUserFeedback] = useState("");
   // eslint-disable-next-line
@@ -32,29 +34,28 @@ function App() {
   return (
     <>
       <Route exact path="/">
+      <Header userInfo={userInfo} />
         <LandingPage
           setLocation={setLocation}
           setInDate={setInDate}
           setOutDate={setOutDate}
           setRoomType={setRoomType}
           userInfo={userInfo}
+          setFetchedResults={setFetchedResults}
         />
       </Route>
-      <Route path="/login">
+      <Route exact path="/login">
         <Header userInfo={userInfo} hide="true" />
         <Login setUserInfo={setUserInfo} userInfo={userInfo} />
       </Route>
-      <Route path="/search">
-        {/* copy this line into all other routes when done */}
+      <Route exact path="/search">
         <Header userInfo={userInfo} />
-        this is the results page
-      </Route>
-      <Route exact path="/hotel">
         <DisplayPage
           location={location}
           inDate={inDate}
           outDate={outDate}
           roomType={roomType}
+          fetchedResults={fetchedResults}
         />
       </Route>
       <Route exact path="/hotel/:hotelId">

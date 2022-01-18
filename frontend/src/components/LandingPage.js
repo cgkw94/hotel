@@ -1,14 +1,17 @@
 import React, { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { Button } from "@chakra-ui/react";
 
 const LandingPage = (props) => {
-  const [locationInput, setLocationInput] = useState("");
-  const [inDateInput, setInDateInput] = useState("2022-01-20");
-  const [outDateInput, setOutDateInput] = useState("2022-01-20");
-  const [roomTypeInput, setRoomTypeInput] = useState("");
 
-  const handleOnClick = (event) => {
+    const history = useHistory();
+
+    const [locationInput, setLocationInput] = useState("");
+    const [inDateInput, setInDateInput] = useState("2022-01-20");
+    const [outDateInput, setOutDateInput] = useState("2022-01-20");
+    const [roomTypeInput, setRoomTypeInput] = useState("");
+
+    const handleOnClick = (event) => {
     event.preventDefault();
 
     props.setLocation(locationInput);
@@ -17,7 +20,9 @@ const LandingPage = (props) => {
     props.setRoomType(roomTypeInput);
 
     console.log("clicked");
-    //props.setFetching(true)
+    props.setFetchedResults(true)
+
+    history.push('/search')
   };
 
   const handleLocationChange = (event) => {
@@ -85,13 +90,7 @@ const LandingPage = (props) => {
           <option value="Grand Deluxe">Grand Deluxe</option>
           <option value="Suite">Suite</option>
         </select>
-        <Link
-          to={{
-            pathname: `/${locationInput}`,
-          }}
-        >
           <Button onClick={handleOnClick}>Submit</Button>
-        </Link>
       </form>
     </div>
   );
