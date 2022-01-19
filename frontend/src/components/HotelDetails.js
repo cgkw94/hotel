@@ -96,7 +96,7 @@ function HotelDetails(props) {
       setBooked(true);
     }
   };
-  console.log(hotelStayed);
+
   const handleSubmit = (event) => {
     event.preventDefault();
     fetch(`/hotel/${params.hotelId}/feedback/create`, {
