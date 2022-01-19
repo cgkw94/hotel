@@ -73,22 +73,28 @@ function HotelDetails(props) {
   };
 
   const bookSubmit = () => {
-    fetch(`/hotel/${params.hotelId}`, {
-      method: "PUT",
-      body: JSON.stringify({ roomSearchData }),
-      headers: { "Content-Type": "application/json" },
-    }).then(() => {
-      console.log("booked");
-      const lastStay = cookies.get("hotelStayedCookie");
-      lastStay.push(parseInt(params.hotelId));
-      setHotelStayed(lastStay);
-      cookies.set("hotelStayedCookie", lastStay, {
-        path: "/",
-        maxAge: 2 * 60 * 60,
+    const lastStay = cookies.get("hotelStayedCookie");
+
+    if (!lastStay.includes(parseInt(params.hotelId))) {
+      fetch(`/hotel/${params.hotelId}`, {
+        method: "PUT",
+        body: JSON.stringify({ roomSearchData }),
+        headers: { "Content-Type": "application/json" },
+      }).then(() => {
+        console.log("booked");
+
+        lastStay.push(parseInt(params.hotelId));
+        setHotelStayed(lastStay);
+        cookies.set("hotelStayedCookie", lastStay, {
+          path: "/",
+          maxAge: 2 * 60 * 60,
+        });
+        setBooked(true);
+        window.location.href = `/hotel/${params.hotelId}`;
       });
+    } else {
       setBooked(true);
-      window.location.href = `/hotel/${params.hotelId}`;
-    });
+    }
   };
   console.log(hotelStayed);
   const handleSubmit = (event) => {
@@ -170,6 +176,7 @@ function HotelDetails(props) {
         src={hotelDetails.hotelImg}
         hotelName={hotelDetails.hotelName}
       />
+      {booked ? "hotel" : null}
       <div>{displayRooms}</div>
       <div className="feedback-container">{displayFeedback}</div>
       <div>{displayFeedbackForm}</div>
