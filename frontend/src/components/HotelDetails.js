@@ -90,7 +90,7 @@ function HotelDetails(props) {
           maxAge: 2 * 60 * 60,
         });
         setBooked(true);
-        window.location.href = `/hotel/${params.hotelId}`;
+        // window.location.href = `/hotel/${params.hotelId}`;
       });
     } else {
       setBooked(true);
@@ -179,7 +179,7 @@ function HotelDetails(props) {
       {booked ? "hotel" : null}
       <div>{displayRooms}</div>
       <div className="feedback-container">{displayFeedback}</div>
-      <div>{displayFeedbackForm}</div>
+      <div>{loggedIn ? displayFeedbackForm : null}</div>
     </div>
   );
 }
