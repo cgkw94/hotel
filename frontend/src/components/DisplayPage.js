@@ -127,7 +127,7 @@ const DisplayPage = (props) => {
             className="userInput"
             value={props.inDate}
             min="2022-01-20"
-            max="2023-12-31"
+            max="2022-02-01"
             onChange={handleInDateChange}
           ></Input>
           </Box>
@@ -137,8 +137,8 @@ const DisplayPage = (props) => {
             name="outDate"
             className="userInput"
             value={props.outDate}
-            min="2022-01-20"
-            max="2023-12-31"
+            min="2022-01-21"
+            max="2022-02-04"
             onChange={handleOutDateChange}
           ></Input>
           </Box>

@@ -4,11 +4,18 @@ import FeedbackForm from "./FeedbackForm";
 import HotelHeader from "./HotelHeader";
 import ReviewsCard from "./ReviewsCard";
 import RoomsCard from "./RoomsCard";
+import Cookies from "universal-cookie";
 
 function HotelDetails(props) {
   const params = useParams();
 
+  const cookies = new Cookies();
+
   const [loggedUsername, setLoggedUsername] = useState(null);
+  const [hotelStayed, setHotelStayed] = useState(
+    cookies.get("hotelStayedCookie")
+  );
+  const [booked, setBooked] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
   const [hotelDetails, setHotelDetails] = useState([]);
   const [feedbackDetails, setFeedbackDetails] = useState([]);
@@ -72,9 +79,18 @@ function HotelDetails(props) {
       headers: { "Content-Type": "application/json" },
     }).then(() => {
       console.log("booked");
+      const lastStay = cookies.get("hotelStayedCookie");
+      lastStay.push(parseInt(params.hotelId));
+      setHotelStayed(lastStay);
+      cookies.set("hotelStayedCookie", lastStay, {
+        path: "/",
+        maxAge: 2 * 60 * 60,
+      });
+      setBooked(true);
+      window.location.href = `/hotel/${params.hotelId}`;
     });
   };
-
+  console.log(hotelStayed);
   const handleSubmit = (event) => {
     event.preventDefault();
     fetch(`/hotel/${params.hotelId}/feedback/create`, {
@@ -129,6 +145,25 @@ function HotelDetails(props) {
     );
   });
 
+  const displayFeedbackForm = hotelStayed.map((data) => {
+    return (
+      <>
+        {data == `${params.hotelId}` ? (
+          <FeedbackForm
+            handleSubmit={handleSubmit}
+            handleFeedbackChange={handleFeedbackChange}
+            handleRatingChange={handleRatingChange}
+            username={feedback.username}
+            userRating={feedback.userRating}
+            userFeedback={feedback.userFeedback}
+            loggedIn={loggedIn}
+            loggedUsername={loggedUsername}
+          />
+        ) : null}
+      </>
+    );
+  });
+
   return (
     <div>
       <HotelHeader
@@ -137,16 +172,7 @@ function HotelDetails(props) {
       />
       <div>{displayRooms}</div>
       <div className="feedback-container">{displayFeedback}</div>
-      <FeedbackForm
-        handleSubmit={handleSubmit}
-        handleFeedbackChange={handleFeedbackChange}
-        handleRatingChange={handleRatingChange}
-        username={feedback.username}
-        userRating={feedback.userRating}
-        userFeedback={feedback.userFeedback}
-        loggedIn={loggedIn}
-        loggedUsername={loggedUsername}
-      />
+      <div>{displayFeedbackForm}</div>
     </div>
   );
 }
