@@ -36,12 +36,6 @@ function HotelDetails(props) {
   useEffect(() => {
     const username = props.userInfo.username;
 
-    if (hotelStayed === undefined) {
-      setHotelStayed([]);
-    } else {
-      setHotelStayed(cookies.get("hotelStayedCookie"));
-    }
-
     if (username !== undefined) {
       setLoggedIn(true);
       setLoggedUsername(username);
@@ -101,7 +95,15 @@ function HotelDetails(props) {
         // window.location.href = `/hotel/${params.hotelId}`;
       });
     } else {
-      setBooked(true);
+      fetch(`/hotel/${params.hotelId}`, {
+        method: "PUT",
+        body: JSON.stringify({ roomSearchData }),
+        headers: { "Content-Type": "application/json" },
+      }).then(() => {
+        console.log("booked");
+        setBooked(true);
+        // window.location.href = `/hotel/${params.hotelId}`;
+      });
     }
   };
 
