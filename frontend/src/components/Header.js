@@ -50,8 +50,9 @@ const Header = (props) => {
               mt="2"
               mr="6"
               color='white'
+              fontSize={15}
             >
-              <LinkOverlay href="/login">Login / Sign Up</LinkOverlay>
+              <LinkOverlay href="/login"><b>Login / Sign Up</b></LinkOverlay>
             </LinkBox>
           )}
           {props.userInfo.username !== undefined && (
