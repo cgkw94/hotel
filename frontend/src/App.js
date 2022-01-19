@@ -56,6 +56,11 @@ function App() {
           outDate={outDate}
           roomType={roomType}
           fetchedResults={fetchedResults}
+          setFetchedResults={setFetchedResults}
+          setLocation={setLocation}
+          setInDate={setInDate}
+          setOutDate={setOutDate}
+          setRoomType={setRoomType}
         />
       </Route>
       <Route exact path="/hotel/:hotelId">
