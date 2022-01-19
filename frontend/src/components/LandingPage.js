@@ -44,10 +44,12 @@ const LandingPage = (props) => {
   };
 
   return (
-    <div className="header">
+    <Box align='center' backgroundImage="url('https://images.unsplash.com/photo-1472148439583-1f4cf81b80e0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1931&q=80')"
+    backgroundPosition="center"
+    backgroundRepeat="no-repeat" h='800px' pt='20px'>
       <Box mb="30px" align='center'>
-      <Text fontSize='6xl'><b>Welcome</b></Text>
-      <Text fontSize='md'><i>Have a warm and welcoming stay with us.</i></Text>
+      <Text fontSize='6xl' color='white'><b>Welcome</b></Text>
+      <Text fontSize='md' color='white'><i>Have a warm and welcoming stay with us.</i></Text>
       </Box>
 
       <form>
@@ -107,11 +109,7 @@ const LandingPage = (props) => {
       </HStack>
       </Box>
       </form>
-      <Box align='center'>
-      <Image htmlHeight='90%' objectFit='cover' src="https://images.unsplash.com/photo-1472148439583-1f4cf81b80e0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1931&q=80" />
       </Box>
-
-    </div>
   );
 };
 
