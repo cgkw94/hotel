@@ -866,7 +866,7 @@ module.exports = [
     hotelId: 10,
     hotelName: "Ascott Jurong Singapore",
     hotelImg:
-      "https://t-cf.bstatic.com/xdata/images/hotel/max1280x900/94800103.jpg?k=9546c77e8124c01de421b369e11604d187e44dbae8ac52cbf6ed2463214fc7a4&o=&hp=1",
+      "https://t-cf.bstatic.com/xdata/images/hotel/max1280x900/60379977.jpg?k=9ee0f8ce9dfc8464b7fd1de173776992f556605410061d3907a1ddc3427c906b&o=&hp=1",
     location: "Jurong East",
     address: "20 Unicorn Road, Jurong, Singapore 229724",
     geolocation: {
