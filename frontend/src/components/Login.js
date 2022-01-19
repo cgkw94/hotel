@@ -88,7 +88,7 @@ const Login = () => {
         path: "/",
         maxAge: 2 * 60 * 60,
       });
-      history.push("/");
+      window.location.href = "/";
     } else {
       setError(data.msg);
     }
