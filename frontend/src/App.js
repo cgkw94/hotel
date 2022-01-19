@@ -18,7 +18,7 @@ function App() {
   const [outDate, setOutDate] = useState("");
   const [roomType, setRoomType] = useState("");
 
-  const [fetchedResults, setFetchedResults] = useState(false)
+  const [fetchedResults, setFetchedResults] = useState(false);
 
   // eslint-disable-next-line -- this is to "get rid" of the compilation warning that the state was assigned but never used.
   const [userFeedback, setUserFeedback] = useState("");
@@ -34,7 +34,7 @@ function App() {
   return (
     <>
       <Route exact path="/">
-      <Header userInfo={userInfo} />
+        <Header userInfo={userInfo} />
         <LandingPage
           setLocation={setLocation}
           setInDate={setInDate}
@@ -59,7 +59,8 @@ function App() {
         />
       </Route>
       <Route exact path="/hotel/:hotelId">
-        <HotelDetails />
+        <Header userInfo={userInfo} />
+        <HotelDetails userInfo={userInfo} />
       </Route>
     </>
   );
