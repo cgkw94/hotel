@@ -286,7 +286,7 @@ module.exports = [
       "Swee",
       "Nicolaas",
     ],
-    rooms: [{ inDate: "02/10/21", outDate: "05/10/21", roomType: "Deluxe" }],
+    rooms: [{ inDate: "02/10/21", outDate: "02/15/21", roomType: "Deluxe" }],
     roomsGeneral: [
       {
         roomType: "Deluxe",
@@ -504,9 +504,9 @@ module.exports = [
     ],
     userStayed: ["Jasmin", "Cheryl", "Lee"],
     rooms: [
-      { inDate: "02/10/21", outDate: "05/10/21", roomType: "Deluxe" },
-      { inDate: "03/10/21", outDate: "05/10/21", roomType: "Grand Deluxe" },
-      { inDate: "06/10/21", outDate: "10/10/21", roomType: "Deluxe" },
+      { inDate: "02/03/22", outDate: "05/03/22", roomType: "Deluxe" },
+      { inDate: "03/03/22", outDate: "05/03/22", roomType: "Grand Deluxe" },
+      { inDate: "06/03/22", outDate: "10/03/22", roomType: "Deluxe" },
     ],
     roomsGeneral: [
       {
@@ -580,8 +580,8 @@ module.exports = [
     ],
     userStayed: ["Jasmin", "Cheryl", "Lee"],
     rooms: [
-      { inDate: "02/02/21", outDate: "05/02/21", roomType: "Deluxe" },
-      { inDate: "03/03/21", outDate: "05/03/21", roomType: "Grand Deluxe" },
+      { inDate: "02/02/22", outDate: "05/02/22", roomType: "Deluxe" },
+      { inDate: "09/03/22", outDate: "10/03/22", roomType: "Grand Deluxe" },
     ],
     roomsGeneral: [
       {
@@ -766,11 +766,11 @@ module.exports = [
     ],
     userStayed: ["Hidayah", "Desmond", "WeiJie", "Ain89", "James"],
     rooms: [
-      { inDate: "20/02/22", outDate: "23/02/22", roomType: "Deluxe" },
-      { inDate: "25/02/22", outDate: "27/02/22", roomType: "Grand Deluxe" },
-      { inDate: "10/03/22", outDate: "13/03/22", roomType: "Deluxe" },
-      { inDate: "05/03/22", outDate: "09/03/22", roomType: "Grand Deluxe" },
-      { inDate: "02/02/22", outDate: "10/02/22", roomType: "Suite" },
+      { inDate: "02/20/22", outDate: "02/23/22", roomType: "Deluxe" },
+      { inDate: "02/25/22", outDate: "02/27/22", roomType: "Grand Deluxe" },
+      { inDate: "03/10/22", outDate: "03/13/22", roomType: "Deluxe" },
+      { inDate: "03/05/22", outDate: "03/09/22", roomType: "Grand Deluxe" },
+      { inDate: "02/02/22", outDate: "02/10/22", roomType: "Suite" },
     ],
     roomsGeneral: [
       {
@@ -865,10 +865,10 @@ module.exports = [
     ],
     userStayed: ["Mommysiti", "Desmond", "Jessie", "AiTeo", "James"],
     rooms: [
-      { inDate: "15/03/22", outDate: "17/03/22", roomType: "Deluxe" },
-      { inDate: "20/03/22", outDate: "24/03/22", roomType: "Deluxe" },
-      { inDate: "01/04/22", outDate: "02/04/22", roomType: "Grand Deluxe" },
-      { inDate: "03/03/21", outDate: "05/03/21", roomType: "Grand Deluxe" },
+      { inDate: "03/15/22", outDate: "03/17/22", roomType: "Deluxe" },
+      { inDate: "03/20/22", outDate: "03/24/22", roomType: "Deluxe" },
+      { inDate: "04/01/22", outDate: "04/02/22", roomType: "Grand Deluxe" },
+      { inDate: "03/03/21", outDate: "03/05/21", roomType: "Grand Deluxe" },
     ],
     roomsGeneral: [
       {
@@ -931,11 +931,11 @@ module.exports = [
     amenities: ["Free Wifi", "Family Room", "Free Parking", ,],
     userStayed: ["Jessie", "Alex", "WeiJie", "Ain89", "James"],
     rooms: [
-      { inDate: "20/02/22", outDate: "23/02/22", roomType: "Deluxe" },
-      { inDate: "25/02/22", outDate: "27/02/22", roomType: "Grand Deluxe" },
-      { inDate: "10/03/22", outDate: "13/03/22", roomType: "Deluxe" },
-      { inDate: "05/03/22", outDate: "09/03/22", roomType: "Grand Deluxe" },
-      { inDate: "02/02/22", outDate: "10/02/22", roomType: "Suite" },
+      { inDate: "02/20/22", outDate: "02/23/22", roomType: "Deluxe" },
+      { inDate: "02/25/22", outDate: "02/27/22", roomType: "Grand Deluxe" },
+      { inDate: "03/10/22", outDate: "03/13/22", roomType: "Deluxe" },
+      { inDate: "03/05/22", outDate: "03/09/22", roomType: "Grand Deluxe" },
+      { inDate: "02/02/22", outDate: "02/10/22", roomType: "Suite" },
     ],
     roomsGeneral: [
       {
@@ -1007,11 +1007,11 @@ module.exports = [
       "Hazel",
     ],
     rooms: [
-      { inDate: "10/02/22", outDate: "20/02/22", roomType: "Deluxe" },
-      { inDate: "28/02/22", outDate: "01/03/22", roomType: "Grand Deluxe" },
-      { inDate: "02/03/22", outDate: "10/03/22", roomType: "Deluxe" },
-      { inDate: "30/03/22", outDate: "31/03/22", roomType: "Grand Deluxe" },
-      { inDate: "25/02/22", outDate: "30/02/22", roomType: "Suite" },
+      { inDate: "02/10/22", outDate: "02/20/22", roomType: "Deluxe" },
+      { inDate: "02/28/22", outDate: "03/01/22", roomType: "Grand Deluxe" },
+      { inDate: "03/02/22", outDate: "03/08/22", roomType: "Deluxe" },
+      { inDate: "03/30/22", outDate: "03/31/22", roomType: "Grand Deluxe" },
+      { inDate: "02/35/22", outDate: "02/30/22", roomType: "Suite" },
     ],
     roomsGeneral: [
       {
@@ -1121,11 +1121,11 @@ module.exports = [
     ],
     userStayed: ["James", "Colin", "Desmond"],
     rooms: [
-      { inDate: "01/02/22", outDate: "02/02/22", roomType: "Deluxe" },
-      { inDate: "25/02/22", outDate: "26/02/22", roomType: "Grand Deluxe" },
-      { inDate: "08/03/22", outDate: "10/03/22", roomType: "Deluxe" },
-      { inDate: "01/03/22", outDate: "05/03/22", roomType: "Grand Deluxe" },
-      { inDate: "02/02/22", outDate: "14/02/22", roomType: "Suite" },
+      { inDate: "02/01/22", outDate: "02/02/22", roomType: "Deluxe" },
+      { inDate: "02/25/22", outDate: "02/26/22", roomType: "Grand Deluxe" },
+      { inDate: "03/08/22", outDate: "03/10/22", roomType: "Deluxe" },
+      { inDate: "03/01/22", outDate: "03/05/22", roomType: "Grand Deluxe" },
+      { inDate: "02/02/22", outDate: "02/14/22", roomType: "Suite" },
     ],
     roomsGeneral: [
       {
@@ -1171,37 +1171,40 @@ module.exports = [
   },
   {
     hotelId: 26,
-    hotelName: "Hotel Grand Central",
+    hotelName: "Goodwood Park Hotel",
     hotelImg:
-      "https://q-xx.bstatic.com/xdata/images/hotel/840x460/84993482.jpg?k=1d748b1dcea255c906c30d9082fbb0f862a9317f34126b680df016c6a030e89a&o=",
+      "https://t-cf.bstatic.com/xdata/images/hotel/max1280x900/15294315.jpg?k=4ffd8d1e0f20c2cef53522f23ebd8dec86df6ed724d4f930e98cda1201e2043f&o=&hp=1",
     location: "Orchard",
-    address: "22 Cavenagh Road, Singapore 229617",
+    address: "22 Scotts Road, Singapore 228221",
     geolocation: {
-      longitude: 103.83711216006765,
-      latitude: 1.304358181694658,
+      longitude: 103.83431915396635,
+      latitude: 1.3087148382998013,
     },
-    hotelRating: 3,
+    hotelRating: 4,
     vacancies: true,
     feedback: [
       {
         username: "Anthony",
-        userRating: 3,
-        userFeedback: "Rooms were comfortable.",
+        userRating: 5,
+        userFeedback:
+          "Service was top notch! very rare these days. We booked 2 nights but ended up extending to 4 nights. I would like to commend duty manager Donal for his exceptional service. Restaurant choices were excellent if you're willing to fork out for a great meal. would love to be back again!",
       },
       {
-        username: "Wei",
+        username: "Fairuz",
         userRating: 3,
-        userFeedback: "Decent place.",
+        userFeedback:
+          "Love the room and the bed is comfy! The staff there was nice and helpful. pool was quite old, not many facilities. ",
       },
     ],
     amenities: [
-      "Outdoor Pool",
-      "Garden",
-      "Free Wifi",
-      "Non-Smoking Rooms",
+      "2 Swimming Pools",
       "Fitness Center",
-      "Facilities for disabled guests",
-      "Airport Shuttle",
+      "Free Wifi",
+      "Spa and Wellness Center",
+      "Room Service",
+      "Free Parking",
+      "Restaurants",
+      "Bar",
     ],
     userStayed: ["James", "Colin", "Desmond"],
     rooms: [
@@ -1217,7 +1220,7 @@ module.exports = [
         maxPax: 2,
         price: 129,
         roomImg:
-          "https://q-xx.bstatic.com/xdata/images/hotel/840x460/60312179.jpg?k=a8cfc31679e709ce2471b31ea496bc216df6e48d0b786312b6e0e4078abb8004&o=",
+          "https://t-cf.bstatic.com/xdata/images/hotel/max1280x900/273280785.jpg?k=df0036665e6660e12b0653a12f4f4904fea35e2272b1340ab0f62034869efc08&o=&hp=1",
         size: "215 sqf",
         amenities: ["Private Bathroom", "Wardrobe or Closet"],
       },
@@ -1226,7 +1229,7 @@ module.exports = [
         maxPax: 3,
         price: 159,
         roomImg:
-          "https://q-xx.bstatic.com/xdata/images/hotel/840x460/60312184.jpg?k=f19b265d91d68fb774e4b60bd6134929984489168390f5f80f45654c7c60d5fb&o=",
+          "https://t-cf.bstatic.com/xdata/images/hotel/max1280x900/289560083.jpg?k=260504e7eaf056f3250ef93cc7603c8bffd8e314a88ccc2fd72b05004a912f28&o=&hp=1",
         size: "600 sqf",
         amenities: [
           "Private Bathroom",
@@ -1240,7 +1243,7 @@ module.exports = [
         maxPax: 4,
         price: 180,
         roomImg:
-          "https://pix8.agoda.net/hotelImages/212/2129/2129_16110910590048558721.jpg?ca=13&ce=1&s=1024x768",
+          "https://t-cf.bstatic.com/xdata/images/hotel/max1280x900/290619806.jpg?k=655fcde3fd4f0fa92c9ea290ebc62dbd087e42c2eda7fcb45be1608626d5ef04&o=&hp=1",
         size: "750 sqf",
         amenities: [
           "Private Bathroom",
