@@ -11,11 +11,11 @@ const RoomsCard = (props) => {
   };
 
   return (
-    <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
-      <Image src={props.src} alt="hotel-picture" />
+    <Box w="90%" borderWidth="1px" borderRadius="lg" overflow="hidden" display='flex' alignItems='justify'>
+      <Image src={props.src} alt="hotel-picture" maxW='sm'/>
 
-      <Box p="6">
-        <Box display="flex" alignItems="baseline">
+      <Box p="12">
+        <Box display="flex">
           <Badge borderRadius="full" px="2" colorScheme="teal">
             Available
           </Badge>
@@ -32,7 +32,7 @@ const RoomsCard = (props) => {
         </Box>
 
         <Box
-          mt="1"
+          mt="5"
           fontWeight="semibold"
           as="h4"
           lineHeight="tight"
@@ -45,12 +45,12 @@ const RoomsCard = (props) => {
 
         {props.loggedIn ? (
           props.booked ? (
-            <Button disabled="disabled">Booked!</Button>
+            <Button mt='5' disabled="disabled">Booked!</Button>
           ) : (
-            <Button onClick={props.onClick}>Book!</Button>
+            <Button mt='5' onClick={props.onClick}>Book!</Button>
           )
         ) : (
-          <Button onClick={handleOnClick}>Login to Book!</Button>
+          <Button mt='5' onClick={handleOnClick}>Login to Book!</Button>
         )}
       </Box>
     </Box>

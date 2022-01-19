@@ -1003,7 +1003,7 @@ module.exports = [
       longitude: 103.84179279609675,
       latitude: 1.3017645202969519,
     },
-    hotelRating: 3,
+    hotelRating: 3.0,
     vacancies: true,
     feedback: [
       {

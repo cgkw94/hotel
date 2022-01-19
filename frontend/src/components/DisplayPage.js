@@ -75,7 +75,7 @@ const DisplayPage = (props) => {
             >
               <Image
                 borderRadius="lg"
-                maxH="260"
+                h="260"
                 w="300"
                 src={`${hotel.hotelImg}`}
                 alt=""
@@ -184,7 +184,7 @@ const DisplayPage = (props) => {
         </Box>
       </form>
       {hotelData.length > 0 ? (
-        <Box display="flex" w="100%" mx="auto">
+        <Box ml='100px'>
           <Center>
             <Wrap>{hotelDisplay}</Wrap>
           </Center>

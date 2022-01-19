@@ -5,6 +5,7 @@ import HotelHeader from "./HotelHeader";
 import ReviewsCard from "./ReviewsCard";
 import RoomsCard from "./RoomsCard";
 import Cookies from "universal-cookie";
+import { Box, Text } from "@chakra-ui/react";
 
 function HotelDetails(props) {
   const params = useParams();
@@ -123,6 +124,7 @@ function HotelDetails(props) {
     return (
       <>
         {data.roomType === props.roomTypeSearch ? (
+          <Box ml='135' pt='10'>
           <RoomsCard
             src={data.roomImg}
             roomType={data.roomType}
@@ -133,6 +135,7 @@ function HotelDetails(props) {
             loggedIn={loggedIn}
             booked={booked}
           />
+          </Box>
         ) : null}
       </>
     );
@@ -151,6 +154,7 @@ function HotelDetails(props) {
 
     return (
       <>
+      <Box align='center' mt='5'>
         <ReviewsCard
           username={data.username}
           userRating={data.userRating}
@@ -159,6 +163,7 @@ function HotelDetails(props) {
           loggedIn={loggedIn}
           loggedUsername={loggedUsername}
         />
+        </Box>
       </>
     );
   });
@@ -183,16 +188,17 @@ function HotelDetails(props) {
   });
 
   return (
-    <div>
+    <Box>
       <HotelHeader
         src={hotelDetails.hotelImg}
         hotelName={hotelDetails.hotelName}
+        hotelAddress={hotelDetails.hotelAddress}
       />
-      {booked ? "hotel" : null}
+      {/* {booked ? "hotel" : null} */}
       <div>{displayRooms}</div>
       <div className="feedback-container">{displayFeedback}</div>
       <div>{loggedIn ? displayFeedbackForm : null}</div>
-    </div>
+    </Box>
   );
 }
 

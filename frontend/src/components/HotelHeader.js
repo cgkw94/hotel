@@ -3,11 +3,15 @@ import { Image, Box, Text } from "@chakra-ui/react";
 
 const HotelHeader = (props) => {
   return (
-    <Box>
-      <Box>
-        <Image src={props.src} maxW="120ch" />
+    <Box alignItems='center'>
+      <Box
+      align="center">
+      <Text fontSize="5xl" p='5'><b>{props.hotelName}</b></Text>
+    </Box>
+    
+      <Box align='center'>
+        <Image align='center' w="80%" h='500' borderRadius="lg" src={props.src} />
       </Box>
-      <Text fontSize="5xl">{props.hotelName}</Text>
     </Box>
   );
 };
