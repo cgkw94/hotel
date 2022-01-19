@@ -138,12 +138,15 @@ app.delete("/hotel/:id/feedback/delete/:feedbackId", async (req, res) => {
 ////////////////////////////////////
 
 app.put("/hotel/:id", async (req, res) => {
-  let id = parseInt(req.params.id);
+  const id = parseInt(req.params.id);
   let inDate = req.body.inDate;
   let outDate = req.body.outDate;
-  let userName = req.body.userName;
-  let roomType = req.body.roomType;
-  let roomSize = req.body.roomSize;
+  const userName = req.body.userName;
+  const roomType = req.body.roomType;
+  const roomSize = req.body.roomSize;
+
+  //convert context of date
+  inDate.split("-");
 
   const hotelDetails = await Hotel.findOne({
     hotelId: `${req.params.id}`,
@@ -191,8 +194,8 @@ app.get("/hotel/", async (req, res) => {
       bookings.every((booking) => {
         // Date.parse converts the in and out dates to unix for comparison
 
-        console.log(`keyed in booking ${inDateUnix}}`)
-        console.log(Date.parse(booking.outDate))
+        console.log(`keyed in booking ${inDateUnix}}`);
+        console.log(Date.parse(booking.outDate));
 
         let bookingStart = Date.parse(booking.inDate);
         let bookingEnd = Date.parse(booking.outDate);
