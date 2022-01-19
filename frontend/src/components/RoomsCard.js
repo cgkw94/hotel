@@ -1,7 +1,15 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import { Box, Image, Text, Badge, Button } from "@chakra-ui/react";
 
 const RoomsCard = (props) => {
+  const history = useHistory();
+
+  const handleOnClick = (e) => {
+    e.preventDefault();
+    history.push("/login");
+  };
+
   return (
     <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
       <Image src={props.src} alt="hotel-picture" />
@@ -34,7 +42,10 @@ const RoomsCard = (props) => {
         </Box>
 
         <Box> ${props.price} per night</Box>
-        <Button onClick={props.onClick}>Book!</Button>
+        {props.loggedIn && <Button onClick={props.onClick}>Book!</Button>}
+        {props.loggedIn === false && (
+          <Button onClick={handleOnClick}>Login!</Button>
+        )}
       </Box>
     </Box>
   );

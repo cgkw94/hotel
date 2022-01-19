@@ -12,9 +12,7 @@ function HotelDetails(props) {
   const cookies = new Cookies();
 
   const [loggedUsername, setLoggedUsername] = useState(null);
-  const [hotelStayed, setHotelStayed] = useState(
-    cookies.get("hotelStayedCookie")
-  );
+  const [hotelStayed, setHotelStayed] = useState([]);
   const [booked, setBooked] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
   const [hotelDetails, setHotelDetails] = useState([]);
@@ -41,6 +39,10 @@ function HotelDetails(props) {
     if (username !== undefined) {
       setLoggedIn(true);
       setLoggedUsername(username);
+      const checkCookie = cookies.get("hotelStayedCookie");
+      if (checkCookie !== undefined) {
+        setHotelStayed(checkCookie);
+      }
       setFeedback((prevState) => {
         return { ...prevState, username: username };
       });
@@ -120,6 +122,7 @@ function HotelDetails(props) {
             maxPax={data.maxPax}
             size={data.size}
             onClick={bookSubmit}
+            loggedIn={loggedIn}
           />
         ) : null}
       </>
