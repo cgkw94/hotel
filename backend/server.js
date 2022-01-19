@@ -184,7 +184,7 @@ app.get("/hotel/", async (req, res) => {
   const inDateUnix = Date.parse(inDate);
   const outDateUnix = Date.parse(outDate);
   const roomType = req.query.roomType;
-  const allHotels = await Hotel.find();
+  let allHotels = await Hotel.find();
 
   allHotels = allHotels.filter((singleHotel) => {
     let bookings = singleHotel.rooms.filter(
