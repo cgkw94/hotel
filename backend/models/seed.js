@@ -766,11 +766,11 @@ module.exports = [
     ],
     userStayed: ["Hidayah", "Desmond", "WeiJie", "Ain89", "James"],
     rooms: [
-      { inDate: "20/02/22", outDate: "23/02/22", roomType: "Deluxe" },
-      { inDate: "25/02/22", outDate: "27/02/22", roomType: "Grand Deluxe" },
-      { inDate: "10/03/22", outDate: "13/03/22", roomType: "Deluxe" },
-      { inDate: "05/03/22", outDate: "09/03/22", roomType: "Grand Deluxe" },
-      { inDate: "02/02/22", outDate: "10/02/22", roomType: "Suite" },
+      { inDate: "02/20/22", outDate: "02/23/22", roomType: "Deluxe" },
+      { inDate: "02/25/22", outDate: "02/27/22", roomType: "Grand Deluxe" },
+      { inDate: "03/10/22", outDate: "03/13/22", roomType: "Deluxe" },
+      { inDate: "03/05/22", outDate: "03/09/22", roomType: "Grand Deluxe" },
+      { inDate: "02/02/22", outDate: "02/10/22", roomType: "Suite" },
     ],
     roomsGeneral: [
       {
@@ -865,10 +865,10 @@ module.exports = [
     ],
     userStayed: ["Mommysiti", "Desmond", "Jessie", "AiTeo", "James"],
     rooms: [
-      { inDate: "15/03/22", outDate: "17/03/22", roomType: "Deluxe" },
-      { inDate: "20/03/22", outDate: "24/03/22", roomType: "Deluxe" },
-      { inDate: "01/04/22", outDate: "02/04/22", roomType: "Grand Deluxe" },
-      { inDate: "03/03/21", outDate: "05/03/21", roomType: "Grand Deluxe" },
+      { inDate: "03/15/22", outDate: "03/17/22", roomType: "Deluxe" },
+      { inDate: "03/20/22", outDate: "03/24/22", roomType: "Deluxe" },
+      { inDate: "04/01/22", outDate: "04/02/22", roomType: "Grand Deluxe" },
+      { inDate: "03/03/21", outDate: "03/05/21", roomType: "Grand Deluxe" },
     ],
     roomsGeneral: [
       {
@@ -931,11 +931,11 @@ module.exports = [
     amenities: ["Free Wifi", "Family Room", "Free Parking", ,],
     userStayed: ["Jessie", "Alex", "WeiJie", "Ain89", "James"],
     rooms: [
-      { inDate: "20/02/22", outDate: "23/02/22", roomType: "Deluxe" },
-      { inDate: "25/02/22", outDate: "27/02/22", roomType: "Grand Deluxe" },
-      { inDate: "10/03/22", outDate: "13/03/22", roomType: "Deluxe" },
-      { inDate: "05/03/22", outDate: "09/03/22", roomType: "Grand Deluxe" },
-      { inDate: "02/02/22", outDate: "10/02/22", roomType: "Suite" },
+      { inDate: "02/20/22", outDate: "02/23/22", roomType: "Deluxe" },
+      { inDate: "02/25/22", outDate: "02/27/22", roomType: "Grand Deluxe" },
+      { inDate: "03/10/22", outDate: "03/13/22", roomType: "Deluxe" },
+      { inDate: "03/05/22", outDate: "03/09/22", roomType: "Grand Deluxe" },
+      { inDate: "02/02/22", outDate: "02/10/22", roomType: "Suite" },
     ],
     roomsGeneral: [
       {
@@ -1007,11 +1007,11 @@ module.exports = [
       "Hazel",
     ],
     rooms: [
-      { inDate: "10/02/2022", outDate: "20/02/2022", roomType: "Deluxe" }, // works
-      { inDate: "28/02/2022", outDate: "01/03/2022", roomType: "Grand Deluxe" },
-      { inDate: "02/03/2022", outDate: "10/03/2022", roomType: "Deluxe" },
-      { inDate: "30/03/2022", outDate: "31/03/2022", roomType: "Grand Deluxe" },
-      { inDate: "25/02/2022", outDate: "30/02/2022", roomType: "Suite" }, //doenst owrk
+      { inDate: "02/10/22", outDate: "02/20/22", roomType: "Deluxe" },
+      { inDate: "02/28/22", outDate: "03/01/22", roomType: "Grand Deluxe" },
+      { inDate: "03/02/22", outDate: "03/08/22", roomType: "Deluxe" },
+      { inDate: "03/30/22", outDate: "03/31/22", roomType: "Grand Deluxe" },
+      { inDate: "02/35/22", outDate: "02/30/22", roomType: "Suite" },
     ],
     roomsGeneral: [
       {
@@ -1121,11 +1121,11 @@ module.exports = [
     ],
     userStayed: ["James", "Colin", "Desmond"],
     rooms: [
-      { inDate: "01/02/2022", outDate: "02/02/2022", roomType: "Deluxe" },
-      { inDate: "25/02/2022", outDate: "26/02/2022", roomType: "Grand Deluxe" },
-      { inDate: "08/03/2022", outDate: "10/03/2022", roomType: "Deluxe" },
-      { inDate: "01/03/2022", outDate: "05/03/2022", roomType: "Grand Deluxe" },
-      { inDate: "02/02/2022", outDate: "14/02/2022", roomType: "Suite" },
+      { inDate: "02/01/22", outDate: "02/02/22", roomType: "Deluxe" },
+      { inDate: "02/25/22", outDate: "02/26/22", roomType: "Grand Deluxe" },
+      { inDate: "03/08/22", outDate: "03/10/22", roomType: "Deluxe" },
+      { inDate: "03/01/22", outDate: "03/05/22", roomType: "Grand Deluxe" },
+      { inDate: "02/02/22", outDate: "02/14/22", roomType: "Suite" },
     ],
     roomsGeneral: [
       {
