@@ -83,7 +83,7 @@ const LandingPage = (props) => {
                 className="userInput"
                 value={inDateInput}
                 min="2022-01-20"
-                max="2022-02-01"
+                max="2022-01-29"
                 onChange={handleInDateChange}
                 variant="filled"
               ></Input>
@@ -95,7 +95,7 @@ const LandingPage = (props) => {
                 className="userInput"
                 value={outDateInput}
                 min="2022-01-21"
-                max="2022-02-04"
+                max="2022-01-30"
                 onChange={handleOutDateChange}
                 variant="filled"
               ></Input>
