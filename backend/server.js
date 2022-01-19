@@ -80,11 +80,11 @@ app.get("/seed", async (req, res) => {
 // Seed Users Data
 ////////////////////////////////////
 
-// app.get("/usersseed",  async (req, res) => {
-Users.deleteMany().then(Users.create(usersseed));
-// const checkUsers = await Users.find();
-// res.json(checkUsers);
-// }
+app.get("/seedusers", async (req, res) => {
+  Users.deleteMany().then(Users.create(usersseed));
+  const userDetails = await Users.find();
+  res.json(userDetails);
+});
 
 ////////////////////////////////////
 // Hotel Details
@@ -101,7 +101,6 @@ app.get("/hotel/:id", async (req, res) => {
 ////////////////////////////////////
 
 app.post("/hotel/:id/feedback/create", async (req, res) => {
-  console.log(req.body.feedback);
   const newFeedback = req.body.feedback;
 
   await Hotel.updateOne(
@@ -139,22 +138,21 @@ app.delete("/hotel/:id/feedback/delete/:feedbackId", async (req, res) => {
 
 app.put("/hotel/:id", async (req, res) => {
   let id = parseInt(req.params.id);
-  let inDate = req.body.inDate;
-  let outDate = req.body.outDate;
-  let userName = req.body.userName;
-  let roomType = req.body.roomType;
-  let roomSize = req.body.roomSize;
+  let inDate = req.body.roomSearchData.inDate;
+  let outDate = req.body.roomSearchData.outDate;
+  let username = req.body.roomSearchData.username;
+  let roomType = req.body.roomSearchData.roomType;
 
+  console.log(req.body.roomSearchData.username);
   const hotelDetails = await Hotel.findOne({
     hotelId: `${req.params.id}`,
   });
 
-  hotelDetails.userStayed.push(userName);
+  hotelDetails.userStayed.push(username);
   hotelDetails.rooms.push({
     inDate: inDate,
     outDate: outDate,
     roomType: roomType,
-    roomSize: roomSize,
   });
 
   Hotel.updateOne({ hotelId: id }, hotelDetails, function (err, res) {
@@ -166,6 +164,12 @@ app.put("/hotel/:id", async (req, res) => {
       console.log(res);
     }
   });
+
+  await Users.updateOne(
+    { username: username },
+    { $push: { hotelStayed: `${req.params.id}` } }
+  );
+
   res.status(200);
   res.json(hotelDetails);
 });
@@ -191,8 +195,8 @@ app.get("/hotel/", async (req, res) => {
       bookings.every((booking) => {
         // Date.parse converts the in and out dates to unix for comparison
 
-        console.log(`keyed in booking ${inDateUnix}}`)
-        console.log(Date.parse(booking.outDate))
+        console.log(`keyed in booking ${inDateUnix}}`);
+        console.log(Date.parse(booking.outDate));
 
         let bookingStart = Date.parse(booking.inDate);
         let bookingEnd = Date.parse(booking.outDate);

@@ -1,8 +1,7 @@
 import React from "react";
-import { Box, Image, Text, Badge } from "@chakra-ui/react";
+import { Box, Image, Text, Badge, Button } from "@chakra-ui/react";
 
 const RoomsCard = (props) => {
-  
   return (
     <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
       <Image src={props.src} alt="hotel-picture" />
@@ -35,6 +34,7 @@ const RoomsCard = (props) => {
         </Box>
 
         <Box> ${props.price} per night</Box>
+        <Button onClick={props.onClick}>Book!</Button>
       </Box>
     </Box>
   );

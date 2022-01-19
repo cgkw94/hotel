@@ -65,7 +65,12 @@ function App() {
       </Route>
       <Route exact path="/hotel/:hotelId">
         <Header userInfo={userInfo} />
-        <HotelDetails userInfo={userInfo} />
+        <HotelDetails
+          userInfo={userInfo}
+          inDateSearch={inDate}
+          outDateSearch={outDate}
+          roomTypeSearch={roomType}
+        />
       </Route>
     </>
   );

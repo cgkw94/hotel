@@ -46,6 +46,13 @@ function HotelDetails(props) {
     setLoading(false);
   }, []);
 
+  const roomSearchData = {
+    inDate: props.inDateSearch,
+    outDate: props.outDateSearch,
+    roomType: props.roomTypeSearch,
+    username: loggedUsername,
+  };
+
   const handleFeedbackChange = (event) => {
     setFeedback((prevState) => {
       return { ...prevState, userFeedback: event.target.value };
@@ -55,6 +62,16 @@ function HotelDetails(props) {
   const handleRatingChange = (event) => {
     setFeedback((prevState) => {
       return { ...prevState, userRating: event.target.value };
+    });
+  };
+
+  const bookSubmit = () => {
+    fetch(`/hotel/${params.hotelId}`, {
+      method: "PUT",
+      body: JSON.stringify({ roomSearchData }),
+      headers: { "Content-Type": "application/json" },
+    }).then(() => {
+      console.log("booked");
     });
   };
 
@@ -73,13 +90,16 @@ function HotelDetails(props) {
   const displayRooms = roomDetails.map((data, index) => {
     return (
       <>
-        <RoomsCard
-          src={data.roomImg}
-          roomType={data.roomType}
-          price={data.price}
-          maxPax={data.maxPax}
-          size={data.size}
-        />
+        {data.roomType === props.roomTypeSearch ? (
+          <RoomsCard
+            src={data.roomImg}
+            roomType={data.roomType}
+            price={data.price}
+            maxPax={data.maxPax}
+            size={data.size}
+            onClick={bookSubmit}
+          />
+        ) : null}
       </>
     );
   });

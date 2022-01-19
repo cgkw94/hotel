@@ -4,7 +4,6 @@ const FeedbackForm = (props) => {
   const loggedIn = props.loggedIn;
   const loggedUsername = props.loggedUsername;
 
-  console.log(loggedUsername);
   return (
     <>
       {loggedIn ? (
@@ -14,7 +13,7 @@ const FeedbackForm = (props) => {
             placeholder="username"
             type="text"
             name="username"
-            value={props.loggedUsername}
+            value={loggedUsername}
             disabled="disabled"
           />
           <select onChange={props.handleRatingChange} value={props.userRating}>
