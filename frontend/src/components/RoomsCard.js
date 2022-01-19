@@ -42,7 +42,11 @@ const RoomsCard = (props) => {
         </Box>
 
         <Box> ${props.price} per night</Box>
-        {props.loggedIn && <Button onClick={props.onClick}>Book!</Button>}
+        {props.loggedIn && props.booked ? (
+          <Button disabled="disabled">Booked!</Button>
+        ) : (
+          <Button onClick={props.onClick}>Book!</Button>
+        )}
         {props.loggedIn === false && (
           <Button onClick={handleOnClick}>Login!</Button>
         )}

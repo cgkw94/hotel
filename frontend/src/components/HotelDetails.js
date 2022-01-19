@@ -129,6 +129,7 @@ function HotelDetails(props) {
             size={data.size}
             onClick={bookSubmit}
             loggedIn={loggedIn}
+            booked={booked}
           />
         ) : null}
       </>
