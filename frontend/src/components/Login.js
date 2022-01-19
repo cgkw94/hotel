@@ -51,7 +51,7 @@ const Login = () => {
         path: "/",
         maxAge: 2 * 60 * 60,
       });
-      window.location.href = "/search";
+      window.location.href = "/";
     } else {
       setError(data.msg);
     }
