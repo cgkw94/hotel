@@ -286,7 +286,7 @@ module.exports = [
       "Swee",
       "Nicolaas",
     ],
-    rooms: [{ inDate: "02/10/21", outDate: "05/10/21", roomType: "Deluxe" }],
+    rooms: [{ inDate: "02/10/21", outDate: "02/15/21", roomType: "Deluxe" }],
     roomsGeneral: [
       {
         roomType: "Deluxe",
@@ -504,9 +504,9 @@ module.exports = [
     ],
     userStayed: ["Jasmin", "Cheryl", "Lee"],
     rooms: [
-      { inDate: "02/10/21", outDate: "05/10/21", roomType: "Deluxe" },
-      { inDate: "03/10/21", outDate: "05/10/21", roomType: "Grand Deluxe" },
-      { inDate: "06/10/21", outDate: "10/10/21", roomType: "Deluxe" },
+      { inDate: "02/03/22", outDate: "05/03/22", roomType: "Deluxe" },
+      { inDate: "03/03/22", outDate: "05/03/22", roomType: "Grand Deluxe" },
+      { inDate: "06/03/22", outDate: "10/03/22", roomType: "Deluxe" },
     ],
     roomsGeneral: [
       {
@@ -580,8 +580,8 @@ module.exports = [
     ],
     userStayed: ["Jasmin", "Cheryl", "Lee"],
     rooms: [
-      { inDate: "02/02/21", outDate: "05/02/21", roomType: "Deluxe" },
-      { inDate: "03/03/21", outDate: "05/03/21", roomType: "Grand Deluxe" },
+      { inDate: "02/02/22", outDate: "05/02/22", roomType: "Deluxe" },
+      { inDate: "09/03/22", outDate: "10/03/22", roomType: "Grand Deluxe" },
     ],
     roomsGeneral: [
       {

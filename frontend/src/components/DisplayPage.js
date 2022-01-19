@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { Button } from '@chakra-ui/react';
+import { Box, Button } from '@chakra-ui/react';
 
 const DisplayPage = (props) => {
 
@@ -51,7 +51,7 @@ const DisplayPage = (props) => {
         console.log(hotelData)
         hotelDisplay = hotelData?.map((hotel, index) => {
             return (
-                <div className="card">
+                <Box maxW='sm' borderWidth='1px' borderRadius='lg' overflow='hidden'>
                     <Link className="link" to={{
                         pathname: `/${hotel.hotelId}`,
                         }}>
@@ -60,7 +60,7 @@ const DisplayPage = (props) => {
                     <div>{hotel.address}</div>
                     <div>{hotel.hotelRating}</div>
                     </Link>
-                </div>
+                </Box>
             )
         })
 
