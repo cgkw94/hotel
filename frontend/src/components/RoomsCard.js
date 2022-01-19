@@ -2,6 +2,7 @@ import React from "react";
 import { Box, Image, Text, Badge } from "@chakra-ui/react";
 
 const RoomsCard = (props) => {
+  
   return (
     <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
       <Image src={props.src} alt="hotel-picture" />
@@ -9,7 +10,7 @@ const RoomsCard = (props) => {
       <Box p="6">
         <Box display="flex" alignItems="baseline">
           <Badge borderRadius="full" px="2" colorScheme="teal">
-            New
+            Available
           </Badge>
           <Box
             color="gray.500"
