@@ -177,8 +177,8 @@ app.put("/hotel/:id", async (req, res) => {
 app.get("/hotel/", async (req, res) => {
   let inDate = req.query.inDate;
   let outDate = req.query.outDate;
-  let inDateUnix = Date(inDate);
-  let outDateUnix = Date(outDate);
+  let inDateUnix = Date.parse(inDate);
+  let outDateUnix = Date.parse(outDate);
   let roomType = req.query.roomType;
   let allHotels = await Hotel.find();
 
@@ -188,6 +188,9 @@ app.get("/hotel/", async (req, res) => {
     return (
       bookings.every((booking) => {
         // Date.parse converts the in and out dates to unix for comparison
+
+        console.log(`keyed in booking ${inDateUnix}}`)
+        console.log(Date.parse(booking.outDate))
 
         let bookingStart = Date.parse(booking.inDate);
         let bookingEnd = Date.parse(booking.outDate);
