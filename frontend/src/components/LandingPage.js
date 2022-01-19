@@ -1,15 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import {
-  Button,
-  Input,
-  Select,
-  HStack,
-  Box,
-  Text,
-  Image,
-  Center,
-} from "@chakra-ui/react";
+import { Button, Input, Select, HStack, Box, Text } from "@chakra-ui/react";
 
 const LandingPage = (props) => {
   const history = useHistory();
@@ -52,13 +43,20 @@ const LandingPage = (props) => {
   };
 
   return (
-    <div className="header">
+    <Box
+      align="center"
+      backgroundImage="url('https://images.unsplash.com/photo-1472148439583-1f4cf81b80e0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1931&q=80')"
+      backgroundPosition="center"
+      backgroundRepeat="no-repeat"
+      h="700px"
+      pt="20px"
+    >
       <Box mb="30px" align="center">
-        <Text fontSize="6xl">
+        <Text fontSize="6xl" color="white">
           <b>Welcome</b>
         </Text>
-        <Text fontSize="md">
-          <i>Have a warm and welcoming stay with us.</i>
+        <Text fontSize="md" color="white">
+          <i>we guarantee a warm and superb stay.</i>
         </Text>
       </Box>
 
@@ -127,14 +125,7 @@ const LandingPage = (props) => {
           </HStack>
         </Box>
       </form>
-      <Box align="center">
-        <Image
-          htmlHeight="90%"
-          objectFit="cover"
-          src="https://images.unsplash.com/photo-1472148439583-1f4cf81b80e0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1931&q=80"
-        />
-      </Box>
-    </div>
+    </Box>
   );
 };
 

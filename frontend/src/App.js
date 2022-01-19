@@ -20,16 +20,12 @@ function App() {
 
   const [fetchedResults, setFetchedResults] = useState(false);
 
-  // eslint-disable-next-line -- this is to "get rid" of the compilation warning that the state was assigned but never used.
-  const [userFeedback, setUserFeedback] = useState("");
   // eslint-disable-next-line
   const [userInfo, setUserInfo] = useState({
     username: cookies.get("usernameCookie"),
     hotelStayed: cookies.get("hotelStayedCookie"),
   });
   // removed loggedIn state. to check if logged in or not, check "if (userInfo.username!== undefined)" >> this means user is logged in.
-
-  const handleSubmit = () => {};
 
   return (
     <>

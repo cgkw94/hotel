@@ -29,7 +29,7 @@ const Header = (props) => {
   };
   return (
     <>
-      <Flex bg="blue.300" mb={8}>
+      <Flex bg='blue.100'>
         <Box as="a" ml="8" href="/">
           <Image
             src="https://i.ibb.co/68QKWDr/get-Hotel-2-removebg-preview.png"
@@ -49,8 +49,10 @@ const Header = (props) => {
               bg="#f59f40"
               mt="2"
               mr="6"
+              color='white'
+              fontSize={15}
             >
-              <LinkOverlay href="/login">Login / Sign Up</LinkOverlay>
+              <LinkOverlay href="/login"><b>Login / Sign Up</b></LinkOverlay>
             </LinkBox>
           )}
           {props.userInfo.username !== undefined && (

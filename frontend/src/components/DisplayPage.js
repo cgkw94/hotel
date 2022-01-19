@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
-import { Box, Button } from "@chakra-ui/react";
+import {  Button, Input, Select, HStack, Box, Text } from "@chakra-ui/react";
 
 const DisplayPage = (props) => {
   let searchTitle = "";
@@ -95,14 +95,12 @@ const DisplayPage = (props) => {
 
   return (
     <>
-      <div className="header">
-        <h1 className="header-title">Welcome!</h1>
-        <h2 className="header-title2">
-          Have a warm and welcoming stay with us.
-        </h2>
+
 
         <form>
-          <select
+        <Box m={[2, 3]}>
+        <HStack spacing='10px'>
+          <Select
             className="userInput"
             name="location"
             onChange={handleLocationChange}
@@ -111,8 +109,9 @@ const DisplayPage = (props) => {
             <option value="Orchard">Orchard</option>
             <option value="Marina Bay">Marina Bay</option>
             <option value="Jurong East">Jurong East</option>
-          </select>
-          <input
+          </Select>
+          <Box>
+          <Input
             type="date"
             name="inDate"
             className="userInput"
@@ -120,8 +119,10 @@ const DisplayPage = (props) => {
             min="2022-01-20"
             max="2022-02-01"
             onChange={handleInDateChange}
-          ></input>
-          <input
+          ></Input>
+          </Box>
+          <Box>
+          <Input
             type="date"
             name="outDate"
             className="userInput"
@@ -129,8 +130,9 @@ const DisplayPage = (props) => {
             min="2022-01-21"
             max="2022-02-04"
             onChange={handleOutDateChange}
-          ></input>
-          <select
+          ></Input>
+          </Box>
+          <Select
             className="userInput"
             name="roomType"
             value={props.roomType}
@@ -139,14 +141,17 @@ const DisplayPage = (props) => {
             <option value="Deluxe">Deluxe</option>
             <option value="Grand Deluxe">Grand Deluxe</option>
             <option value="Suite">Suite</option>
-          </select>
-          <Button onClick={handleOnClick}>Submit</Button>
+          </Select>
+          <Button variant='solid' colorScheme='blue' width='100px' size='md' onClick={handleOnClick}>Find</Button>
+          </HStack>
+        </Box>
         </form>
-      </div>
-      <div className="container">
+
+      
+        <Box>
         {searchTitle}
-        <div className="container2">{hotelDisplay}</div>
-      </div>
+        <Box>{hotelDisplay}</Box>
+        </Box>
     </>
   );
 };
