@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
-import {  Button, Input, Select, HStack, Box, Text } from "@chakra-ui/react";
+import {  Button, Input, Select, HStack, Box, Text, Wrap, WrapItem, Image, Center } from "@chakra-ui/react";
+import { StarIcon } from '@chakra-ui/icons'
 
 const DisplayPage = (props) => {
   let searchTitle = "";
@@ -53,21 +54,32 @@ const DisplayPage = (props) => {
     console.log(hotelData);
     hotelDisplay = hotelData?.map((hotel, index) => {
       return (
-        <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
+
+        <WrapItem>
+        <Box maxW="sm" m='10px' borderRadius="lg" overflow="hidden">
           <Link
             className="link"
             to={{
               pathname: `/hotel/${hotel.hotelId}`,
             }}
           >
-            <div key={index} id={hotel.hotelId}>
+
+            <Image borderRadius="lg" maxH="260" w="300" src={`${hotel.hotelImg}`} alt=""></Image>
+            <Text 
+            mt='1'
+            fontWeight='semibold'
+            as='h4'
+            lineHeight='tight'
+            isTruncated
+            id={hotel.hotelId}>
               {hotel.hotelName}
-            </div>
-            <img src={`${hotel.hotelImg}`} alt=""></img>
-            <div>{hotel.address}</div>
-            <div>{hotel.hotelRating}</div>
+            </Text>
+            <Text color='gray.500' isTruncated>{hotel.address}</Text>
+            <Text color='gray.700' fontSize='18px'><StarIcon/> {hotel.hotelRating}</Text>
           </Link>
         </Box>
+        </WrapItem>
+
       );
     });
   }
@@ -95,8 +107,6 @@ const DisplayPage = (props) => {
 
   return (
     <>
-
-
         <form>
         <Box m={[2, 3]}>
         <HStack spacing='10px'>
@@ -148,10 +158,13 @@ const DisplayPage = (props) => {
         </form>
 
       
-        <Box>
-        {searchTitle}
-        <Box>{hotelDisplay}</Box>
+        
+        <Box display='flex' w="100%" mx='auto'>
+        <Center>
+        <Wrap>{hotelDisplay}</Wrap>
+        </Center>
         </Box>
+        
     </>
   );
 };
