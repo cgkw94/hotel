@@ -190,9 +190,9 @@ const DisplayPage = (props) => {
           </Center>
         </Box>
       ) : (
-        <Text>
+        <Text m='5'>
           Oops! We've run out of available hotels. Please change the search
-          parameters and try again..
+          parameters and try again.
         </Text>
       )}
     </>
