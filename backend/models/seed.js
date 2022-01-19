@@ -73,6 +73,9 @@ module.exports = [
       "Swee",
       "Nicolaas",
     ],
+    rooms: [
+      { inDate: "23/01/22", outDate: "28/01/22", roomType: "Grand Deluxe" },
+    ],
     roomsGeneral: [
       {
         roomType: "Deluxe",
@@ -769,7 +772,7 @@ module.exports = [
       { inDate: "03/15/22", outDate: "03/17/22", roomType: "Deluxe" },
       { inDate: "03/20/22", outDate: "03/24/22", roomType: "Deluxe" },
       { inDate: "04/01/22", outDate: "04/02/22", roomType: "Grand Deluxe" },
-      { inDate: "03/03/21", outDate: "03/05/21", roomType: "Grand Deluxe" },
+      { inDate: "01/23/22", outDate: "01/25/21", roomType: "Suite" },
     ],
     roomsGeneral: [
       {
