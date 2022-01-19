@@ -90,7 +90,7 @@ const Login = () => {
         path: "/",
         maxAge: 2 * 60 * 60,
       });
-      window.location.href = "/search";
+      history.push("/");
     } else {
       setError(data.msg);
     }
