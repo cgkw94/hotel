@@ -175,6 +175,7 @@ module.exports = [
       "Bath",
     ],
     userStayed: ["Jasmin", "Cheryl", "Lee", "Rajan", "Patrick"],
+    rooms: [{ inDate: "01/15/22", outDate: "01/25/22", roomType: "Deluxe" }],
     roomsGeneral: [
       {
         roomType: "Deluxe",
@@ -407,6 +408,7 @@ module.exports = [
     userStayed: ["Jasmin", "Cheryl", "Lee", "Rajan"],
     rooms: [
       { inDate: "02/10/21", outDate: "05/10/21", roomType: "Deluxe" },
+      { inDate: "01/15/22", outDate: "01/25/22", roomType: "Suite" },
       { inDate: "03/10/21", outDate: "05/10/21", roomType: "Grand Deluxe" },
     ],
     roomsGeneral: [
@@ -587,8 +589,9 @@ module.exports = [
     ],
     userStayed: ["Jasmin", "Cheryl", "Lee"],
     rooms: [
-      { inDate: "02/02/22", outDate: "05/02/22", roomType: "Deluxe" },
+      { inDate: "01/15/22", outDate: "01/25/22", roomType: "Deluxe" },
       { inDate: "09/03/22", outDate: "10/03/22", roomType: "Grand Deluxe" },
+      { inDate: "01/15/22", outDate: "01/25/22", roomType: "Suite" },
     ],
     roomsGeneral: [
       {
@@ -725,7 +728,7 @@ module.exports = [
     hotelId: 8,
     hotelName: "Hotel NuVe Heritage",
     hotelImg:
-      "https://t-cf.bstatic.com/xdata/images/hotel/max1280x900/81206427.jpg?k=b866e1a7e153e89b365fb606dab3642f3fd3ecaa631039665a7df2aa6353ff02&o=&hp=1",
+      "https://pix8.agoda.net/hotelImages/548/548576/548576_16112910070049181249.jpg?ca=6&ce=1&s=1024x768",
     location: "Marina Bay",
     address: "13 Purvis St, Singapore 188592",
     geolocation: {
@@ -769,8 +772,8 @@ module.exports = [
     ],
     userStayed: ["Mommysiti", "Desmond", "Jessie", "AiTeo", "James"],
     rooms: [
-      { inDate: "03/15/22", outDate: "03/17/22", roomType: "Deluxe" },
-      { inDate: "03/20/22", outDate: "03/24/22", roomType: "Deluxe" },
+      { inDate: "01/20/22", outDate: "01/25/22", roomType: "Grand Deluxe" },
+      { inDate: "01/22/22", outDate: "01/24/22", roomType: "Suite" },
       { inDate: "04/01/22", outDate: "04/02/22", roomType: "Grand Deluxe" },
       { inDate: "01/23/22", outDate: "01/25/21", roomType: "Suite" },
     ],
@@ -1030,6 +1033,7 @@ module.exports = [
       { inDate: "03/08/22", outDate: "03/10/22", roomType: "Deluxe" },
       { inDate: "03/01/22", outDate: "03/05/22", roomType: "Grand Deluxe" },
       { inDate: "02/02/22", outDate: "02/14/22", roomType: "Suite" },
+      { inDate: "01/15/22", outDate: "01/25/22", roomType: "Suite" },
     ],
     roomsGeneral: [
       {

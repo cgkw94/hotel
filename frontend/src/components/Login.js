@@ -17,7 +17,6 @@ import {
   Stack,
 } from "@chakra-ui/react";
 import { EmailIcon } from "@chakra-ui/icons";
-import { useHistory } from "react-router-dom";
 
 const Login = () => {
   const [error, setError] = useState("");
@@ -33,7 +32,6 @@ const Login = () => {
   const handleClick = () => setShow(!show);
 
   const cookies = new Cookies();
-  const history = useHistory();
 
   const fetchData = async (username, password) => {
     const res = await fetch("http://localhost:5005/users/login", {
@@ -53,7 +51,7 @@ const Login = () => {
         path: "/",
         maxAge: 2 * 60 * 60,
       });
-      history.push("/");
+      window.location.href = "/";
     } else {
       setError(data.msg);
     }

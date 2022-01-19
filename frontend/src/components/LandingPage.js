@@ -7,7 +7,7 @@ const LandingPage = (props) => {
 
   const [locationInput, setLocationInput] = useState("");
   const [inDateInput, setInDateInput] = useState("2022-01-20");
-  const [outDateInput, setOutDateInput] = useState("2022-01-21");
+  const [outDateInput, setOutDateInput] = useState("2022-01-22");
   const [roomTypeInput, setRoomTypeInput] = useState("");
 
   const handleOnClick = (event) => {

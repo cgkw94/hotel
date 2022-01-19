@@ -20,7 +20,6 @@ function App() {
 
   const [fetchedResults, setFetchedResults] = useState(false);
 
-  // eslint-disable-next-line
   const [userInfo, setUserInfo] = useState({
     username: cookies.get("usernameCookie"),
     hotelStayed: cookies.get("hotelStayedCookie"),

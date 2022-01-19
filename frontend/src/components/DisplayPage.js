@@ -183,13 +183,7 @@ const DisplayPage = (props) => {
           </HStack>
         </Box>
       </form>
-
-      <Box display="flex" w="100%" mx="auto">
-        <Center>
-          <Wrap>{hotelDisplay}</Wrap>
-        </Center>
-      </Box>
-      {!hotelData ? (
+      {hotelData.length > 0 ? (
         <Box display="flex" w="100%" mx="auto">
           <Center>
             <Wrap>{hotelDisplay}</Wrap>
