@@ -34,6 +34,9 @@ function HotelDetails(props) {
     if (username !== undefined) {
       setLoggedIn(true);
       setLoggedUsername(username);
+      setFeedback((prevState) => {
+        return { ...prevState, username: username };
+      });
     } else {
       setLoggedIn(false);
     }
@@ -42,12 +45,6 @@ function HotelDetails(props) {
     fetchHotelDetails(`/hotel/${params.hotelId}`);
     setLoading(false);
   }, []);
-
-  const handleUsernameChange = (event) => {
-    setFeedback((prevState) => {
-      return { ...prevState, username: event.target.value };
-    });
-  };
 
   const handleFeedbackChange = (event) => {
     setFeedback((prevState) => {
@@ -122,13 +119,13 @@ function HotelDetails(props) {
       <div className="feedback-container">{displayFeedback}</div>
       <FeedbackForm
         handleSubmit={handleSubmit}
-        handleUsernameChange={handleUsernameChange}
         handleFeedbackChange={handleFeedbackChange}
         handleRatingChange={handleRatingChange}
         username={feedback.username}
         userRating={feedback.userRating}
         userFeedback={feedback.userFeedback}
         loggedIn={loggedIn}
+        loggedUsername={loggedUsername}
       />
     </div>
   );
