@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { Button } from "@chakra-ui/react";
+import { Button, Input, Select, HStack, Box, Text, Image, Center} from "@chakra-ui/react";
 
 const LandingPage = (props) => {
 
@@ -45,23 +45,29 @@ const LandingPage = (props) => {
 
   return (
     <div className="header">
-      <h1 className="header-title">Welcome!</h1>
-      <h2 className="header-title2">Have a warm and welcoming stay with us.</h2>
+      <Box mb="30px" align='center'>
+      <Text fontSize='6xl'><b>Welcome</b></Text>
+      <Text fontSize='md'><i>Have a warm and welcoming stay with us.</i></Text>
+      </Box>
 
       <form>
-        <select
+        <Box m={[2, 3]}>
+        <HStack spacing='10px'>
+        <Select
+          variant='filled'
           className="userInput"
           name="location"
           onChange={handleLocationChange}
         >
           <option value="Orchard" selected>
-            --Please choose a location--
+            Please choose a location
           </option>
           <option value="Orchard">Orchard</option>
           <option value="Marina Bay">Marina Bay</option>
           <option value="Jurong East">Jurong East</option>
-        </select>
-        <input
+        </Select>
+        <Box>
+        <Input
           type="date"
           name="inDate"
           className="userInput"
@@ -69,8 +75,11 @@ const LandingPage = (props) => {
           min="2022-01-20"
           max="2023-12-31"
           onChange={handleInDateChange}
-        ></input>
-        <input
+          variant='filled'
+        ></Input>
+        </Box>
+        <Box>
+        <Input
           type="date"
           name="outDate"
           className="userInput"
@@ -78,21 +87,30 @@ const LandingPage = (props) => {
           min="2022-01-20"
           max="2023-12-31"
           onChange={handleOutDateChange}
-        ></input>
-        <select
+          variant='filled'
+        ></Input>
+        </Box>
+        <Select
+          variant='filled'
           className="userInput"
           name="roomType"
           onChange={handleRoomTypeChange}
         >
           <option value="Deluxe" selected>
-            --Please choose a room type--
+            Please choose a room type
           </option>
           <option value="Deluxe">Deluxe</option>
           <option value="Grand Deluxe">Grand Deluxe</option>
           <option value="Suite">Suite</option>
-        </select>
-          <Button onClick={handleOnClick}>Submit</Button>
+        </Select>
+          <Button variant='solid' colorScheme='blue' width='100px' size='md' onClick={handleOnClick}>Find</Button>
+      </HStack>
+      </Box>
       </form>
+      <Box align='center'>
+      <Image htmlHeight='90%' objectFit='cover' src="https://images.unsplash.com/photo-1472148439583-1f4cf81b80e0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1931&q=80" />
+      </Box>
+
     </div>
   );
 };
