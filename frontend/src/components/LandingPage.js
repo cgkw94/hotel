@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { Button, Input, Select, HStack, Box, Text, Image, Center} from "@chakra-ui/react";
+import { Button, Input, Select, HStack, Box, Text} from "@chakra-ui/react";
 
 const LandingPage = (props) => {
 
