@@ -30,7 +30,7 @@ const Header = (props) => {
   return (
     <>
       <Flex bg="blue.300" mb={8}>
-        <Box as="a" ml="8" href="/search">
+        <Box as="a" ml="8" href="/">
           <Image
             src="https://i.ibb.co/68QKWDr/get-Hotel-2-removebg-preview.png"
             alt="logo"

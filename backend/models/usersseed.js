@@ -1,5 +1,4 @@
 module.exports = [
-  //user seed works :)
   {
     username: "Jessie",
     email: "jessie@gmail.com",
