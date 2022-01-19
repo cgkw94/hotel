@@ -20,9 +20,10 @@ const LandingPage = (props) => {
     props.setRoomType(roomTypeInput);
 
     console.log("clicked");
-    props.setFetchedResults(true)
 
     history.push('/search')
+
+    props.setFetchedResults(true)
   };
 
   const handleLocationChange = (event) => {

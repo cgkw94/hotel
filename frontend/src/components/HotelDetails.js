@@ -34,6 +34,9 @@ function HotelDetails(props) {
     if (username !== undefined) {
       setLoggedIn(true);
       setLoggedUsername(username);
+      setFeedback((prevState) => {
+        return { ...prevState, username: username };
+      });
     } else {
       setLoggedIn(false);
     }
@@ -43,10 +46,11 @@ function HotelDetails(props) {
     setLoading(false);
   }, []);
 
-  const handleUsernameChange = (event) => {
-    setFeedback((prevState) => {
-      return { ...prevState, username: event.target.value };
-    });
+  const roomSearchData = {
+    inDate: props.inDateSearch,
+    outDate: props.outDateSearch,
+    roomType: props.roomTypeSearch,
+    username: loggedUsername,
   };
 
   const handleFeedbackChange = (event) => {
@@ -58,6 +62,16 @@ function HotelDetails(props) {
   const handleRatingChange = (event) => {
     setFeedback((prevState) => {
       return { ...prevState, userRating: event.target.value };
+    });
+  };
+
+  const bookSubmit = () => {
+    fetch(`/hotel/${params.hotelId}`, {
+      method: "PUT",
+      body: JSON.stringify({ roomSearchData }),
+      headers: { "Content-Type": "application/json" },
+    }).then(() => {
+      console.log("booked");
     });
   };
 
@@ -76,13 +90,16 @@ function HotelDetails(props) {
   const displayRooms = roomDetails.map((data, index) => {
     return (
       <>
-        <RoomsCard
-          src={data.roomImg}
-          roomType={data.roomType}
-          price={data.price}
-          maxPax={data.maxPax}
-          size={data.size}
-        />
+        {data.roomType === props.roomTypeSearch ? (
+          <RoomsCard
+            src={data.roomImg}
+            roomType={data.roomType}
+            price={data.price}
+            maxPax={data.maxPax}
+            size={data.size}
+            onClick={bookSubmit}
+          />
+        ) : null}
       </>
     );
   });
@@ -122,13 +139,13 @@ function HotelDetails(props) {
       <div className="feedback-container">{displayFeedback}</div>
       <FeedbackForm
         handleSubmit={handleSubmit}
-        handleUsernameChange={handleUsernameChange}
         handleFeedbackChange={handleFeedbackChange}
         handleRatingChange={handleRatingChange}
         username={feedback.username}
         userRating={feedback.userRating}
         userFeedback={feedback.userFeedback}
         loggedIn={loggedIn}
+        loggedUsername={loggedUsername}
       />
     </div>
   );

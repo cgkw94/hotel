@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Image, Text, Badge } from "@chakra-ui/react";
+import { Box, Image, Text, Badge, Button } from "@chakra-ui/react";
 
 const RoomsCard = (props) => {
   return (
@@ -9,7 +9,7 @@ const RoomsCard = (props) => {
       <Box p="6">
         <Box display="flex" alignItems="baseline">
           <Badge borderRadius="full" px="2" colorScheme="teal">
-            New
+            Available
           </Badge>
           <Box
             color="gray.500"
@@ -34,6 +34,7 @@ const RoomsCard = (props) => {
         </Box>
 
         <Box> ${props.price} per night</Box>
+        <Button onClick={props.onClick}>Book!</Button>
       </Box>
     </Box>
   );
