@@ -242,6 +242,7 @@ app.patch("/users/login", async (req, res) => {
 
 ////////////////////////////////////
 // Create New User
+////////////////////////////////////
 // remember that username is case-sensitive
 app.post("/users/new", async (req, res) => {
   const checkUsername = await Users.find(
