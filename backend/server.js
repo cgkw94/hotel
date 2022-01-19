@@ -195,9 +195,6 @@ app.get("/hotel/", async (req, res) => {
       bookings.every((booking) => {
         // Date.parse converts the in and out dates to unix for comparison
 
-        console.log(`keyed in booking ${inDateUnix}}`);
-        console.log(Date.parse(booking.outDate));
-
         let bookingStart = Date.parse(booking.inDate);
         let bookingEnd = Date.parse(booking.outDate);
 
