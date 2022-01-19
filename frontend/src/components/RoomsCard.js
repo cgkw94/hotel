@@ -50,7 +50,7 @@ const RoomsCard = (props) => {
             <Button onClick={props.onClick}>Book!</Button>
           )
         ) : (
-          <Button onClick={handleOnClick}>Login!</Button>
+          <Button onClick={handleOnClick}>Login to Book!</Button>
         )}
       </Box>
     </Box>

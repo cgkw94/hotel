@@ -137,11 +137,11 @@ app.delete("/hotel/:id/feedback/delete/:feedbackId", async (req, res) => {
 ////////////////////////////////////
 
 app.put("/hotel/:id", async (req, res) => {
-  let id = parseInt(req.params.id);
-  let inDate = req.body.roomSearchData.inDate;
-  let outDate = req.body.roomSearchData.outDate;
-  let username = req.body.roomSearchData.username;
-  let roomType = req.body.roomSearchData.roomType;
+  const id = parseInt(req.params.id);
+  const inDate = req.body.roomSearchData.inDate;
+  const outDate = req.body.roomSearchData.outDate;
+  const username = req.body.roomSearchData.username;
+  const roomType = req.body.roomSearchData.roomType;
 
   console.log(req.body.roomSearchData.username);
   const hotelDetails = await Hotel.findOne({
@@ -179,11 +179,11 @@ app.put("/hotel/:id", async (req, res) => {
 ////////////////////////////////////
 
 app.get("/hotel/", async (req, res) => {
-  let inDate = req.query.inDate;
-  let outDate = req.query.outDate;
-  let inDateUnix = Date.parse(inDate);
-  let outDateUnix = Date.parse(outDate);
-  let roomType = req.query.roomType;
+  const inDate = req.query.inDate;
+  const outDate = req.query.outDate;
+  const inDateUnix = Date.parse(inDate);
+  const outDateUnix = Date.parse(outDate);
+  const roomType = req.query.roomType;
   let allHotels = await Hotel.find();
 
   allHotels = allHotels.filter((singleHotel) => {
@@ -195,8 +195,8 @@ app.get("/hotel/", async (req, res) => {
       bookings.every((booking) => {
         // Date.parse converts the in and out dates to unix for comparison
 
-        let bookingStart = Date.parse(booking.inDate);
-        let bookingEnd = Date.parse(booking.outDate);
+        const bookingStart = Date.parse(booking.inDate);
+        const bookingEnd = Date.parse(booking.outDate);
 
         return outDateUnix < bookingStart || inDateUnix > bookingEnd; //the conditions to make sure it doesn't overlap
       }) && singleHotel.location === req.query.location

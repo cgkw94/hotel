@@ -27,7 +27,6 @@ function ReviewsCard(props) {
         {props.username}
       </Badge>
 
-      <p>{props.userRating}</p>
       <Box display="flex" mt="2" alignItems="center">
         {Array(5)
           .fill("")
