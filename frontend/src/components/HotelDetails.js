@@ -8,6 +8,8 @@ import RoomsCard from "./RoomsCard";
 function HotelDetails(props) {
   const params = useParams();
 
+  const [loggedUsername, setLoggedUsername] = useState(null);
+  const [loggedIn, setLoggedIn] = useState(false);
   const [hotelDetails, setHotelDetails] = useState([]);
   const [feedbackDetails, setFeedbackDetails] = useState([]);
   const [roomDetails, setRoomDetails] = useState([]);
@@ -27,6 +29,15 @@ function HotelDetails(props) {
   };
 
   useEffect(() => {
+    const username = props.userInfo.username;
+
+    if (username !== undefined) {
+      setLoggedIn(true);
+      setLoggedUsername(username);
+    } else {
+      setLoggedIn(false);
+    }
+
     setLoading(true);
     fetchHotelDetails(`/hotel/${params.hotelId}`);
     setLoading(false);
@@ -59,6 +70,7 @@ function HotelDetails(props) {
     }).then(() => {
       console.log("new feedback added");
     });
+    window.location.reload(false);
   };
 
   const displayRooms = roomDetails.map((data, index) => {
@@ -82,7 +94,10 @@ function HotelDetails(props) {
       }).then(() => {
         console.log("feedback deleted");
       });
+
+      window.location.reload(false);
     };
+
     return (
       <>
         <ReviewsCard
@@ -90,6 +105,8 @@ function HotelDetails(props) {
           userRating={data.userRating}
           userFeedback={data.userFeedback}
           onClick={handleDelete}
+          loggedIn={loggedIn}
+          loggedUsername={loggedUsername}
         />
       </>
     );
@@ -111,6 +128,7 @@ function HotelDetails(props) {
         username={feedback.username}
         userRating={feedback.userRating}
         userFeedback={feedback.userFeedback}
+        loggedIn={loggedIn}
       />
     </div>
   );
