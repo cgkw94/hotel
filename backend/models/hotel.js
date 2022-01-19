@@ -18,9 +18,9 @@ const HotelSchema = new mongoose.Schema(
         roomType: String,
         maxPax: { type: Number, max: 4 },
         price: Number,
-        roomImg: { type: String }, // const imgURL = "https://imgur.com"  /xxxxxx
+        roomImg: { type: String },
         size: String,
-        amenities: [{ type: String }], // coffee maker, safe deposit box, couch, Netflix, bathtub
+        amenities: [{ type: String }],
       },
     ],
     rooms: [
