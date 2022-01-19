@@ -38,6 +38,12 @@ function HotelDetails(props) {
   useEffect(() => {
     const username = props.userInfo.username;
 
+    if (hotelStayed === undefined) {
+      setHotelStayed([]);
+    } else {
+      setHotelStayed(cookies.get("hotelStayedCookie"));
+    }
+
     if (username !== undefined) {
       setLoggedIn(true);
       setLoggedUsername(username);
